@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GFX - Borja Bonilla</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
+
+      @font-face {
+        font-family: "DepartureMono";
+        src:
+          url("DepartureMono-1.500/DepartureMono-Regular.woff")
+            format("opentype"),
+          url("DepartureMono-1.500/DepartureMono-Regular.woff2")
+            format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        overflow: auto;
+        padding-bottom: 60px;
+        margin: 0;
+        background:
+          linear-gradient(rgba(17, 24, 39, 0.25), rgba(17, 24, 39, 0.25)),
+          url("gaveta/FONDO GENERAL.jpg") center center / cover no-repeat fixed;
+        background-attachment: fixed;
+      }
+            /* ----- ESTILOS DE TEST.HTML ----- */
+
+      .seccion-clientes {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        max-width: 1200px;
+        margin: 40px auto 0;
+        padding: 20px;
+      }
+
+      .cliente-fila {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .cliente-fila:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .cliente-contenido {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 300px;
+        flex: 0.7;
+      }
+
+      .cliente-logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 300px;
+        flex: 0.8;
+        align-items: center;
+      }
+
+      .cliente-logo img {
+        width: 100%;
+        max-width: 320px;
+        height: 170px;
+        object-fit: contain;
+        border: none;
+        background: transparent;
+        display: block;
+      }
+
+      .cliente-logo.logo-cifras img {
+        max-width: 500px;
+        height: 300px;
+      }
+      
+      .cliente-logo.logo-atm img {
+        max-width: 400px;
+        height: 300px;
+      }
+
+      .cliente-logo.logo-gigantes img {
+        max-width: 360px;
+        height: 190px;
+      }
+
+      .cliente-logo.logo-urban img {
+        max-width: 360px;
+        height: 190px;
+      }
+
+      .cliente-logo.logo-mrunderdog img {
+        max-width: 560px;
+        height: 240px;
+      }
+      .cliente-nombre {
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        color: #000;
+      }
+
+      .cliente-descripcion {
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        padding-left: 20px;
+      }
+
+      .enlace-video {
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        color: #000;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: bold;
+        display: inline-block;
+      }
+
+      .cliente-video-box {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .cliente-video-box iframe {
+        width: 100%;
+        height: 315px;
+        border: none;
+        margin-bottom: 15px;
+      }
+
+      .contenedor-galeria {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .boton-volver {
+        position: fixed;
+        bottom: 84px;
+        left: 20px;
+        z-index: 30;
+        display: inline-block;
+        padding: 12px 22px;
+        background-color: rgba(255, 255, 255, 0.96);
+        color: #2563eb;
+        text-decoration: none;
+        font-family: "DepartureMono", monospace;
+        font-weight: 700;
+        font-size: 1.15rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 18px;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+        transition: all 0.3s ease;
+      }
+
+      .boton-volver:hover {
+        background-color: #ffffff;
+        color: #1d4ed8;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+      }
+
+      .titulo-seccion {
+        display: none;
+      }
+
+      .banner-logos {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 20;
+      }
+
+      .pantalla-foto {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        background-color: #f3f4f6;
+        border-bottom: 1px solid #d1d5db;
+        position: relative;
+      }
+
+      .pantalla-foto h2 {
+        color: #1f2937;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+      }
+
+      .pantalla-foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      @media (max-width: 768px) {
+        .cliente-fila,
+        .cliente-fila:nth-child(even) {
+          flex-direction: column-reverse;
+          gap: 30px;
+        }
+
+        .cliente-logo,
+        .cliente-contenido {
+          width: 100%;
+          min-height: auto;
+        }
+
+        body {
+          padding-bottom: 80px;
+        }
+
+        .boton-volver {
+          bottom: 88px;
+          left: 12px;
+          padding: 10px 18px;
+          font-size: 0.95rem;
+          border-radius: 14px;
+        }
+
+        .titulo-seccion {
+          display: none;
+        }
+      }
+
+      .banner-logos {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 20;
+      }
+
+      /* ========================================== */
+      /* ESTILOS PARA LAS PANTALLAS (FULL SCREEN) */
+      /* ========================================== */
+
+      .pantalla-foto {
+        height: 100vh; /* Obliga a la sección a medir el 100% de la altura de la ventana */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        background-color: #f3f4f6; /* Color de fondo gris suave por si la foto deja bandas a los lados */
+        border-bottom: 1px solid #d1d5db;
+        position: relative;
+      }
+
+      .pantalla-foto h2 {
+        color: #1f2937;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+      }
+
+      .pantalla-foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Garantiza que la foto crezca al máximo sin cortar las letras */
+        border-radius: 0; /* Sin bordes redondeados para que pegue a los marcos de la pantalla */
+        box-shadow: none;
+      }
+
+      /* ========================================== */
+      /* ADAPTACIÓN PARA MÓVILES */
+      /* ========================================== */
+
+      @media (max-width: 768px) {
+        .cliente-fila,
+        .cliente-fila:nth-child(even) {
+          flex-direction: column-reverse;
+          gap: 30px;
+        }
+        .cliente-logo,
+        .cliente-contenido {
+          width: 100%;
+          min-height: auto;
+        }
+        body {
+          padding-bottom: 80px;
+        }
+
+        .boton-volver {
+          bottom: 88px;
+          left: 12px;
+          padding: 10px 18px;
+          font-size: 0.95rem;
+          border-radius: 14px;
+        }
+
+        .pantalla-foto {
+          height: 100vh; /* En móvil también ocupará la pantalla entera */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="contenedor-galeria">
+      <a href="00.portada_portfolio.html" class="boton-volver">← Volver</a>
+
+      <div class="seccion-clientes">
+        <!-- COMIENZO CLIENTE RTVE - CIFRAS Y LETRAS -->
+        <div class="cliente-fila">
+          <div class="cliente-contenido">
+            <div id="texto-cliente-1">
+              <h2 class="cliente-nombre">RTVE - CIFRAS Y LETRAS</h2>
+              <div class="cliente-descripcion">
+                <p>
+                  Histórico concurso de agilidad mental y cultura general
+                  emitido en La 2 de RTVE. En su etapa actual, el formato se
+                  apoya en una sólida infraestructura tecnológica en plató,
+                  exigiendo una sincronización milimétrica entre la mecánica del
+                  juego, los sistemas de respuesta interactivos y su reflejo
+                  visual inmediato para la audiencia.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Operación de Grafismo (GFX):</strong> Control y
+                    lanzamiento en directo de la línea gráfica y rotulación del
+                    programa durante las estrictas jornadas de grabación.
+                  </li>
+                  <li>
+                    <strong>Control de software interactivo:</strong> Gestión
+                    integral en tiempo real del sistema de visualización y
+                    respuesta desplegado en las tablets táctiles de los
+                    concursantes y el presentador.
+                  </li>
+                  <li>
+                    <strong>Administración de redes de plató:</strong>
+                    Diseño de la red <strong>Dante</strong> de los envíos de audio,
+                    configuración y mantenimiento técnico del sistema cerrado de
+                    conmutación por IP, encargado de enlazar y sincronizar la red
+                    de tablets, los pulsadores de juego y los marcadores físicos.
+                  </li>
+                  <li>
+                    <strong>Coordinador Técnico de Plató:</strong> supervisión del
+                    montaje de la parte técnica audiovisual y del sistema de
+                    proyección de las señales broadcast que conformaron las
+                    primeras 3 temporadas del programa en su nueva etapa.
+                  </li>
+                </ul>
+              </div>
+              <a class="enlace-video" onclick="alternarBloque('1', true)">
+                VER VIDEO
+              </a>
+            </div>
+
+            <div id="video-cliente-1" class="cliente-video-box">
+              <iframe
+                src="https://www.youtube.com/embed/ClOMD-_Y7_0"
+                allowfullscreen
+              ></iframe>
+              <a class="enlace-video" onclick="alternarBloque('1', false)"
+                >← Volver a la descripción</a
+              >
+            </div>
+          </div>
+
+          <div class="cliente-logo logo-cifras">
+            <img src="gaveta/cifrayletras.png" alt="Cifras y Letras" />
+          </div>
+        </div>
+        <!-- FINAL DEL CLIENTE RTVE - CIFRAS Y LETRAS -->
+
+<!-- ateltico de madrid ribbon -->
+<div class="cliente-fila">
+  <div class="cliente-contenido">
+    <div id="texto-cliente-5">
+      <h2 class="cliente-nombre">ATLETICO DE MADRID</h2>
+      <ul class="cliente-descripcion">
+<p>
+      Operativa técnica de grafismo y publicidad en directo durante los encuentros oficiales del club. Gestión bajo alta presión ante más de 50.000 espectadores, garantizando la emisión ininterrumpida y sincronizada de los activos comerciales y deportivos.
+    </p>
+    <li>
+      <strong>Control integral de Ribbon Board:</strong> Manejo de la red de pantallas LED perimetrales (ribbon) para la proyección estructurada de la publicidad de la cartera completa de patrocinadores.
+    </li>
+    <li>
+      <strong>Operación avanzada con CGFootball:</strong> Gestión del sistema profesional de grafismo para la alimentación de videomarcadores, control de resultados en directo y disparo inmediato de activaciones dinámicas de marca por gol.
+    </li>
+  </ul>
+      <a class="enlace-video" onclick="alternarBloque('5', true)">
+        VER VIDEO
+      </a>
+    </div>
+
+    <div id="video-cliente-5" class="cliente-video-box">
+      <iframe src="https://www.youtube.com/embed/kDcDypNB7oo" allowfullscreen></iframe>
+      <a class="enlace-video" onclick="alternarBloque('5', false)">← Volver a la descripción</a>
+    </div>
+  </div>
+
+  <div class="cliente-logo logo-atm">
+    <img src="gaveta/ATM.png" alt="Nombre cliente" />
+  </div>
+</div>
+<!-- FIN CLIENTE -->
+
+        <!-- COMIENZO CLIENTE PREMIOS GIGANTES DEL BASKET 2021/26 -->
+        <div class="cliente-fila">
+          <div class="cliente-contenido">
+            <div id="texto-cliente-2">
+              <h2 class="cliente-nombre">
+                PREMIOS GIGANTES DEL BASKET 2021/26
+              </h2>
+              <ul class="cliente-descripcion">
+                <p>
+                  La revista <strong>Gigantes del Basket</strong>. Su histórica
+                  gala anual de premios es el evento cumbre del Baloncesto
+                  español, reuniendo a la élite del deporte nacional e
+                  internacional.
+                </p>
+                <li>
+                  <strong>Diseño de Grafismo (GFX):</strong> Creación y
+                  desarrollo de la línea gráfica estática y animada, adaptada
+                  integralmente a la identidad visual de la gala.
+                </li>
+                <li>
+                  <strong>Operación de gráficos en tiempo real:</strong>
+                  Integración y lanzamiento de la rotulación para la emisión de
+                  streaming mediante el software NewBlue, implementando
+                  personalizaciones dinámicas y ajustes de estilo en directo a
+                  través de programación CSS.
+                </li>
+                <li>
+                  <strong>Gestión de proyección y playout:</strong> Control,
+                  enrutamiento y lanzamiento de los vídeos de premiados,
+                  resúmenes y recursos audiovisuales de apoyo, sincronizados al
+                  milímetro con la escaleta del evento en vivo.
+                </li>
+                <li>
+                  <strong>Montaje del evento:</strong> Coordinación y enlace de
+                  tiradas de cámara, conexiones a rack de realización
+                  Atme/Tricaster y gestión de los envíos de GFX en fill & key a
+                  través de salidas físicas BNC.
+                </li>
+              </ul>
+              <a class="enlace-video" onclick="alternarBloque('2', true)">
+                VER VIDEO
+              </a>
+            </div>
+
+            <div id="video-cliente-2" class="cliente-video-box">
+              <iframe
+                src="https://www.youtube.com/embed/4_SIlApP1RI"
+                allowfullscreen
+              ></iframe>
+              <a class="enlace-video" onclick="alternarBloque('2', false)"
+                >← Volver a la descripción</a
+              >
+            </div>
+          </div>
+
+          <div class="cliente-logo logo-gigantes">
+            <img src="gaveta/gigantes.jpg" alt="Logo El Economista" />
+          </div>
+        </div>
+        <!-- FINAL DEL CLIENTE PREMIOS GIGANTES DEL BASKET 2021/26 -->
+
+        <!-- COMIENZO CLIENTE FMS WORLD SERIES 2023-2025 -->
+        <div class="cliente-fila">
+          <div class="cliente-contenido">
+            <div id="texto-cliente-3">
+              <h2 class="cliente-nombre">FMS WORLD SERIES 2023-2025</h2>
+              <p class="cliente-descripcion">
+                La FMS (Freestyle Master Series) es la competición internacional
+                de referencia en el circuito del freestyle rap, organizada por
+                Urban Roosters.
+              </p>
+
+              <ul class="cliente-descripcion">
+                <li>
+                  <strong>Operación de Grafismo (GFX) y Playout:</strong>
+                  Emisión en directo de toda la línea gráfica corporativa del
+                  evento y lanzamiento de la totalidad de los vídeos (VTRs)
+                  integrados en la retransmisión.
+                </li>
+                <li>
+                  <strong>Coordinación de infraestructura multicámara:</strong>
+                  Gestión y montaje del operativo de captación, coordinando una
+                  configuración de entre 4 y 10 cámaras simultáneas operando
+                  mediante conexión física, por ip (ndi) y radioenlace.
+                </li>
+                <li>
+                  <strong>Enrutamiento y distribución de señales:</strong> Envío
+                  de señales de vídeo de referencia a los controles de FOH
+                  (Front of House) e Iluminación, y ruteo técnico general a
+                  realización para sistemas Blackmagic ATEM Constellation o
+                  TriCaster TC2.
+                </li>
+              </ul>
+              <a class="enlace-video" onclick="alternarBloque('3', true)">
+                VER VIDEO
+              </a>
+            </div>
+
+            <div id="video-cliente-3" class="cliente-video-box">
+              <a
+                href="https://www.youtube.com/watch?v=eRfOTPFt9-w"
+                target="_blank"
+                title="Ver vídeo en YouTube"
+              >
+                <img
+                  src="gaveta/captura_video_fms.jpg"
+                  alt="Reproducir evento FMS World Series"
+                  style="
+                    width: 100%;
+                    height: 315px;
+                    object-fit: cover;
+                    border: none;
+                    margin-bottom: 15px;
+                  "
+                />
+              </a>
+              <a class="enlace-video" onclick="alternarBloque('3', false)"
+                >← Volver a la descripción</a
+              >
+            </div>
+          </div>
+
+          <div class="cliente-logo logo-urban">
+            <img src="gaveta/urban.png" alt="Urban" />
+          </div>
+        </div>
+        <!-- FINAL DEL CLIENTE FMS WORLD SERIES 2023-2025 -->
+
+        <!-- COMIENZO CLIENTE MR. UNDERDOG -->
+        <div class="cliente-fila">
+          <div class="cliente-contenido">
+            <div id="texto-cliente-4">
+              <h2 class="cliente-nombre">MR. UNDERDOG</h2>
+              <p class="cliente-descripcion">
+                Programa de análisis y debate deportivo bajo el patrocinio de
+                Codere, temporadas 2021-2023 
+              </p>
+
+              <ul class="cliente-descripcion">
+                <li>
+                  <strong>Operación de Grafismo (GFX) interactivo:</strong>
+                  Lanzamiento de rotulación en directo y gestión de sistemas de
+                  grafismo online, integrando y embebiendo contenido dinámico
+                  extraído directamente desde redes sociales en tiempo real.
+                </li>
+                <li>
+                  <strong>Gestión visual de Pantalla LED:</strong> Diseño de la
+                  composición y control integral del contenido proyectado en la
+                  pantalla principal del plató mediante el entorno de
+                  programación visual Isadora.
+                </li>
+                <li>
+                  <strong>Ingeniería de plató y enrutamiento:</strong> Montaje
+                  de la infraestructura audiovisual, coordinando el envío de
+                  cámaras y la interconexión de señales con el control de
+                  realización, priorizando la ingesta de vídeo sin latencia
+                  hacia la pantalla LED.
+                </li>
+              </ul>
+              <a class="enlace-video" onclick="alternarBloque('4', true)">
+                VER VIDEO
+              </a>
+            </div>
+
+            <div id="video-cliente-4" class="cliente-video-box">
+                <a href="https://www.youtube.com/watch?v=89nNJKqiukU" target="_blank" title="Ver vídeo en YouTube">
+                    <!-- El object-fit asegura que la imagen respete el tamaño exacto del recuadro del vídeo -->
+                    <img src="gaveta/captura_video_codere.jpg" alt="Reproducir evento Codere Mr Underdog" style="width: 100%; height: 315px; object-fit: cover; border: none; margin-bottom: 15px;">
+                  </a>
+              <a class="enlace-video" onclick="alternarBloque('4', false)"
+                >← Volver a la descripción</a
+              >
+            </div>
+          </div>
+
+             <div class="cliente-logo logo-mrunderdog">
+            <img src="gaveta/mrunderdog.jpg" alt="Logo Cliente 4" />
+          </div>
+        </div>
+        <!-- FINAL DEL CLIENTE MR. UNDERDOG -->
+      </div>
+
+      
+
+       <!-- Pantalla de foto destacada  -->
+      <div class="pantalla-foto">
+        <img src="gaveta/01gfx.jpg" alt="GFX 2" />
+      </div>
+      
+
+    <div class="banner-logos">
+      <span>MStudio</span><span>5G1</span><span>El Economista</span
+      ><span>Iberdrola</span> <span>Mediapro</span><span>Secuoya</span
+      ><span>PRG</span><span>Tres60</span><span>TVE1</span><span>CyL</span>
+    </div>
+
+    <script>
+      function alternarBloque(id, mostrarVideo) {
+        const texto = document.getElementById("texto-cliente-" + id);
+        const video = document.getElementById("video-cliente-" + id);
+
+        if (mostrarVideo) {
+          texto.style.display = "none";
+          video.style.display = "flex";
+        } else {
+          texto.style.display = "block";
+          video.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

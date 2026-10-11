@@ -1,0 +1,200 @@
+/* 1. CARGAMOS TU FUENTE LOCAL */
+@font-face {
+  font-family: "DepartureMono";
+  src:
+    url("DepartureMono-1.500/DepartureMono-Regular.woff") format("opentype"),
+    url("DepartureMono-1.500/DepartureMono-Regular.woff2") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 2. ESTILOS GENERALES */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #217396;
+  background-image: url("gaveta/FONDO GENERAL.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: #2a3546;
+  font-family: "DepartureMono", monospace;
+  overflow: hidden;
+}
+
+.pantalla-completa {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 3. TU FOTO EN EL CENTRO */
+.foto-borja {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-48%, -50%);
+  width: 780px;
+  height: 680px;
+  max-width: 55vw;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #111;
+  border: 4px solid #3b82f6;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.foto-borja img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.1) translate(-6%, -12%);
+}
+
+/* 4. ESTILO DE LOS HIPERVÍNCULOS */
+.enlace-categoria {
+  position: absolute;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 12px 25px;
+  background-color: #ffffff;
+  color: #2563eb;
+  font-weight: 600;
+  border: 1px solid #e5e7eb;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  z-index: 2;
+  text-align: center;
+}
+
+.enlace-categoria:hover {
+  background-color: #f3f4f6;
+  color: #1d4ed8;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- POSICIONES EXACTAS --- */
+.pos-video {
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.pos-streaming {
+  top: 15%;
+  right: 10%;
+}
+.pos-gfx {
+  top: 45%;
+  right: 8%;
+  transform: translateY(-50%);
+}
+.pos-alquiler {
+  bottom: 25%;
+  right: 10%;
+}
+.pos-formacion {
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.pos-proyeccion {
+  bottom: 25%;
+  left: 8%;
+}
+.pos-produccion {
+  top: 55%;
+  left: 5%;
+}
+.pos-audio {
+  top: 35%;
+  left: 5%;
+}
+.pos-edicion {
+  top: 15%;
+  left: 10%;
+}
+
+/* 5. BANNER INFERIOR PARA LOGOS */
+.banner-logos {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 3;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.banner-logos span {
+  color: #6b7280;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+
+  .pantalla-completa {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px 16px 120px;
+    box-sizing: border-box;
+  }
+
+  .foto-borja {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: min(72vw, 300px);
+    height: min(72vw, 300px);
+    max-width: 300px;
+    margin: 20px auto 12px;
+    border-width: 3px;
+  }
+
+  .enlace-categoria {
+    position: static;
+    display: inline-block;
+    width: min(90vw, 280px);
+    margin: 8px auto;
+    font-size: 0.8rem;
+    padding: 12px 14px;
+    transform: none;
+  }
+
+  .banner-logos {
+    height: auto;
+    min-height: 60px;
+    padding: 10px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    justify-content: center;
+  }
+
+  .banner-logos span {
+    font-size: 0.68rem;
+    letter-spacing: 0.8px;
+  }
+}

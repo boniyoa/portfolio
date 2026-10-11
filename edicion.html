@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edición y postproducción - Borja Bonilla</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @font-face {
+        font-family: "DepartureMono";
+        src:
+          url("DepartureMono-1.500/DepartureMono-Regular.woff")
+            format("opentype"),
+          url("DepartureMono-1.500/DepartureMono-Regular.woff2")
+            format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        overflow: auto;
+        padding-bottom: 60px;
+        margin: 0;
+        background:
+          linear-gradient(rgba(17, 24, 39, 0.25), rgba(17, 24, 39, 0.25)),
+          url("gaveta/FONDO GENERAL.jpg") center center / cover no-repeat fixed;
+        background-attachment: fixed;
+      }
+      /* ----- ESTILOS DE TEST.HTML ----- */
+      .seccion-clientes {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        max-width: 1200px;
+        margin: 40px auto 0;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(1px);
+        border-radius: 18px;
+      }
+
+      .cliente-fila {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+      }
+
+      .cliente-fila:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .cliente-contenido,
+      .cliente-logo {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 300px;
+      }
+
+      .cliente-logo {
+        align-items: center;
+      }
+
+      .cliente-logo img {
+        max-width: 100%;
+        max-height: 250px;
+        object-fit: contain;
+        border: none;
+        background: transparent;
+      }
+
+      .cliente-nombre {
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        color: #000;
+      }
+
+      .cliente-descripcion {
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        padding-left: 20px;
+      }
+
+      .enlace-video {
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        color: #000;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: bold;
+        display: inline-block;
+      }
+
+      .cliente-video-box {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .cliente-video-box iframe {
+        width: 100%;
+        height: 315px;
+        border: none;
+        margin-bottom: 15px;
+      }
+
+      .contenedor-galeria {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .boton-volver {
+        position: fixed;
+        bottom: 84px;
+        left: 20px;
+        z-index: 30;
+        display: inline-block;
+        padding: 12px 22px;
+        background-color: rgba(255, 255, 255, 0.96);
+        color: #2563eb;
+        text-decoration: none;
+        font-family: "DepartureMono", monospace;
+        font-weight: 700;
+        font-size: 1.15rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 18px;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+        transition: all 0.3s ease;
+      }
+      .boton-volver:hover {
+        background-color: #ffffff;
+        color: #1d4ed8;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+      }
+      .titulo-seccion {
+        display: none;
+      }
+      .banner-logos {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 20;
+      }
+      .pantalla-foto {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        background-color: #f3f4f6;
+        border-bottom: 1px solid #d1d5db;
+        position: relative;
+      }
+      .pantalla-foto h2 {
+        color: #1f2937;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+      }
+      .pantalla-foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      @media (max-width: 768px) {
+        .cliente-fila,
+        .cliente-fila:nth-child(even) {
+          flex-direction: column-reverse;
+          gap: 30px;
+        }
+        .cliente-logo,
+        .cliente-contenido {
+          width: 100%;
+          min-height: auto;
+        }
+        body {
+          padding-bottom: 80px;
+        }
+        .boton-volver {
+          bottom: 88px;
+          left: 12px;
+          padding: 10px 18px;
+          font-size: 0.95rem;
+          border-radius: 14px;
+        }
+        .pantalla-foto {
+          height: 100vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor-galeria">
+      <a href="00.portada_portfolio.html" class="boton-volver">← Volver</a>
+
+      <div class="seccion-clientes">
+        <div class="cliente-fila">
+          <div class="cliente-contenido">
+            <div id="texto-cliente-1">
+              <h2 class="cliente-nombre">NOMBRE</h2>
+              <ul class="cliente-descripcion">
+                <li>hice aquello</li>
+                <li>hice lo de más allá</li>
+              </ul>
+              <a class="enlace-video" onclick="alternarBloque('1', true)">
+                VER VIDEO
+              </a>
+            </div>
+
+            <div id="video-cliente-1" class="cliente-video-box">
+              <iframe
+                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
+                allowfullscreen
+              ></iframe>
+              <a class="enlace-video" onclick="alternarBloque('1', false)"
+                >← Volver a la descripción</a
+              >
+            </div>
+          </div>
+
+          <div class="cliente-logo">
+            <img src="atletico_de_madrid.jpg" alt="Logo Atlético de Madrid" />
+          </div>
+        </div>
+
+        <div class="cliente-fila">
+          <div class="cliente-contenido">
+            <div id="texto-cliente-2">
+              <h2 class="cliente-nombre">NOMBRE</h2>
+              <ul class="cliente-descripcion">
+                <li>hice aquello</li>
+                <li>hice lo de más allá</li>
+              </ul>
+              <a class="enlace-video" onclick="alternarBloque('2', true)">
+                VER VIDEO
+              </a>
+            </div>
+
+            <div id="video-cliente-2" class="cliente-video-box">
+              <iframe
+                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
+                allowfullscreen
+              ></iframe>
+              <a class="enlace-video" onclick="alternarBloque('2', false)"
+                >← Volver a la descripción</a
+              >
+            </div>
+          </div>
+
+          <div class="cliente-logo">
+            <img src="el_economista.jpg" alt="Logo El Economista" />
+          </div>
+        </div>
+
+        <div class="cliente-fila">
+          <div class="cliente-contenido">
+            <div id="texto-cliente-3">
+              <h2 class="cliente-nombre">NOMBRE</h2>
+              <ul class="cliente-descripcion">
+                <li>hice aquello</li>
+                <li>hice lo de más allá</li>
+              </ul>
+              <a class="enlace-video" onclick="alternarBloque('3', true)">
+                VER VIDEO
+              </a>
+            </div>
+
+            <div id="video-cliente-3" class="cliente-video-box">
+              <iframe
+                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
+                allowfullscreen
+              ></iframe>
+              <a class="enlace-video" onclick="alternarBloque('3', false)"
+                >← Volver a la descripción</a
+              >
+            </div>
+          </div>
+
+          <div class="cliente-logo">
+            <img src="iberdrola.jpg" alt="Logo Iberdrola" />
+          </div>
+        </div>
+
+        <div class="cliente-fila">
+          <div class="cliente-contenido">
+            <div id="texto-cliente-4">
+              <h2 class="cliente-nombre">NOMBRE CLIENTE 4</h2>
+              <ul class="cliente-descripcion">
+                <li>hice aquello</li>
+                <li>hice lo de más allá</li>
+              </ul>
+              <a class="enlace-video" onclick="alternarBloque('4', true)">
+                VER VIDEO
+              </a>
+            </div>
+
+            <div id="video-cliente-4" class="cliente-video-box">
+              <iframe
+                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
+                allowfullscreen
+              ></iframe>
+              <a class="enlace-video" onclick="alternarBloque('4', false)"
+                >← Volver a la descripción</a
+              >
+            </div>
+          </div>
+
+          <div class="cliente-logo">
+            <img src="logo_cliente_4.jpg" alt="Logo Cliente 4" />
+          </div>
+        </div>
+      </div>
+
+      <div class="pantalla-foto">
+        <h2>Edición y postproducción - Proyecto 1</h2>
+        <img src="foto-edicion-1.jpg" alt="Edición y postproducción 1" />
+      </div>
+      <div class="pantalla-foto">
+        <h2>Edición y postproducción - Proyecto 2</h2>
+        <img src="foto-edicion-2.jpg" alt="Edición y postproducción 2" />
+      </div>
+      <div class="pantalla-foto">
+        <h2>Edición y postproducción - Proyecto 3</h2>
+        <img src="foto-edicion-3.jpg" alt="Edición y postproducción 3" />
+      </div>
+    </div>
+    <div class="banner-logos">
+      <span>MStudio</span><span>5G1</span><span>El Economista</span
+      ><span>Iberdrola</span> <span>Mediapro</span><span>Secuoya</span
+      ><span>PRG</span><span>Tres60</span><span>TVE1</span><span>CyL</span>
+    </div>
+    <script>
+      function alternarBloque(id, mostrarVideo) {
+        const texto = document.getElementById("texto-cliente-" + id);
+        const video = document.getElementById("video-cliente-" + id);
+
+        if (mostrarVideo) {
+          texto.style.display = "none";
+          video.style.display = "flex";
+        } else {
+          texto.style.display = "block";
+          video.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

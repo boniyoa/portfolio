@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vídeo - Borja Bonilla</title>
+
+    <!-- Enlazamos tu archivo de diseño común -->
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
+
+      @font-face {
+        font-family: "DepartureMono";
+        src:
+          url("DepartureMono-1.500/DepartureMono-Regular.woff")
+            format("opentype"),
+          url("DepartureMono-1.500/DepartureMono-Regular.woff2")
+            format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        overflow: auto;
+        padding-bottom: 60px;
+        margin: 0;
+        background:
+          linear-gradient(rgba(17, 24, 39, 0.25), rgba(17, 24, 39, 0.25)),
+          url("gaveta/FONDO GENERAL.jpg") center center / cover no-repeat fixed;
+        background-attachment: fixed;
+      }
+
+      .seccion-clientes {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        max-width: 1200px;
+        margin: 40px auto 0;
+        padding: 20px;
+      }
+
+      .cliente-fila {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .cliente-fila:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .cliente-contenido {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 300px;
+        flex: 0.7;
+      }
+
+      .cliente-logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 300px;
+        flex: 0.8;
+        align-items: center;
+      }
+
+      .cliente-logo img {
+        width: 100%;
+        max-width: 320px;
+        height: 170px;
+        object-fit: contain;
+        border: none;
+        background: transparent;
+        display: block;
+      }
+
+      .cliente-logo.logo-cifras img {
+        max-width: 400px;
+        height: 300px;
+      }
+
+      .cliente-logo.logo-atm img {
+        max-width: 500px;
+        height: 300px;
+      }
+
+      .cliente-logo.logo-iberdrola img {
+        max-width: 550px;
+        height: 190px;
+      }
+
+      .cliente-logo.logo-eleconomista img {
+        max-width: 600px;
+        height: 420px;
+      }
+
+      .cliente-logo.logo-universal img {
+        max-width: 540px;
+        height: 260px;
+      }
+
+      .cliente-logo.logo-red-bull {
+        max-width: 500px;
+        height: 220px;
+        text-align: center;
+      }
+
+      .cliente-logo.logo-red-bull h2 {
+        margin: 0;
+        color: #c8102e;
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        font-size: 3rem;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .cliente-logo.logo-red-bull img {
+        max-width: 600x;
+        height: 420px;
+        object-fit: contain;
+      }
+
+      .cliente-logo.logo-lolindigo {
+        max-width: 500px;
+        height: 220px;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .cliente-logo.logo-lolindigo h2 {
+        margin: 0;
+        font-size: 2.2rem;
+        line-height: 1.1;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      .cliente-logo.logo-urban img {
+        max-width: 360px;
+        height: 190px;
+      }
+
+      .cliente-logo.logo-mrunderdog img {
+        max-width: 560px;
+        height: 240px;
+      }
+
+      .cliente-nombre {
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        color: #000;
+      }
+
+      .cliente-descripcion {
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        padding-left: 20px;
+        text-align: justify;
+      }
+
+      .enlace-video {
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        color: #000;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: bold;
+        display: inline-block;
+      }
+
+      .cliente-video-box {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .cliente-video-box iframe {
+        width: 100%;
+        height: 315px;
+        border: none;
+        margin-bottom: 15px;
+      }
+
+      .contenedor-galeria {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .boton-volver {
+        position: fixed;
+        bottom: 84px;
+        left: 20px;
+        z-index: 30;
+        display: inline-block;
+        padding: 12px 22px;
+        background-color: rgba(255, 255, 255, 0.96);
+        color: #2563eb;
+        text-decoration: none;
+        font-family: "DepartureMono", monospace;
+        font-weight: 700;
+        font-size: 1.15rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 18px;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+        transition: all 0.3s ease;
+      }
+
+      .boton-volver:hover {
+        background-color: #ffffff;
+        color: #1d4ed8;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+      }
+
+      .titulo-seccion {
+        display: none;
+      }
+
+      .banner-logos {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 20;
+      }
+
+      .pantalla-foto {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        background-color: #f3f4f6;
+        border-bottom: 1px solid #d1d5db;
+        position: relative;
+      }
+
+      .pantalla-foto h2 {
+        color: #1f2937;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+      }
+
+      .pantalla-foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      @media (max-width: 768px) {
+        .cliente-fila,
+        .cliente-fila:nth-child(even) {
+          flex-direction: column-reverse;
+          gap: 30px;
+        }
+
+        .cliente-logo,
+        .cliente-contenido {
+          width: 100%;
+          min-height: auto;
+        }
+
+        body {
+          padding-bottom: 80px;
+        }
+
+        .boton-volver {
+          bottom: 88px;
+          left: 12px;
+          padding: 10px 18px;
+          font-size: 0.95rem;
+          border-radius: 14px;
+        }
+
+        .pantalla-foto {
+          height: 100vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Botón para regresar a la portada -->
+    <a href="00.portada_portfolio.html" class="boton-volver">← Volver</a>
+
+       <div class="seccion-clientes">
+        <!-- COMIENZO CLIENTE RTVE - CIFRAS Y LETRAS -->
+        <div class="cliente-fila">
+          <div class="cliente-contenido">
+            <div id="texto-cliente-1">
+              <h2 class="cliente-nombre">CIFRAS Y LETRAS</h2>
+              <ul class="cliente-descripcion">
+                <p>
+                  <strong> Coordinador técnico de plató </strong> para el concurso de RTVE supervisando el diseño, montaje e instalación audiovisual y el sistema de proyección de señales broadcast en directo.
+                </p>
+               
+              <li>
+          <strong>Enrutamiento y distribución:</strong> Apoyo en configuración y enrutamiento de E/S, despliegue de fibra, recepción de 4 cámaras broadcast (más cabeza caliente) y emisión de señal personalizada a todos los departamentos.
+            </li>
+            <li>
+                 <strong>Gestión de señales e iluminación:</strong> Diseño de programación MIDI ad hoc para recibir señal y gestionar la pulsación de los concursantes mediante conexión específica con el departamento de iluminación.
+              </li>
+          </ul>
+              </ul>
+              <a class="enlace-video" onclick="alternarBloque('1', true)">
+                VER VIDEO
+              </a>
+            </div>
+
+            <div id="video-cliente-1" class="cliente-video-box">
+              <iframe
+                src="https://www.youtube.com/embed/87tA-yGrxG0"
+                allowfullscreen
+              ></iframe>
+              <a class="enlace-video" onclick="alternarBloque('1', false)"
+                >← Volver a la descripción</a
+              >
+            </div>
+          </div>
+
+          <div class="cliente-logo logo-cifras">
+            <img src="gaveta/cifrayletras.png" alt="Cifras y Letras" />
+          </div>
+        </div>
+        <!-- FINAL DEL CLIENTE RTVE - CIFRAS Y LETRAS -->
+<!-- atletico de madrid -->
+<div class="cliente-fila">
+  <div class="cliente-contenido">
+    <div id="texto-cliente-2">
+      <h2 class="cliente-nombre">ATLETICO DE MADRID</h2>
+      <ul class="cliente-descripcion">
+        <p>
+          Técnico audiovisual polibalente (montaje, enrutamiento, supervisión) de eventos coorporativos en riyah metropolitano
+        </p>
+        <li>
+          <strong> Mixer Video Wall y Ribbon</strong> Utilizando TriCaster Flex Dual Control y Vizrt Vectar para la realización de las tres señales simultáneas de Sky-Ribbon, el  anillo led del estadio y los Videowall del mismo, incluyendo la gestión de contenido y la integración de gráficos en tiempo real.
+        </li>  
+        <li>
+          <strong>Mixer:</strong> Mezclador de vídeo con tc2 de tricaster de eventos coorporativos en el auditorio.
+        </li>
+        <li>
+          <strong>Cámara de eventos coorporativos en el auditorio</strong> Detalle
+        </li>
+        <li>
+          <strong>técnico polivalente</strong> técnico polivalente (audio, video, proyección, realización) en flexis coorporativos para clientes del estadio riyah
+        </li>
+      </ul>
+      <a class="enlace-video" onclick="alternarBloque('2', true)">
+        VER VIDEO
+      </a>
+    </div>
+
+    <div id="video-cliente-2" class="cliente-video-box">
+      <iframe src="https://www.youtube.com/embed/V03x5K-7an8" allowfullscreen></iframe>
+      <a class="enlace-video" onclick="alternarBloque('2', false)">← Volver a la descripción</a>
+    </div>
+  </div>
+
+  <div class="cliente-logo logo-atm">
+    <img src="gaveta/ATM.png" alt="ATLETICO DE MADRID" />
+  </div>
+</div>
+<!-- FIN CLIENTE atletico de madrid -->
+
+<!-- Iberdrola -->
+<div class="cliente-fila">
+  <div class="cliente-contenido">
+    <div id="texto-cliente-3">
+      <h2 class="cliente-nombre">IBERDROLA</h2>
+      <ul class="cliente-descripcion">
+        <p>
+          Asesoramiento y diseño técnico de  instalaciónes audiovisuales para diferentes proyectos híbridos de Iberdrola, entre ellos .
+        </p>
+        <li>
+          <strong>Digital Summit:</strong> Montaje del proyecto, manejo de cámaras ptz canon en directo en auditorio general y jefe técnico de sala con realización híbrida Tricaster tc1, integrado con teams 
+        </li>
+        <li>
+          <strong>Cybertalks</strong> Realziación híbrida, integración teams, webex, zoom+ vmix en varias consolas virtuales de amazon web service para 
+        </li>
+        <li>
+          <strong>Asesría Audiovisual</strong> implantación de soluciones de streaming (kiloview) y sistemas de video Tricaster para los platós de Eima en madrid 
+        </li>
+      </ul>
+      <a class="enlace-video" onclick="alternarBloque('3', true)">
+        VER VIDEO
+      </a>
+    </div>
+
+    <div id="video-cliente-3" class="cliente-video-box">
+      <iframe src="https://www.youtube.com/embed/xMDXvvHXTFM" allowfullscreen></iframe>
+      <a class="enlace-video" onclick="alternarBloque('3', false)">← Volver a la descripción</a>
+    </div>
+  </div>
+
+  <div class="cliente-logo logo-iberdrola">
+    <img src="gaveta/iberdrola.png" alt="Nombre cliente" />
+  </div>
+</div>
+<!-- FIN CLIENTE iberdrola -->
+
+<!-- El Economista -->
+<div class="cliente-fila">
+  <div class="cliente-contenido">
+    <div id="texto-cliente-4">
+      <h2 class="cliente-nombre">EL ECONOMISTA</h2>
+      <ul class="cliente-descripcion">
+        <li>
+          <strong>Realización y control de cámaras PTZ:</strong>
+          Operación de 3 cámaras PTZ Datavideo, incluyendo el control de
+          posiciones y ajuste de colorimetría, operadas mediante mezclador
+          Blackmagic ATEM Constellation y ATEM 1 M/E Advanced Panel.
+        </li>
+        <li>
+          <strong>Gestión de pantallas LED:</strong>
+          Diseño y realización simultánea de contenidos para pantallas LED
+          mediante mapeo visual con Millumin, integrado y controlado a través
+          de Bitfocus Companion y el panel ATEM 1 M/E.
+        </li>
+      </ul>
+      <a class="enlace-video" onclick="alternarBloque('4', true)">
+        VER VIDEO
+      </a>
+    </div>
+
+    <div id="video-cliente-4" class="cliente-video-box">
+      <a href="https://www.dailymotion.com/video/xa8m2ha" target="_blank" rel="noopener noreferrer" title="Ver vídeo de El Economista en Dailymotion">
+        <img
+          src="gaveta/ecopantalla.png"
+          alt="Miniatura El Economista"
+          style="width: 100%; height: 315px; object-fit: cover; border: none; margin-bottom: 15px; display: block; cursor: pointer;"
+        />
+      </a>
+      <a class="enlace-video" onclick="alternarBloque('4', false)">← Volver a la descripción</a>
+    </div>
+  </div>
+
+  <div class="cliente-logo logo-eleconomista">
+    <img src="gaveta/economista.jpg" alt="Logo El Economista" />
+  </div>
+</div>
+<!-- FIN CLIENTE El Economista -->
+
+<!-- Universal Music - Aitana -->
+<div class="cliente-fila">
+  <div class="cliente-contenido">
+    <div id="texto-cliente-5">
+      <h2 class="cliente-nombre">UNIVERSAL MUSIC - AITANA (LISTENING PARTY 'CUARTO AZUL')</h2>
+      <ul class="cliente-descripcion">
+        <li>
+          <strong>Responsable :</strong>
+          Enrutamiento y disposición en escenario de 5 cámaras de estudio y
+          1 cámara PTZ de plano general. Captura y enrutamiento de la señal
+          de audio del directo mediante stagebox Yamaha Rio y el enrutamiento via Dante. Envío de la señal de realización al Cubewall de proyección.
+        </li>
+        <li>
+          <strong>Infraestructura de red:</strong>
+          Diseño y despliegue de una red Wi-Fi dedicada y del software correspondiente,
+          garantizando la recogida de señal
+          directamente desde el dispositivo móvil de la artista.
+        </li>
+      </ul>
+      <a class="enlace-video" onclick="alternarBloque('5', true)">
+        VER VIDEO
+      </a>
+    </div>
+
+    <div id="video-cliente-5" class="cliente-video-box">
+      <iframe src="https://www.youtube.com/embed/9McPBJuuaB4?list=PLIe3WQxesrmItDzG0zZ_uPFvVeD7AzGM7" allowfullscreen></iframe>
+      <a class="enlace-video" onclick="alternarBloque('5', false)">← Volver a la descripción</a>
+    </div>
+  </div>
+
+  <div class="cliente-logo logo-universal">
+    <img src="gaveta/universal.jpg" alt="Logo Universal Music - Aitana" />
+  </div>
+</div>
+<!-- FIN CLIENTE Universal Music - Aitana -->
+
+<!-- Lola Indigo - Presentación disco Dragón -->
+<div class="cliente-fila">
+  <div class="cliente-contenido">
+    <div id="texto-cliente-6">
+      <h2 class="cliente-nombre">UNIVERSAL MUSIC - LOLA INDIGO (PRESENTACIÓN DISCO DRAGÓN)</h2>
+      <ul class="cliente-descripcion">
+        <li>
+          <strong>Despliegue multicámara y radiofrecuencia:</strong>
+          Montaje de set de grabación a 3 cámaras en la azotea del Teatro
+          Kapital, integrando una cámara adicional vía RF para la cobertura en
+          directo del photocall en el acceso principal.
+        </li>
+        <li>
+          <strong>Realización y streaming vertical (9:16):</strong>
+          Gestión de la realización audiovisual y codificación de la señal en
+          formato nativo 9:16, operando mediante sistema TriCaster y
+          distribución a través de Nimble Streamer para la emisión en el canal
+          de TikTok de la artista.
+        </li>
+      </ul>
+      <a class="enlace-video" onclick="alternarBloque('6', true)">
+        VER VIDEO
+      </a>
+    </div>
+
+    <div id="video-cliente-6" class="cliente-video-box">
+      <a href="https://www.tiktok.com/@soyfabiiann/video/7221644862502751493?q=lolaindigo%20presentacion%20dragon%20kapital&t=1791131937386" target="_blank" rel="noopener noreferrer" title="Ver vídeo de Lola Indigo en TikTok">
+        <img
+          src="gaveta/Captura de pantalla 2026-10-04 184604.png"
+          alt="Miniatura de Lola Indigo"
+          style="width: 100%; height: 315px; object-fit: cover; border: none; margin-bottom: 15px; display: block; cursor: pointer;"
+        />
+      </a>
+      <a class="enlace-video" onclick="alternarBloque('6', false)">← Volver a la descripción</a>
+    </div>
+  </div>
+
+  <div class="cliente-logo logo-universal">
+    <img src="gaveta/universal2.jpg" alt="Logo Universal Music - Aitana" />
+  </div>
+</div>
+<!-- FIN CLIENTE Lola Indigo -->
+
+<!-- Red Bull Batalla -->
+<div class="cliente-fila">
+  <div class="cliente-contenido">
+    <div id="texto-cliente-7">
+      <h2 class="cliente-nombre">RED BULL BATALLA</h2>
+      <h3>Responsable Técnico de Montaje</h3>
+      <ul class="cliente-descripcion">
+        <li>
+          <strong>Despliegue de equipamiento técnico:</strong>
+          Instalación y configuración de cámaras de estudio, sistemas PTZ,
+          enlaces de radiofrecuencia (RF), Unidades de Control
+          de Cámara (CCU), mesas de mezclas de vídeo y consolas de audio con
+          stagebox.
+        </li>
+        <li>
+          <strong>Infraestructura de fibra óptica y redes:</strong>
+          Tendido y gestión de tiradas largas de cable de fibra óptica (hasta
+          1000 metros) para el enrutamiento de señales, junto con el diseño y
+          despliegue de redes Wi-Fi dedicadas para la operativa de los eventos.
+        </li>
+      </ul>
+      <a class="enlace-video" onclick="alternarBloque('7', true)">
+        VER VIDEO
+      </a>
+    </div>
+
+    <div id="video-cliente-7" class="cliente-video-box">
+      <iframe
+        src="https://www.youtube.com/embed/dcHsCLj7LJ0"
+        title="Red Bull Batalla"
+        allowfullscreen
+      ></iframe>
+      <a class="enlace-video" onclick="alternarBloque('7', false)"
+        >← Volver a la descripción</a
+      >
+    </div>
+  </div>
+
+  <div class="cliente-logo logo-red-bull">
+    <img src="gaveta/redbull.jpg" alt="Red Bull Batalla" />
+  </div>
+</div>
+<!-- FIN CLIENTE Red Bull Batalla -->
+
+<!-- FMS -->
+<div class="cliente-fila">
+  <div class="cliente-contenido">
+    <div id="texto-cliente-8">
+      <h2 class="cliente-nombre">FMS WORLD SERIES 2023-2025
+</h2>
+      <h3>Responsable Técnico de Montaje</h3>
+      <ul class="cliente-descripcion">
+        <li>
+          <strong>Despliegue de equipamiento técnico:</strong>
+          Instalación y configuración de cámaras de estudio, sistemas PTZ, enlaces de radiofrecuencia (RF), Unidades de Control
+          de Cámara (CCU), mesas de mezclas de vídeo y consolas de audio con
+          stagebox.
+        </li>
+        <li>
+          <strong>Infraestructura de fibra óptica y redes:</strong>
+          Tendido y gestión de tiradas largas de cable de fibra óptica (hasta
+          1000 metros) para el enrutamiento de señales, junto con el diseño y
+          despliegue de redes Wi-Fi dedicadas para la operativa de los eventos.
+        </li>
+      </ul>
+      <a class="enlace-video" onclick="alternarBloque('8', true)">
+        VER VIDEO
+      </a>
+    </div>
+
+    <div id="video-cliente-8" class="cliente-video-box">
+      <a
+        href="https://www.youtube.com/watch?v=eRfOTPFt9-w"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Ver vídeo de FMS en YouTube"
+      >
+        <img
+          src="gaveta/captura_video_fms.jpg"
+          alt="Reproducir evento FMS World Series"
+          style="width: 100%; height: 315px; object-fit: cover; border: none; margin-bottom: 15px;"
+        />
+      </a>
+      <a class="enlace-video" onclick="alternarBloque('8', false)">
+        ← Volver a la descripción
+      </a>
+    </div>
+  </div>
+
+  <div class="cliente-logo logo-urban">
+    <img src="gaveta/urban.png" alt="Urban Roosters" />
+  </div>
+</div>
+<!-- FIN CLIENTE FMS -->
+
+    <!-- PANTALLA 1: INFOGRAFÍA DE EQUIPOS -->
+    <div class="pantalla-foto">
+      <img
+        src="gaveta/01video.jpg"
+        alt="Experiencia en configuración y manejo de equipos Broadcast"
+      />
+    </div>
+
+    <!-- PANTALLA 2 -->
+    <div class="pantalla-foto">
+      <!-- <h2>Nombre o Proyecto de la Foto 2</h2> -->
+      <img src="gaveta/02video.jpg" alt="Proyecto Vídeo 2" />
+    </div>
+
+    <!-- PANTALLA 3 -->
+    <div class="pantalla-foto">
+      <!-- <h2>Nombre o Proyecto de la Foto 3</h2> -->
+      <img src="gaveta/03video.jpg" alt="Proyecto Vídeo 3" />
+    </div>
+
+    <!-- PANTALLA 4 -->
+    <div class="pantalla-foto">
+      <!-- <h2>Nombre o Proyecto de la Foto 4</h2> -->
+      <img src="gaveta/04video.jpg" alt="Proyecto Vídeo 4" />
+    </div>
+
+    <!-- PANTALLA 5 -->
+    <div class="pantalla-foto">
+      <!-- <h2>Nombre o Proyecto de la Foto 5</h2> -->
+      <img src="gaveta/05video.jpg" alt="Proyecto Vídeo 5" />
+    </div>
+
+    <!-- PANTALLA 6 -->
+    <div class="pantalla-foto">
+      <!-- <h2>Nombre o Proyecto de la Foto 6</h2> -->
+      <img src="gaveta/06video.jpg" alt="Proyecto Vídeo 6" />
+    </div>
+
+    <!-- BANNER INFERIOR -->
+    <div class="banner-logos">
+      <span>MStudio</span>
+      <span>5G1</span>
+      <span>El Economista</span>
+      <span>Iberdrola</span>
+      <span>Mediapro</span>
+      <span>Secuoya</span>
+      <span>PRG</span>
+      <span>Tres60</span>
+      <span>TVE1</span>
+      <span>CyL</span>
+    </div>
+
+    <script>
+      function alternarBloque(id, mostrarVideo) {
+        const texto = document.getElementById("texto-cliente-" + id);
+        const video = document.getElementById("video-cliente-" + id);
+
+        if (!texto || !video) return;
+
+        if (mostrarVideo) {
+          texto.style.display = "none";
+          video.style.display = "flex";
+        } else {
+          texto.style.display = "block";
+          video.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
