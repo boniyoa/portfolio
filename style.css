@@ -24,6 +24,11 @@ body {
 }
 
 .pantalla-completa {
+  /* TAMAÑO BASE de los botones de la portada: el 0,6 % del ancho de la ventana,
+     nunca menos de 9px ni más de 14px. Los botones usan "em" (veces este tamaño),
+     así crecen y encogen con la pantalla. Para agrandarlos o achicarlos TODOS a la vez,
+     cambia el 0.6vw. */
+  font-size: clamp(9px, 0.6vw, 14px);
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -71,7 +76,7 @@ body.portada {
 .enlace-categoria {
   position: absolute;
   text-decoration: none;
-  font-size: 1.35rem; /* tamaño por defecto; cada botón tiene el suyo abajo, en POSICIONES */
+  font-size: 1.35em; /* tamaño por defecto; cada botón tiene el suyo abajo, en POSICIONES */
   padding: 0.55em 1.2em; /* en "em": el globo crece o encoge con la letra */
   background-color: #ffffff;
   color: #2563eb;
@@ -93,8 +98,8 @@ body.portada {
 
 /* --- POSICIONES EXACTAS Y TAMAÑO DE CADA BOTÓN --- */
 .pos-video {
-  font-size: 3rem; /* tamaño de este botón */
-  top: 5%;
+  font-size: 3em; /* tamaño de este botón (veces el tamaño base) */
+  top: 2%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -103,44 +108,44 @@ body.portada {
   transform: translate(-50%, -5px);
 }
 .pos-streaming {
-  font-size: 2rem; /* tamaño de este botón */
+  font-size: 2em; /* tamaño de este botón (veces el tamaño base) */
   top: 15%;
   right: 15%;
 }
 .pos-gfx {
-  font-size: 2.1rem; /* tamaño de este botón */
+  font-size: 2.1em; /* tamaño de este botón (veces el tamaño base) */
   top: 45%;
   right: 14%;
   transform: translateY(-50%);
 }
 .pos-alquiler {
-  font-size: 2.6rem; /* tamaño de este botón */
+  font-size: 2.6em; /* tamaño de este botón (veces el tamaño base) */
   bottom: 25%;
   right: 10%;
 }
 .pos-formacion {
-  font-size: 1.6rem; /* tamaño de este botón */
+  font-size: 1.6em; /* tamaño de este botón (veces el tamaño base) */
   bottom: 12%;
   left: 50%;
   transform: translateX(-50%);
 }
 .pos-proyeccion {
-  font-size: 2rem; /* tamaño de este botón */
+  font-size: 2em; /* tamaño de este botón (veces el tamaño base) */
   bottom: 25%;
   left: 13%;
 }
 .pos-produccion {
-  font-size: 1.6rem; /* tamaño de este botón */
+  font-size: 1.6em; /* tamaño de este botón (veces el tamaño base) */
   top: 55%;
   left: 11%;
 }
 .pos-audio {
-  font-size: 2.5rem; /* tamaño de este botón */
+  font-size: 2.5em; /* tamaño de este botón (veces el tamaño base) */
   top: 35%;
   left: 11%;
 }
 .pos-edicion {
-  font-size: 1.6rem; /* tamaño de este botón */
+  font-size: 1.6em; /* tamaño de este botón (veces el tamaño base) */
   top: 15%;
   left: 15%;
 }
