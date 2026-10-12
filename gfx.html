@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GFX - Borja Bonilla</title>
+    <link rel="icon" href="gaveta/favicon.png" type="image/png" />
     <link rel="stylesheet" href="style.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
@@ -315,7 +316,7 @@
 
   <body>
     <div class="contenedor-galeria">
-      <a href="00.portada_portfolio.html" class="boton-volver">← Volver</a>
+      <a href="index.html" class="boton-volver">← Volver</a>
 
       <div class="seccion-clientes">
         <!-- COMIENZO CLIENTE RTVE - CIFRAS Y LETRAS -->
@@ -599,17 +600,83 @@
 
       
 
-       <!-- Pantalla de foto destacada  -->
-      <div class="pantalla-foto">
-        <img loading="lazy" src="gaveta/01gfx.webp" alt="Infografía de grafismo (GFX)" />
-      </div>
+      <!-- ================= EQUIPOS (antes infografía 01gfx.webp) ================= -->
+      <section class="seccion-equipos">
+        <h2>Experiencia garantizada en la total configuración y el manejo en directo de los siguientes equipos</h2>
+        <div class="rejilla-equipos">
+          <article class="tarjeta-equipo">
+            <div class="foto plana"><img loading="lazy" src="gaveta/equipos/viz-flowics.webp" alt="Viz Flowics" /></div>
+            <div class="info">
+              <h3>Viz Flowics</h3>
+              <ul>
+                <li>Plataforma de creación de gráficos HTML5 basada íntegramente en la nube sin necesidad de hardware de renderizado local</li>
+                <li>Integración directa de datos en tiempo real incluyendo redes sociales, estadísticas deportivas y resultados financieros o electorales</li>
+                <li>Interfaz de diseño web intuitiva con funciones de arrastrar y soltar para la creación rápida de titulaciones y elementos broadcast</li>
+                <li>Compatibilidad nativa y transparente con múltiples sistemas de producción y mezcladores de vídeo profesionales mediante integración por URL</li>
+                <li>Control remoto multiusuario que permite a operadores deslocalizados gestionar y lanzar gráficos desde cualquier navegador web</li>
+                <li>Arquitectura escalable optimizada para producciones remotas (REMI) y generación de experiencias interactivas con la audiencia en directo</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/cgfootball.webp" alt="CGFootball" /></div>
+            <div class="info">
+              <h3>CGFootball</h3>
+              <ul>
+                <li>Sistema profesional de grafismo broadcast diseñado específicamente para la gestión de rotulación, marcadores y cronómetros en retransmisiones de fútbol</li>
+                <li>Integración avanzada de datos estadísticos en tiempo real mediante conexión directa con bases de datos oficiales y plugins de proveedores como Opta</li>
+                <li>Motor de renderizado multicapa que permite la emisión simultánea de múltiples elementos gráficos animados, alineaciones dinámicas y tercios inferiores</li>
+                <li>Reproductor integrado uPlayer multicanal para la emisión fluida de clips de vídeo, ráfagas de repetición y recursos publicitarios durante el encuentro</li>
+                <li>Alta flexibilidad de enrutamiento y entrada/salida de señal con soporte nativo para flujos de vídeo profesional mediante protocolos NDI, SDI y HDMI</li>
+                <li>Interfaz de operación optimizada para reacción inmediata en directo, con arquitectura robusta y redundancia para garantizar emisiones sin interrupciones</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/newblue-fusion.webp" alt="NewBlue Fusion" /></div>
+            <div class="info">
+              <h3>NewBlue Fusion</h3>
+              <ul>
+                <li>Sistema llave en mano para generación de gráficos broadcast 3D en tiempo real mediante el software NewBlue Captivate</li>
+                <li>Salida multicanal con soporte para hasta 16 canales NDI 4K y doble canal SDI (key/fill) mediante tarjetas Blackmagic Design</li>
+                <li>Integración nativa de datos en directo para vincular marcadores deportivos, hojas de cálculo, RSS y redes sociales</li>
+                <li>Incluye más de 1000 plantillas de titulación personalizables para producciones deportivas, noticias y entornos corporativos</li>
+                <li>Importación directa de proyectos y capas nativas desde Adobe Photoshop y After Effects sin necesidad de renderizado previo</li>
+                <li>Automatización de reproducción mediante API y soporte de controladores físicos externos para flujos de trabajo dinámicos</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/cifras-gfx.webp" alt="Logo de Cifras y Letras" /></div>
+            <div class="info">
+              <h3>Cifras y Letras GFX</h3>
+              <ul>
+                <li>Aplicación creada y gestionada "ad hoc" para el programa de Televisión Española Cifras y Letras, mediante lenguajes de programación Python, Visual Basic</li>
+                <li>Integración con capa física al actuar sobre aparatos de hardware tales como DeckLink Studio, MIDI send/receive y protocolos de puerto que exigen apertura de puertos de red de routers mediante software de gestión PuTTY para actuar en consola</li>
+                <li>Distribución de múltiples señales vía IP para configuración del desarrollo del juego de cara a los concursantes y presentadores a través de apps creadas e integradas en entorno Windows y Android</li>
+                <li>Automatización de pantallas de puntuación por medio de programación vía IP</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/vmix-gt-title.webp" alt="vMix GT Title" /></div>
+            <div class="info">
+              <h3>vMix GT Title</h3>
+              <ul>
+                <li>Aplicación nativa para diseño de titulación y gráficos animados en tiempo real acelerada por GPU</li>
+                <li>Arquitectura vectorial para garantizar nitidez absoluta de formas y textos en resoluciones hasta 4K</li>
+                <li>Motor de animación avanzada (In, Out, Continuous) mediante fotogramas clave sin sobrecargar la CPU</li>
+                <li>Integración dinámica con Data Sources de vMix para vincular datos externos desde Excel, XML, JSON y RSS</li>
+                <li>Importación directa de archivos de Adobe Photoshop (.PSD) conservando la estructura de capas</li>
+                <li>Reproducción multicapa fluida con canal alfa completo, optimizada para las versiones vMix 4K, Pro y Max</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
     </div>
 
-    <div class="banner-logos">
-      <span>MStudio</span><span>5G1</span><span>El Economista</span
-      ><span>Iberdrola</span> <span>Mediapro</span><span>Secuoya</span
-      ><span>PRG</span><span>Tres60</span><span>TVE1</span><span>CyL</span>
-    </div>
+
 
     <script>
       function alternarBloque(id, mostrarVideo) {
@@ -625,5 +692,6 @@
         }
       }
     </script>
+    <script src="banner-clientes.js"></script>
   </body>
 </html>

@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Producción cine/broadcast - Borja Bonilla</title>
+    <link rel="icon" href="gaveta/favicon.png" type="image/png" />
     <link rel="stylesheet" href="style.css" />
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
+
       @font-face {
         font-family: "DepartureMono";
         src:
@@ -24,6 +27,7 @@
           url("gaveta/fondo-general.webp") center center / cover no-repeat fixed;
         background-attachment: fixed;
       }
+      /* ----- ESTILOS DE TEST.HTML ----- */
       .seccion-clientes {
         display: flex;
         flex-direction: column;
@@ -31,6 +35,9 @@
         max-width: 1200px;
         margin: 40px auto 0;
         padding: 20px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(1px);
+        border-radius: 18px;
       }
 
       .cliente-fila {
@@ -168,6 +175,7 @@
         border-radius: 0;
         box-shadow: none;
       }
+
       @media (max-width: 768px) {
         .cliente-fila,
         .cliente-fila:nth-child(even) {
@@ -197,54 +205,89 @@
   </head>
   <body>
     <div class="contenedor-galeria">
-      <a href="00.portada_portfolio.html" class="boton-volver">← Volver</a>
+      <a href="index.html" class="boton-volver">← Volver</a>
 
       <div class="seccion-clientes">
+        <!-- Hill Valley -->
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-1">
-              <h2 class="cliente-nombre">NOMBRE</h2>
+              <h2 class="cliente-nombre">HILL VALLEY (2006-2009)</h2>
+              <h3>Producción para clientes corporativos</h3>
+              <p class="cliente-descripcion">
+                Productora madrileña especializada en humor y contenidos
+                creativos, responsable de programas como Muchachada Nui. Con
+                ellos desarrollé sobre todo proyectos
+                audiovisuales para clientes corporativos.
+              </p>
               <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
+                <li>
+                  <strong>Piezas corporativas:</strong>
+                  Producción de vídeos de empresa, de la preparación del
+                  rodaje a la entrega final al cliente.
+                </li>
+                <li>
+                  <strong>Coordinación de rodajes:</strong>
+                  Planificación de equipo técnico, material, localizaciones y
+                  calendario para que cada grabación saliera a tiempo.
+                </li>
               </ul>
-              <a class="enlace-video" onclick="alternarBloque('1', true)">
-                VER VIDEO
-              </a>
-            </div>
-
-            <div id="video-cliente-1" class="cliente-video-box">
-              <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
-                allowfullscreen
-              ></iframe>
-              <a class="enlace-video" onclick="alternarBloque('1', false)"
-                >← Volver a la descripción</a
-              >
             </div>
           </div>
-
           <div class="cliente-logo">
-            <img src="atletico_de_madrid.jpg" alt="Logo Atlético de Madrid" />
+            <img loading="lazy" src="gaveta/hill-valley.webp" alt="Logo de Hill Valley" style="max-width: 340px;" />
           </div>
         </div>
 
+        <!-- Avant Pétalos Grillados -->
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-2">
-              <h2 class="cliente-nombre">NOMBRE</h2>
+              <h2 class="cliente-nombre">AVANT PÉTALOS GRILLADOS (2006)</h2>
+              <h3>Jefe de producción · Cortometraje de César Velasco Broca</h3>
+              <p class="cliente-descripcion">
+                Jefe de producción en varios cortometrajes de cine
+                independiente. El más destacado, <em>Avant Pétalos
+                Grillados</em>, recorrió más de 20 festivales de todo el mundo
+                y fue premiado internacionalmente.
+              </p>
               <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
+                <li>
+                  <strong>Coordinación del rodaje:</strong>
+                  Gestión de todos los recursos de la grabación: equipo
+                  humano, material técnico, localizaciones y plan de rodaje.
+                </li>
+                <li>
+                  <strong>Slamdance 2007 (EE.&nbsp;UU.):</strong>
+                  Gran Premio del Jurado al Mejor Cortometraje Experimental.
+                </li>
+                <li>
+                  <strong>Festival de Cine Fantástico de Málaga 2007:</strong>
+                  Premio del Jurado Internacional al Mejor Cortometraje Español.
+                </li>
+                <li>
+                  <strong>Recorrido internacional:</strong>
+                  Nominado al Méliès d'Or y proyectado en festivales como
+                  Maryland Film Festival, CineVegas o el Worldwide Short Film
+                  Festival de Toronto.
+                </li>
               </ul>
               <a class="enlace-video" onclick="alternarBloque('2', true)">
-                VER VIDEO
+                VER CORTOMETRAJE COMPLETO
               </a>
+              <br />
+              <a
+                class="enlace-video"
+                href="https://www.youtube.com/watch?v=MTC2je93EkM"
+                target="_blank"
+                rel="noopener"
+                >VER DIARIO DE RODAJE ↗</a
+              >
             </div>
-
             <div id="video-cliente-2" class="cliente-video-box">
               <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
+                src="https://www.youtube.com/embed/FrTd5_PUDX4"
+                title="Avant Pétalos Grillados (cortometraje completo)"
                 allowfullscreen
               ></iframe>
               <a class="enlace-video" onclick="alternarBloque('2', false)"
@@ -252,89 +295,85 @@
               >
             </div>
           </div>
-
           <div class="cliente-logo">
-            <img loading="lazy" src="el_economista.jpg" alt="Logo El Economista" />
+            <img
+              loading="lazy"
+              src="gaveta/avant-petalos-grillados.webp"
+              alt="Fotograma del cortometraje Avant Pétalos Grillados"
+              style="
+                border-radius: 16px;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+              "
+            />
           </div>
         </div>
 
+        <!-- Telson -->
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-3">
-              <h2 class="cliente-nombre">NOMBRE</h2>
+              <h2 class="cliente-nombre">TELSON (2006-2009)</h2>
+              <h3>Producción de programas de teletienda</h3>
+              <p class="cliente-descripcion">
+                En el departamento de producción de Telson, trabajando en
+                varios programas de teletienda para televisión.
+              </p>
               <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
+                <li>
+                  <strong>Producción televisiva:</strong>
+                  Organización de grabaciones con ritmo de emisión y plazos
+                  de entrega fijos.
+                </li>
+                <li>
+                  <strong>Varios formatos a la vez:</strong>
+                  Coordinación de distintos programas en paralelo dentro de
+                  la misma estructura de producción.
+                </li>
               </ul>
-              <a class="enlace-video" onclick="alternarBloque('3', true)">
-                VER VIDEO
-              </a>
-            </div>
-
-            <div id="video-cliente-3" class="cliente-video-box">
-              <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
-                allowfullscreen
-              ></iframe>
-              <a class="enlace-video" onclick="alternarBloque('3', false)"
-                >← Volver a la descripción</a
-              >
             </div>
           </div>
-
           <div class="cliente-logo">
-            <img loading="lazy" src="iberdrola.jpg" alt="Logo Iberdrola" />
+            <img loading="lazy" src="gaveta/telson.webp" alt="Logo de Telson" style="max-width: 260px;" />
           </div>
         </div>
 
+        <!-- Grupo Tres60 -->
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-4">
-              <h2 class="cliente-nombre">NOMBRE CLIENTE 4</h2>
+              <h2 class="cliente-nombre">GRUPO TRES60 (2014-2017)</h2>
+              <h3>Coordinador de concursos públicos</h3>
+              <p class="cliente-descripcion">
+                Responsable de las licitaciones del grupo: localizar los
+                concursos públicos audiovisuales y preparar cada candidatura
+                de principio a fin.
+              </p>
               <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
+                <li>
+                  <strong>Búsqueda de concursos:</strong>
+                  Seguimiento de las licitaciones audiovisuales publicadas y
+                  análisis de cuáles encajaban con el grupo.
+                </li>
+                <li>
+                  <strong>Pliegos administrativos:</strong>
+                  Preparación y gestión de toda la documentación
+                  administrativa exigida en cada concurso.
+                </li>
+                <li>
+                  <strong>Pliegos técnicos:</strong>
+                  Redacción de las propuestas técnicas de las empresas del
+                  grupo que se presentaban a cada licitación.
+                </li>
               </ul>
-              <a class="enlace-video" onclick="alternarBloque('4', true)">
-                VER VIDEO
-              </a>
-            </div>
-
-            <div id="video-cliente-4" class="cliente-video-box">
-              <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
-                allowfullscreen
-              ></iframe>
-              <a class="enlace-video" onclick="alternarBloque('4', false)"
-                >← Volver a la descripción</a
-              >
             </div>
           </div>
-
           <div class="cliente-logo">
-            <img loading="lazy" src="logo_cliente_4.jpg" alt="Logo Cliente 4" />
+            <img loading="lazy" src="gaveta/tres60.webp" alt="Logo de Grupo Tres60" style="max-width: 280px;" />
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="pantalla-foto">
-        <h2>Producción cine/broadcast - Proyecto 1</h2>
-        <img loading="lazy" src="foto-produccion-1.jpg" alt="Producción cine/broadcast 1" />
-      </div>
-      <div class="pantalla-foto">
-        <h2>Producción cine/broadcast - Proyecto 2</h2>
-        <img loading="lazy" src="foto-produccion-2.jpg" alt="Producción cine/broadcast 2" />
-      </div>
-      <div class="pantalla-foto">
-        <h2>Producción cine/broadcast - Proyecto 3</h2>
-        <img loading="lazy" src="foto-produccion-3.jpg" alt="Producción cine/broadcast 3" />
-      </div>
-    </div>
-    <div class="banner-logos">
-      <span>MStudio</span><span>5G1</span><span>El Economista</span
-      ><span>Iberdrola</span> <span>Mediapro</span><span>Secuoya</span
-      ><span>PRG</span><span>Tres60</span><span>TVE1</span><span>CyL</span>
-    </div>
     <script>
       function alternarBloque(id, mostrarVideo) {
         const texto = document.getElementById("texto-cliente-" + id);
@@ -349,5 +388,6 @@
         }
       }
     </script>
+    <script src="banner-clientes.js"></script>
   </body>
 </html>

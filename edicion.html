@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edición y postproducción - Borja Bonilla</title>
+    <link rel="icon" href="gaveta/favicon.png" type="image/png" />
     <link rel="stylesheet" href="style.css" />
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
+
       @font-face {
         font-family: "DepartureMono";
         src:
@@ -172,6 +175,85 @@
         border-radius: 0;
         box-shadow: none;
       }
+
+      /* --- TARJETAS DE HERRAMIENTAS --- */
+      .seccion-herramientas {
+        max-width: 1200px;
+        margin: 80px auto 40px;
+        padding: 20px;
+      }
+      .seccion-herramientas h2 {
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        font-size: 2.6rem;
+        text-transform: uppercase;
+        text-align: center;
+        color: #000;
+        margin: 0 0 40px;
+      }
+      /* Rejilla: tantas columnas como quepan, de mínimo 240px cada una */
+      .rejilla-herramientas {
+        /* flex + center: las filas incompletas quedan centradas */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 28px;
+      }
+      .rejilla-herramientas > * {
+        flex: 0 1 calc((100% - 3 * 28px) / 4); /* 4 por fila */
+        min-width: 240px;
+      }
+      .tarjeta-herramienta {
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid #e5e7eb;
+        border-radius: 18px;
+        padding: 28px 24px;
+        text-align: center;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .tarjeta-herramienta:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
+      }
+      .tarjeta-herramienta img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+        margin-bottom: 18px;
+      }
+      .tarjeta-herramienta h3 {
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        color: #000;
+        margin: 0 0 12px;
+      }
+      .tarjeta-herramienta p {
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        font-size: 1.15rem;
+        line-height: 1.5;
+        color: #1f2937;
+        margin: 0 0 12px;
+      }
+      /* Lista de 5 puntos: alineada a la izquierda para que se lea bien */
+      .tarjeta-herramienta ul {
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        font-size: 1.05rem;
+        line-height: 1.45;
+        color: #374151;
+        text-align: left;
+        margin: 0;
+        padding-left: 20px;
+      }
+      .tarjeta-herramienta li {
+        margin-bottom: 6px;
+      }
+      .tarjeta-herramienta li::marker {
+        color: #2563eb;
+      }
+
       @media (max-width: 768px) {
         .cliente-fila,
         .cliente-fila:nth-child(even) {
@@ -201,45 +283,79 @@
   </head>
   <body>
     <div class="contenedor-galeria">
-      <a href="00.portada_portfolio.html" class="boton-volver">← Volver</a>
+      <a href="index.html" class="boton-volver">← Volver</a>
 
       <div class="seccion-clientes">
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-1">
-              <h2 class="cliente-nombre">NOMBRE</h2>
+              <h2 class="cliente-nombre">EDICIÓN CONTINUA DESDE 2005</h2>
+              <h3>La edición como parte de cada proyecto</h3>
+              <p class="cliente-descripcion">
+                Desde 2005 la edición y la postproducción han formado parte de
+                mi día a día con todos los clientes y empresas con las que he
+                colaborado.
+              </p>
               <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
+                <li>
+                  <strong>Más de 20 años de práctica:</strong>
+                  Uso constante de las herramientas de edición en paralelo a la
+                  realización, el directo y la técnica audiovisual.
+                </li>
+                <li>
+                  <strong>Visión de conjunto:</strong>
+                  Conocer la cadena completa, desde la captación hasta la
+                  emisión, permite editar pensando en el resultado final y en
+                  cada formato de entrega.
+                </li>
+                <li>
+                  <strong>Autonomía:</strong>
+                  Capacidad para preparar resúmenes, piezas para redes,
+                  cabeceras y contenidos para pantallas sin depender de un
+                  departamento de postproducción.
+                </li>
               </ul>
-              <a class="enlace-video" onclick="alternarBloque('1', true)">
-                VER VIDEO
-              </a>
-            </div>
-
-            <div id="video-cliente-1" class="cliente-video-box">
-              <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
-                allowfullscreen
-              ></iframe>
-              <a class="enlace-video" onclick="alternarBloque('1', false)"
-                >← Volver a la descripción</a
-              >
             </div>
           </div>
 
           <div class="cliente-logo">
-            <img src="atletico_de_madrid.jpg" alt="Logo Atlético de Madrid" />
+            <img
+              src="gaveta/edicion-editor.webp"
+              alt="Editor de vídeo trabajando con la línea de tiempo"
+              style="
+                border-radius: 16px;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+              "
+            />
           </div>
         </div>
 
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-2">
-              <h2 class="cliente-nombre">NOMBRE</h2>
+              <h2 class="cliente-nombre">
+                LIGA NACIONAL DE FÚTBOL SALA (2018-2020)
+              </h2>
+              <h3>Editor de resúmenes y clips para la productora Averal</h3>
+              <p class="cliente-descripcion">
+                Edición en Adobe Premiere y After Effects de los resúmenes de todos los partidos
+                de la Primera División de la LNFS durante dos temporadas.
+              </p>
               <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
+                <li>
+                  <strong>Resúmenes de Primera División:</strong>
+                  Montaje de los resúmenes de cada jornada, con plazos ajustados
+                  tras el final de los partidos.
+                </li>
+                <li>
+                  <strong>Entrega a Televisión Española:</strong>
+                  Envío de los resúmenes a RTVE para su emisión.
+                </li>
+                <li>
+                  <strong>Magazine "Pista Azul":</strong>
+                  Edición de todos los clips del programa semanal dedicado al
+                  fútbol sala.
+                </li>
               </ul>
               <a class="enlace-video" onclick="alternarBloque('2', true)">
                 VER VIDEO
@@ -248,7 +364,8 @@
 
             <div id="video-cliente-2" class="cliente-video-box">
               <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
+                src="https://www.youtube.com/embed/8PwQw30pqWA"
+                title="Resumen LNFS Primera División 2019/2020"
                 allowfullscreen
               ></iframe>
               <a class="enlace-video" onclick="alternarBloque('2', false)"
@@ -258,17 +375,38 @@
           </div>
 
           <div class="cliente-logo">
-            <img loading="lazy" src="el_economista.jpg" alt="Logo El Economista" />
+            <img
+              loading="lazy"
+              src="gaveta/lnfs.webp"
+              alt="Logo de la Liga Nacional de Fútbol Sala"
+              style="max-width: 280px"
+            />
           </div>
         </div>
 
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-3">
-              <h2 class="cliente-nombre">NOMBRE</h2>
+              <h2 class="cliente-nombre">PRODUCTORA AVERAL</h2>
+              <h3>Editor y cámara de estudio</h3>
+              <p class="cliente-descripcion">
+                Diversos trabajos de edición para la productora Averal, entre ellos la serie documental "Noticiario 1936", en la que también trabajé como cámara de estudio.
+              </p>
               <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
+                <li>
+                  <strong>"Noticiario 1936":</strong>
+                  Edición de la serie documental que repasa, día a día, los 150
+                  días previos a la Guerra Civil desde un plató ambientado como una
+                  emisora de radio del Madrid de 1936.
+                </li>
+                <li>
+                  <strong>Cámara de estudio:</strong>
+                  Operación de cámara en las grabaciones de plató del programa.
+                </li>
+                <li>
+                  <strong>Otros proyectos de edición:</strong>
+                  Montaje de diferentes piezas y programas para la productora.
+                </li>
               </ul>
               <a class="enlace-video" onclick="alternarBloque('3', true)">
                 VER VIDEO
@@ -277,7 +415,8 @@
 
             <div id="video-cliente-3" class="cliente-video-box">
               <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
+                src="https://www.youtube.com/embed/EmGVWMaNbCA"
+                title="Noticiario 1936 - Programa 25"
                 allowfullscreen
               ></iframe>
               <a class="enlace-video" onclick="alternarBloque('3', false)"
@@ -287,17 +426,34 @@
           </div>
 
           <div class="cliente-logo">
-            <img loading="lazy" src="iberdrola.jpg" alt="Logo Iberdrola" />
+            <img loading="lazy" src="gaveta/averal.webp" alt="Logo de la productora Averal" style="max-width: 300px;" />
           </div>
         </div>
 
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-4">
-              <h2 class="cliente-nombre">NOMBRE CLIENTE 4</h2>
+              <h2 class="cliente-nombre">ESPAÑA RUMBO AL SUR</h2>
+              <h3>Editor de la expedición (2008, 2009, 2019 y 2020)</h3>
+              <p class="cliente-descripcion">
+                Editor de la expedición juvenil España Rumbo al Sur en sus ediciones de 2019 y 2020, y antes en 2008 y 2009, cuando aún se llamaba Madrid Rumbo al Sur.
+              </p>
               <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
+                <li>
+                  <strong>Edición siguiendo la expedición:</strong>
+                  Montaje del material en paralelo al recorrido, acompañando a la
+                  expedición durante todo el viaje.
+                </li>
+                <li>
+                  <strong>Adobe Premiere y After Effects:</strong>
+                  Edición de las piezas en Premiere y grafismo animado en After
+                  Effects.
+                </li>
+                <li>
+                  <strong>Cuatro ediciones:</strong>
+                  2008 y 2009 como Madrid Rumbo al Sur, y 2019 y 2020 ya como España
+                  Rumbo al Sur.
+                </li>
               </ul>
               <a class="enlace-video" onclick="alternarBloque('4', true)">
                 VER VIDEO
@@ -306,7 +462,8 @@
 
             <div id="video-cliente-4" class="cliente-video-box">
               <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
+                src="https://player.vimeo.com/video/447677422"
+                title="España Rumbo al Sur 2020 - Jornada 8, Cádiz"
                 allowfullscreen
               ></iframe>
               <a class="enlace-video" onclick="alternarBloque('4', false)"
@@ -316,29 +473,156 @@
           </div>
 
           <div class="cliente-logo">
-            <img loading="lazy" src="logo_cliente_4.jpg" alt="Logo Cliente 4" />
+            <img loading="lazy" src="gaveta/espana-rumbo-al-sur.webp" alt="Logo de España Rumbo al Sur" style="max-width: 240px;" />
+          </div>
+        </div>
+
+        <!-- Colegio Oficial de la Psicología de Madrid -->
+        <div class="cliente-fila">
+          <div class="cliente-contenido">
+            <div id="texto-cliente-5">
+              <h2 class="cliente-nombre">COLEGIO OFICIAL DE LA PSICOLOGÍA DE MADRID (2008-2013)</h2>
+              <h3>Responsable del área audiovisual</h3>
+              <p class="cliente-descripcion">
+                Durante cinco años, todo lo que el Colegio emitía o publicaba en vídeo pasaba por mis manos. Asumí en solitario el área audiovisual completa: del directo a la edición y de la grabación a la publicación.
+              </p>
+              <ul class="cliente-descripcion">
+                <li>
+                  <strong>Formación en streaming:</strong>
+                  Realicé en directo las sesiones formativas, jornadas y
+                  conferencias, llevando la formación del Colegio a colegiados de
+                  toda España cuando el streaming aún era una novedad.
+                </li>
+                <li>
+                  <strong>Edición de todo el catálogo formativo:</strong>
+                  Monté cada curso y cada ponencia grabada, convirtiendo horas de
+                  material en contenido claro y listo para consultar.
+                </li>
+                <li>
+                  <strong>Flujo completo bajo mi responsabilidad:</strong>
+                  Desde la cámara hasta la entrega final, sin intermediarios: una
+                  sola persona garantizando la calidad de principio a fin.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cliente-logo">
+            <img loading="lazy" src="gaveta/copmadrid.webp" alt="Logo del Colegio Oficial de la Psicología de Madrid" style="max-width: 300px;" />
+          </div>
+        </div>
+
+        <!-- Consejo General de Graduados Sociales de España -->
+        <div class="cliente-fila">
+          <div class="cliente-contenido">
+            <div id="texto-cliente-6">
+              <h2 class="cliente-nombre">CONSEJO GENERAL DE GRADUADOS SOCIALES DE ESPAÑA (2008-2013)</h2>
+              <h3>Responsable del área audiovisual</h3>
+              <p class="cliente-descripcion">
+                Al mismo tiempo, llevé la voz audiovisual del órgano que representa a los graduados sociales de todo el país: sus cursos, jornadas y actos institucionales, en directo y en diferido.
+              </p>
+              <ul class="cliente-descripcion">
+                <li>
+                  <strong>Directos de alcance nacional:</strong>
+                  Retransmití en streaming la actividad formativa e institucional
+                  del Consejo para profesionales de todas las comunidades autónomas.
+                </li>
+                <li>
+                  <strong>Postproducción a la altura de la institución:</strong>
+                  Edité cada sesión con la imagen cuidada y seria que exige un
+                  organismo de referencia en el ámbito jurídico-laboral.
+                </li>
+                <li>
+                  <strong>Dos instituciones en paralelo:</strong>
+                  Compaginé durante cinco años la dirección audiovisual del Consejo
+                  y del Colegio de la Psicología, demostrando organización y
+                  capacidad para sostener varios proyectos a la vez.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cliente-logo">
+            <img loading="lazy" src="gaveta/graduados-sociales.webp" alt="Logo del Consejo General de Graduados Sociales de España" style="max-width: 320px;" />
           </div>
         </div>
       </div>
 
-      <div class="pantalla-foto">
-        <h2>Edición y postproducción - Proyecto 1</h2>
-        <img loading="lazy" src="foto-edicion-1.jpg" alt="Edición y postproducción 1" />
-      </div>
-      <div class="pantalla-foto">
-        <h2>Edición y postproducción - Proyecto 2</h2>
-        <img loading="lazy" src="foto-edicion-2.jpg" alt="Edición y postproducción 2" />
-      </div>
-      <div class="pantalla-foto">
-        <h2>Edición y postproducción - Proyecto 3</h2>
-        <img loading="lazy" src="foto-edicion-3.jpg" alt="Edición y postproducción 3" />
-      </div>
+      <!-- HERRAMIENTAS DE EDICIÓN Y POSTPRODUCCIÓN -->
+      <section class="seccion-herramientas">
+        <h2>Herramientas de edición y postproducción</h2>
+        <div class="rejilla-herramientas">
+          <div class="tarjeta-herramienta">
+            <img
+              loading="lazy"
+              src="gaveta/logo-davinci.svg"
+              alt="Logo de DaVinci Resolve"
+            />
+            <h3>DaVinci Resolve</h3>
+            <p>Edición, etalonaje y acabado de vídeo.</p>
+            <ul>
+              <li>Corrección de color primaria y secundaria por nodos</li>
+              <li>Montaje multicámara sincronizado por audio o timecode</li>
+              <li>Limpieza y mezcla de audio en Fairlight</li>
+              <li>Uso de LUTs y gestión de color de cámaras broadcast</li>
+              <li>Exportación a formatos de entrega para TV, web y redes</li>
+            </ul>
+          </div>
+
+          <div class="tarjeta-herramienta">
+            <img
+              loading="lazy"
+              src="gaveta/logo-premiere.svg"
+              alt="Logo de Adobe Premiere Pro"
+            />
+            <h3>Adobe Premiere Pro</h3>
+            <p>Montaje ágil de piezas corporativas y de eventos.</p>
+            <ul>
+              <li>Resúmenes y aftermovies de eventos corporativos</li>
+              <li>Edición multicámara de ponencias y entrevistas</li>
+              <li>Versiones en vertical (9:16) para redes sociales</li>
+              <li>Subtitulado y rotulación de piezas</li>
+              <li>Integración con After Effects mediante Dynamic Link</li>
+            </ul>
+          </div>
+
+          <div class="tarjeta-herramienta">
+            <img
+              loading="lazy"
+              src="gaveta/logo-aftereffects.svg"
+              alt="Logo de Adobe After Effects"
+            />
+            <h3>Adobe After Effects</h3>
+            <p>Motion graphics y grafismo animado.</p>
+            <ul>
+              <li>Animación de rótulos, faldones y marcadores</li>
+              <li>Cabeceras, cortinillas y transiciones de marca</li>
+              <li>Contenidos animados para pantallas LED y videowalls</li>
+              <li>Exportación con canal alfa para grafismo en directo</li>
+              <li>Composición, tracking y croma</li>
+            </ul>
+          </div>
+
+          <div class="tarjeta-herramienta">
+            <img
+              loading="lazy"
+              src="gaveta/logo-photoshop.svg"
+              alt="Logo de Adobe Photoshop"
+            />
+            <h3>Adobe Photoshop</h3>
+            <p>Retoque, composición y diseño gráfico.</p>
+            <ul>
+              <li>Retoque y corrección de fotografía</li>
+              <li>Diseño de miniaturas para YouTube y redes</li>
+              <li>Fondos y plantillas para rótulos de vMix y GT Title</li>
+              <li>Adaptación de gráficos a resoluciones de pantallas LED</li>
+              <li>Preparación de imágenes optimizadas para web</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
-    <div class="banner-logos">
-      <span>MStudio</span><span>5G1</span><span>El Economista</span
-      ><span>Iberdrola</span> <span>Mediapro</span><span>Secuoya</span
-      ><span>PRG</span><span>Tres60</span><span>TVE1</span><span>CyL</span>
-    </div>
+
     <script>
       function alternarBloque(id, mostrarVideo) {
         const texto = document.getElementById("texto-cliente-" + id);
@@ -353,5 +637,6 @@
         }
       }
     </script>
+    <script src="banner-clientes.js"></script>
   </body>
 </html>

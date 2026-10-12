@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formación Académica - Borja Bonilla</title>
+    <title>Skills y Formación Académica - Borja Bonilla</title>
+    <link rel="icon" href="gaveta/favicon.png" type="image/png" />
     <link rel="stylesheet" href="style.css" />
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
+
       @font-face {
         font-family: "DepartureMono";
         src:
@@ -24,6 +27,7 @@
           url("gaveta/fondo-general.webp") center center / cover no-repeat fixed;
         background-attachment: fixed;
       }
+      /* ----- ESTILOS DE TEST.HTML ----- */
       .seccion-clientes {
         display: flex;
         flex-direction: column;
@@ -31,6 +35,9 @@
         max-width: 1200px;
         margin: 40px auto 0;
         padding: 20px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(1px);
+        border-radius: 18px;
       }
 
       .cliente-fila {
@@ -168,6 +175,303 @@
         border-radius: 0;
         box-shadow: none;
       }
+
+      /* --- SECCIONES DE CERTIFICADOS (Vizrt, Dante...) --- */
+      .seccion-certificados {
+        --acento: #e8572a; /* color principal de cada sección */
+        max-width: 1200px;
+        margin: 80px auto 40px;
+        padding: 40px 20px;
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 18px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        text-align: center;
+      }
+      .seccion-certificados h2 {
+        font-size: 2.8rem;
+        text-transform: uppercase;
+        color: #000;
+        margin: 0 0 10px;
+      }
+      .cert-intro {
+        font-size: 1.3rem;
+        line-height: 1.5;
+        color: #1f2937;
+        max-width: 820px;
+        margin: 0 auto 30px;
+      }
+      /* Fila de cifras destacadas */
+      .cert-cifras {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+        margin-bottom: 50px;
+      }
+      .cert-cifra strong {
+        display: block;
+        font-size: 3.2rem;
+        line-height: 1;
+        color: var(--acento);
+      }
+      .cert-cifra span {
+        font-size: 1.15rem;
+        text-transform: uppercase;
+        color: #374151;
+      }
+      /* Los tres certificados */
+      .rejilla-certificados {
+        /* flex + center: las filas incompletas quedan centradas */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 28px;
+        margin-bottom: 60px;
+      }
+      .rejilla-certificados > * {
+        flex: 0 1 calc((100% - 2 * 28px) / 3); /* 3 por fila */
+        min-width: 280px;
+      }
+      .certificado {
+        background: #fff;
+        border-radius: 14px;
+        border-top: 6px solid var(--color-nivel);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+        padding: 16px 16px 22px;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .certificado:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+      }
+      .certificado img {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #e5e7eb;
+        display: block;
+      }
+      .certificado h3 {
+        font-size: 1.9rem;
+        text-transform: uppercase;
+        color: var(--color-nivel);
+        margin: 16px 0 6px;
+      }
+      .certificado p {
+        font-size: 1.15rem;
+        line-height: 1.45;
+        color: #1f2937;
+        margin: 0 0 10px;
+      }
+      /* Cada nivel con el color de su certificado */
+      .nivel-expert {
+        --color-nivel: #e8572a;
+      }
+      .nivel-professional {
+        --color-nivel: #08807f;
+      }
+      .nivel-sales {
+        --color-nivel: #e99a12;
+      }
+      /* Colores propios de Dante (rojo Audinate) y de los niveles */
+      .seccion-dante {
+        --acento: #c8202f;
+      }
+      .nivel-dante-1 {
+        --color-nivel: #c8202f;
+      }
+      .nivel-dante-2 {
+        --color-nivel: #4b5563;
+      }
+      .nivel-dante-3 {
+        --color-nivel: #111827;
+      }
+      .nivel-udemy {
+        --color-nivel: #a435f0;
+      }
+      /* Cursos agrupados por área */
+      .rejilla-cursos {
+        /* flex + center: las filas incompletas quedan centradas */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 22px;
+        text-align: left;
+      }
+      .rejilla-cursos > * {
+        flex: 0 1 calc((100% - 2 * 22px) / 3); /* 3 por fila */
+        min-width: 250px;
+      }
+      .grupo-cursos {
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 20px 22px;
+      }
+      .grupo-cursos h3 {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        color: #000;
+        margin: 0 0 10px;
+      }
+      .grupo-cursos ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        color: #374151;
+      }
+      .grupo-cursos li {
+        padding: 4px 0;
+        border-bottom: 1px dashed #e5e7eb;
+      }
+      .grupo-cursos li:last-child {
+        border-bottom: none;
+      }
+      /* Distintivo para los cursos aprobados con el 100 % */
+      .nota-100 {
+        display: inline-block;
+        margin-left: 6px;
+        padding: 0 7px;
+        border-radius: 6px;
+        background: var(--acento);
+        color: #fff;
+        font-size: 0.9rem;
+      }
+
+      /* --- PROGRAMACIÓN CON IA --- */
+      .seccion-programacion {
+        --acento: #2563eb;
+      }
+      .subtitulo-cajas {
+        font-size: 1.9rem;
+        text-transform: uppercase;
+        color: #000;
+        margin: 10px 0 18px;
+      }
+      /* Cajitas: tantas columnas como quepan, de mínimo 180px */
+      .rejilla-cajas {
+        /* flex + center: las filas incompletas quedan centradas */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+        margin-bottom: 40px;
+      }
+      .rejilla-cajas > * {
+        flex: 0 1 calc((100% - 4 * 18px) / 5); /* 5 por fila */
+        min-width: 170px;
+      }
+      .caja-skill {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 22px 16px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .caja-skill:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+      }
+      /* Cuadrado de color de la marca con el icono dentro */
+      .icono-skill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        margin-bottom: 12px;
+      }
+      .icono-skill img {
+        width: 36px;
+        height: 36px;
+      }
+      .caja-skill h4 {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        color: #000;
+        margin: 0 0 6px;
+      }
+      .caja-skill p {
+        font-size: 1.1rem;
+        line-height: 1.35;
+        color: #4b5563;
+        margin: 0;
+      }
+      /* Caja destacada del vibe coding */
+      .caja-vibe {
+        background: linear-gradient(135deg, #1e3a8a, #2563eb);
+        color: #fff;
+        border-radius: 18px;
+        padding: 32px 28px;
+        box-shadow: 0 12px 26px rgba(37, 99, 235, 0.3);
+      }
+      .caja-vibe h3 {
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        margin: 0 0 12px;
+      }
+      .caja-vibe p {
+        font-size: 1.3rem;
+        line-height: 1.5;
+        max-width: 820px;
+        margin: 0 auto 24px;
+      }
+      /* Los 4 pasos, numerados automáticamente con un contador CSS */
+      .pasos-vibe {
+        list-style: none;
+        counter-reset: paso;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 14px;
+        padding: 0;
+        margin: 0 0 20px;
+      }
+      .pasos-vibe li {
+        counter-increment: paso;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 12px;
+        padding: 16px 12px;
+        font-size: 1.1rem;
+        line-height: 1.35;
+      }
+      .pasos-vibe li::before {
+        content: counter(paso);
+        display: block;
+        font-size: 2.4rem;
+        line-height: 1;
+        color: #93c5fd;
+      }
+      .pasos-vibe strong {
+        display: block;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        margin: 4px 0;
+      }
+      .caja-vibe .nota-vibe {
+        font-size: 1.2rem;
+        color: #bfdbfe;
+        margin: 0 auto;
+      }
+      /* Título de la formación académica, ahora al final de la página */
+      .titulo-academica {
+        max-width: 1200px;
+        margin: 80px auto 0;
+        padding: 0 20px;
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        font-size: 2.8rem;
+        text-transform: uppercase;
+        text-align: center;
+        color: #000;
+      }
+
       @media (max-width: 768px) {
         .cliente-fila,
         .cliente-fila:nth-child(even) {
@@ -197,144 +501,399 @@
   </head>
   <body>
     <div class="contenedor-galeria">
-      <a href="00.portada_portfolio.html" class="boton-volver">← Volver</a>
+      <a href="index.html" class="boton-volver">← Volver</a>
 
+      <!-- ===== CERTIFICACIÓN OFICIAL VIZRT / TRICASTER ===== -->
+      <section class="seccion-certificados">
+        <h2>Certificados oficiales Vizrt University</h2>
+        <p class="cert-intro">
+          TriCaster, el sistema de producción en directo creado por NewTek,
+          forma hoy parte de Vizrt. Toda mi formación en este ecosistema está
+          acreditada por <strong>Viz University</strong>, el programa oficial
+          de certificación del fabricante, hasta su nivel más alto:
+          <strong>TriCaster Expert</strong>.
+        </p>
+
+        <div class="cert-cifras">
+          <div class="cert-cifra"><strong>3</strong><span>Certificaciones oficiales</span></div>
+          <div class="cert-cifra"><strong>29</strong><span>Cursos superados</span></div>
+          <div class="cert-cifra"><strong>+80 h</strong><span>De formación oficial</span></div>
+          <div class="cert-cifra"><strong>10</strong><span>Cursos con nota del 100%</span></div>
+        </div>
+
+        <div class="rejilla-certificados">
+          <div class="certificado nivel-expert">
+            <a href="gaveta/certificados/tricaster-expert.webp" target="_blank">
+              <img loading="lazy" src="gaveta/certificados/tricaster-expert.webp" alt="Certificado Vizrt Live Production TriCaster Expert de Borja Bonilla de la Mano" />
+            </a>
+            <h3>TriCaster Expert</h3>
+            <p>
+              El nivel más alto. Acredita el conocimiento técnico de los
+              requisitos del sistema y la capacidad para instalar, configurar
+              y administrar equipos TriCaster.
+            </p>
+          </div>
+
+          <div class="certificado nivel-professional">
+            <a href="gaveta/certificados/tricaster-professional.webp" target="_blank">
+              <img loading="lazy" src="gaveta/certificados/tricaster-professional.webp" alt="Certificado Vizrt Live Production TriCaster Professional de Borja Bonilla de la Mano" />
+            </a>
+            <h3>TriCaster Professional</h3>
+            <p>
+              Acredita la operación profesional de TriCaster para obtener
+              resultados de calidad broadcast y la capacidad de realizar
+              demostraciones de producto.
+            </p>
+          </div>
+
+          <div class="certificado nivel-sales">
+            <a href="gaveta/certificados/tricaster-sales-associate.webp" target="_blank">
+              <img loading="lazy" src="gaveta/certificados/tricaster-sales-associate.webp" alt="Certificado Vizrt Live Production TriCaster Sales Associate de Borja Bonilla de la Mano" />
+            </a>
+            <h3>TriCaster Sales Associate</h3>
+            <p>
+              Acredita la capacidad de asesorar sobre soluciones TriCaster,
+              entendiendo las necesidades de cada cliente y proponiendo el
+              equipo adecuado.
+            </p>
+          </div>
+        </div>
+
+        <h2>Formación completa en Viz University</h2>
+        <p class="cert-intro">
+          Además de las certificaciones, he completado la formación oficial
+          en todo el ecosistema Vizrt: grafismo, platós virtuales, repetición
+          y conectividad IP.
+        </p>
+
+        <div class="rejilla-cursos">
+          <div class="grupo-cursos">
+            <h3>TriCaster</h3>
+            <ul>
+              <li>Live Production with TriCaster</li>
+              <li>TriCaster Essentials</li>
+              <li>TriCaster Operation</li>
+              <li>TriCaster Advanced Operation <span class="nota-100">100%</span></li>
+              <li>TriCaster Vectar Operation <span class="nota-100">100%</span></li>
+              <li>Selling TriCaster Products for Partners <span class="nota-100">100%</span></li>
+            </ul>
+          </div>
+
+          <div class="grupo-cursos">
+            <h3>Grafismo Viz</h3>
+            <ul>
+              <li>Introduction to Viz Artist</li>
+              <li>Viz Artist Design</li>
+              <li>Viz Engine Quick Setup <span class="nota-100">100%</span></li>
+              <li>Viz Engine Hardware</li>
+              <li>Graphic Hub Setup and Administration</li>
+              <li>Viz Arc Essentials <span class="nota-100">100%</span></li>
+              <li>Viz Arc Operation</li>
+              <li>Viz Arc Setup and Administration</li>
+            </ul>
+          </div>
+
+          <div class="grupo-cursos">
+            <h3>Grafismo en la nube (Flowics)</h3>
+            <ul>
+              <li>Viz Flowics Essentials <span class="nota-100">100%</span></li>
+              <li>Viz Flowics Operation</li>
+              <li>Viz Flowics Graphics Operation for TriCaster</li>
+            </ul>
+          </div>
+
+          <div class="grupo-cursos">
+            <h3>Plató virtual y realidad aumentada</h3>
+            <ul>
+              <li>Introduction to Virtual Sets and Augmented Reality</li>
+              <li>Viz Virtual Studio Go Unboxing</li>
+              <li>Viz Virtual Studio Go Essentials <span class="nota-100">100%</span></li>
+              <li>Viz Virtual Studio Go Operation <span class="nota-100">100%</span></li>
+            </ul>
+          </div>
+
+          <div class="grupo-cursos">
+            <h3>Repetición, IP y audio</h3>
+            <ul>
+              <li>Viz 3Play Operation</li>
+              <li>NDI Professional</li>
+              <li>Vizrt Connectivity Products <span class="nota-100">100%</span></li>
+              <li>Vizrt Licensing <span class="nota-100">100%</span></li>
+              <li>Introduction to Audio Mixing</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CERTIFICACIÓN OFICIAL DANTE / AUDINATE ===== -->
+      <section class="seccion-certificados seccion-dante">
+        <h2>Certificado oficial Dante · Niveles 1, 2 y 3</h2>
+        <p class="cert-intro">
+          Dante es el estándar mundial de audio sobre red IP, presente en
+          televisión, eventos, teatros y estudios de todo el mundo. He
+          completado el programa oficial de certificación de
+          <strong>Audinate</strong>, creador de Dante, en sus
+          <strong>tres niveles</strong>: del primer enrutado al diseño y la
+          resolución de problemas en redes de audio de gran escala.
+        </p>
+
+        <div class="cert-cifras">
+          <div class="cert-cifra"><strong>3 / 3</strong><span>Niveles de certificación</span></div>
+          <div class="cert-cifra"><strong>Nivel 3</strong><span>Certificación avanzada</span></div>
+          <div class="cert-cifra"><strong>Audinate</strong><span>Certificación del fabricante</span></div>
+        </div>
+
+        <div class="rejilla-certificados">
+          <div class="certificado nivel-dante-1">
+            <a href="gaveta/certificados/dante-level-1.webp" target="_blank">
+              <img loading="lazy" src="gaveta/certificados/dante-level-1.webp" alt="Certificado Dante Level 1 de Borja Bonilla de la Mano" />
+            </a>
+            <h3>Dante Level 1</h3>
+            <p>
+              Fundamentos del audio en red: Dante Controller, descubrimiento
+              de dispositivos, enrutado de canales y configuración básica de
+              un sistema.
+            </p>
+          </div>
+
+          <div class="certificado nivel-dante-2">
+            <a href="gaveta/certificados/dante-level-2.webp" target="_blank">
+              <img loading="lazy" src="gaveta/certificados/dante-level-2.webp" alt="Certificado Dante Level 2 de Borja Bonilla de la Mano" />
+            </a>
+            <h3>Dante Level 2</h3>
+            <p>
+              Sistemas de tamaño medio: elección y configuración de switches,
+              sincronización de reloj, latencia, flujos multicast y
+              redundancia.
+            </p>
+          </div>
+
+          <div class="certificado nivel-dante-3">
+            <a href="gaveta/certificados/dante-level-3.webp" target="_blank">
+              <img loading="lazy" src="gaveta/certificados/dante-level-3.webp" alt="Certificado Dante Level 3 de Borja Bonilla de la Mano" />
+            </a>
+            <h3>Dante Level 3</h3>
+            <p>
+              El nivel avanzado: diseño de redes de audio a gran escala, QoS,
+              VLAN, gestión de multicast y diagnóstico de problemas en
+              sistemas complejos.
+            </p>
+          </div>
+        </div>
+
+        <p class="cert-intro">
+          Una certificación que aplico en directo: diseño, configuro y
+          mantengo redes Dante que unen microfonía, mesas y sistemas de
+          grabación en una sola red de audio IP, en producciones reales.
+          <a href="audio.html"><strong>Ver mis proyectos de audio →</strong></a>
+        </p>
+      </section>
+
+      <!-- ===== OTRA FORMACIÓN =====
+      <section class="seccion-certificados">
+        <h2>Otra formación</h2>
+        <div class="rejilla-certificados">
+          <div class="certificado nivel-udemy">
+            <a href="gaveta/certificados/davinci-resolve-udemy.webp" target="_blank">
+              <img loading="lazy" src="gaveta/certificados/davinci-resolve-udemy.webp" alt="Certificado del curso DaVinci Resolve en 100 días de Borja Bonilla de la Mano" />
+            </a>
+            <h3>DaVinci Resolve en 100 días</h3>
+            <p>
+              Curso completo de 24 horas en Udemy, impartido por Pedro
+              Terrero, para dominar DaVinci Resolve de principio a fin.
+            </p>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- ===== DESARROLLO WEB Y PROGRAMACIÓN CON IA ===== -->
+      <section class="seccion-certificados seccion-programacion">
+        <h2>Desarrollo web y programación con IA</h2>
+        <p class="cert-intro">
+          Además de la técnica audiovisual, desarrollo webs y aplicaciones a
+          medida con nivel de <strong>programador junior</strong>. Llevo
+          <strong>dos años</strong> trabajando a diario con estos lenguajes y
+          con las principales herramientas de inteligencia artificial para
+          programar.
+        </p>
+
+        <div class="cert-cifras">
+          <div class="cert-cifra"><strong>2 años</strong><span>De experiencia</span></div>
+          <div class="cert-cifra"><strong>4</strong><span>Lenguajes</span></div>
+          <div class="cert-cifra"><strong>Junior</strong><span>Nivel de programación</span></div>
+        </div>
+
+        <h3 class="subtitulo-cajas">Lenguajes</h3>
+        <div class="rejilla-cajas">
+          <div class="caja-skill">
+            <span class="icono-skill" style="background: #e34f26"><img src="gaveta/iconos/html5.svg" alt="" /></span>
+            <h4>HTML</h4>
+            <p>La estructura de cada página web</p>
+          </div>
+          <div class="caja-skill">
+            <span class="icono-skill" style="background: #1572b6"><img src="gaveta/iconos/css3.svg" alt="" /></span>
+            <h4>CSS</h4>
+            <p>Diseño, maquetación y animaciones</p>
+          </div>
+          <div class="caja-skill">
+            <span class="icono-skill" style="background: #f7df1e"><img src="gaveta/iconos/javascript.svg" alt="" /></span>
+            <h4>JavaScript</h4>
+            <p>Interactividad y lógica en el navegador</p>
+          </div>
+          <div class="caja-skill">
+            <span class="icono-skill" style="background: #3776ab"><img src="gaveta/iconos/python.svg" alt="" /></span>
+            <h4>Python</h4>
+            <p>Scripts, automatización y tratamiento de imagen</p>
+          </div>
+        </div>
+
+        <h3 class="subtitulo-cajas">Entorno y asistentes de IA</h3>
+        <div class="rejilla-cajas">
+          <div class="caja-skill">
+            <span class="icono-skill" style="background: #007acc"><img src="gaveta/iconos/visualstudiocode.svg" alt="" /></span>
+            <h4>Visual Studio Code</h4>
+            <p>Mi entorno de trabajo diario</p>
+          </div>
+          <div class="caja-skill">
+            <span class="icono-skill" style="background: #000"><img src="gaveta/iconos/githubcopilot.svg" alt="" /></span>
+            <h4>GitHub Copilot</h4>
+            <p>Asistente de código integrado en VS Code</p>
+          </div>
+          <div class="caja-skill">
+            <span class="icono-skill" style="background: #d97757"><img src="gaveta/iconos/claude.svg" alt="" /></span>
+            <h4>Claude Code</h4>
+            <p>Desarrollo de proyectos completos con IA</p>
+          </div>
+          <div class="caja-skill">
+            <span class="icono-skill" style="background: #8e75b2"><img src="gaveta/iconos/googlegemini.svg" alt="" /></span>
+            <h4>Gemini</h4>
+            <p>Consulta, análisis y generación de código</p>
+          </div>
+          <div class="caja-skill">
+            <span class="icono-skill" style="background: #10a37f"><img src="gaveta/iconos/openai.svg" alt="" /></span>
+            <h4>ChatGPT</h4>
+            <p>Resolución de problemas y documentación</p>
+          </div>
+        </div>
+
+        <div class="caja-vibe">
+          <h3>Mi forma de trabajar: <em>vibe coding</em></h3>
+          <p>
+            Todo lo que desarrollo lo implemento con <strong>vibe coding</strong>:
+            programo conversando con la inteligencia artificial. Yo defino qué
+            se necesita y cómo debe funcionar, la IA propone el código, y yo lo
+            dirijo, lo reviso y lo pruebo hasta que hace exactamente lo que
+            pide el cliente.
+          </p>
+          <ol class="pasos-vibe">
+            <li><strong>Idea</strong>Entender lo que necesita el cliente</li>
+            <li><strong>Diálogo</strong>Describir la solución a la IA</li>
+            <li><strong>Revisión</strong>Leer, probar y corregir el código</li>
+            <li><strong>Entrega</strong>Una herramienta a medida, funcionando</li>
+          </ol>
+          <p class="nota-vibe">
+            Este mismo portfolio está construido así.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== FORMACIÓN ACADÉMICA ===== -->
+      <h2 class="titulo-academica">Formación académica</h2>
       <div class="seccion-clientes">
+        <!-- Universidad Complutense de Madrid -->
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-1">
-              <h2 class="cliente-nombre">NOMBRE</h2>
+              <h2 class="cliente-nombre">LICENCIATURA EN COMUNICACIÓN AUDIOVISUAL (2001-2006)</h2>
+              <h3>Universidad Complutense de Madrid</h3>
+              <p class="cliente-descripcion">
+                La base de todo: cinco años aprendiendo a contar historias con
+                imagen y sonido, desde la teoría hasta la práctica en plató.
+              </p>
               <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
+                <li>
+                  <strong>Lenguaje y narrativa audiovisual:</strong>
+                  Guion, montaje y construcción del relato en cine, televisión
+                  y publicidad.
+                </li>
+                <li>
+                  <strong>Realización y producción:</strong>
+                  Planificación de rodajes, puesta en escena y organización de
+                  equipos técnicos y humanos.
+                </li>
+                <li>
+                  <strong>Tecnología de imagen y sonido:</strong>
+                  Fundamentos de cámara, iluminación, toma de sonido y
+                  postproducción.
+                </li>
               </ul>
-              <a class="enlace-video" onclick="alternarBloque('1', true)">
-                VER VIDEO
-              </a>
-            </div>
-
-            <div id="video-cliente-1" class="cliente-video-box">
-              <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
-                allowfullscreen
-              ></iframe>
-              <a class="enlace-video" onclick="alternarBloque('1', false)"
-                >← Volver a la descripción</a
-              >
             </div>
           </div>
-
           <div class="cliente-logo">
-            <img src="atletico_de_madrid.jpg" alt="Logo Atlético de Madrid" />
+            <img loading="lazy" src="gaveta/ucm.webp" alt="Logo de la Universidad Complutense de Madrid" style="max-width: 280px;" />
           </div>
         </div>
 
+        <!-- Universidad Francisco de Vitoria -->
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-2">
-              <h2 class="cliente-nombre">NOMBRE</h2>
+              <h2 class="cliente-nombre">TÉCNICO EN DISEÑO MULTIMEDIA (2001-2006)</h2>
+              <h3>Universidad Francisco de Vitoria · Madrid</h3>
+              <p class="cliente-descripcion">
+                Formación práctica en las herramientas profesionales de vídeo,
+                3D y diseño gráfico.
+              </p>
               <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
+                <li>
+                  <strong>Edición de vídeo:</strong>
+                  Montaje con Avid y Adobe Premiere Pro.
+                </li>
+                <li>
+                  <strong>Animación y modelado 3D:</strong>
+                  Trabajo en entorno 3D con Autodesk Maya.
+                </li>
+                <li>
+                  <strong>Diseño gráfico:</strong>
+                  Retoque y composición de imagen con Adobe Photoshop.
+                </li>
               </ul>
-              <a class="enlace-video" onclick="alternarBloque('2', true)">
-                VER VIDEO
-              </a>
-            </div>
-
-            <div id="video-cliente-2" class="cliente-video-box">
-              <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
-                allowfullscreen
-              ></iframe>
-              <a class="enlace-video" onclick="alternarBloque('2', false)"
-                >← Volver a la descripción</a
-              >
             </div>
           </div>
-
           <div class="cliente-logo">
-            <img loading="lazy" src="el_economista.jpg" alt="Logo El Economista" />
+            <img loading="lazy" src="gaveta/ufv.webp" alt="Logo de la Universidad Francisco de Vitoria" style="max-width: 380px;" />
           </div>
         </div>
 
+        <!-- UNED -->
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-3">
-              <h2 class="cliente-nombre">NOMBRE</h2>
-              <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
-              </ul>
-              <a class="enlace-video" onclick="alternarBloque('3', true)">
-                VER VIDEO
-              </a>
-            </div>
-
-            <div id="video-cliente-3" class="cliente-video-box">
-              <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
-                allowfullscreen
-              ></iframe>
-              <a class="enlace-video" onclick="alternarBloque('3', false)"
-                >← Volver a la descripción</a
-              >
+              <h2 class="cliente-nombre">GRADO EN PSICOLOGÍA</h2>
+              <h3>Especialización clínica y sanitaria · UNED</h3>
+              <p class="cliente-descripcion">
+                Grado en Psicología por la Universidad Nacional de Educación a
+                Distancia, con especialización en el ámbito clínico y
+                sanitario.
+              </p>
             </div>
           </div>
-
           <div class="cliente-logo">
-            <img loading="lazy" src="iberdrola.jpg" alt="Logo Iberdrola" />
-          </div>
-        </div>
-
-        <div class="cliente-fila">
-          <div class="cliente-contenido">
-            <div id="texto-cliente-4">
-              <h2 class="cliente-nombre">NOMBRE CLIENTE 4</h2>
-              <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
-              </ul>
-              <a class="enlace-video" onclick="alternarBloque('4', true)">
-                VER VIDEO
-              </a>
-            </div>
-
-            <div id="video-cliente-4" class="cliente-video-box">
-              <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
-                allowfullscreen
-              ></iframe>
-              <a class="enlace-video" onclick="alternarBloque('4', false)"
-                >← Volver a la descripción</a
-              >
-            </div>
-          </div>
-
-          <div class="cliente-logo">
-            <img loading="lazy" src="logo_cliente_4.jpg" alt="Logo Cliente 4" />
+            <img
+              loading="lazy"
+              src="gaveta/uned.webp"
+              alt="Logo de la UNED"
+              style="
+                max-width: 220px;
+                border-radius: 16px;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+              "
+            />
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="pantalla-foto">
-        <h2>Formación Académica - Proyecto 1</h2>
-        <img loading="lazy" src="foto-formacion-1.jpg" alt="Formación Académica 1" />
-      </div>
-      <div class="pantalla-foto">
-        <h2>Formación Académica - Proyecto 2</h2>
-        <img loading="lazy" src="foto-formacion-2.jpg" alt="Formación Académica 2" />
-      </div>
-      <div class="pantalla-foto">
-        <h2>Formación Académica - Proyecto 3</h2>
-        <img loading="lazy" src="foto-formacion-3.jpg" alt="Formación Académica 3" />
-      </div>
-    </div>
-    <div class="banner-logos">
-      <span>MStudio</span><span>5G1</span><span>El Economista</span
-      ><span>Iberdrola</span> <span>Mediapro</span><span>Secuoya</span
-      ><span>PRG</span><span>Tres60</span><span>TVE1</span><span>CyL</span>
-    </div>
     <script>
       function alternarBloque(id, mostrarVideo) {
         const texto = document.getElementById("texto-cliente-" + id);
@@ -349,5 +908,6 @@
         }
       }
     </script>
+    <script src="banner-clientes.js"></script>
   </body>
 </html>

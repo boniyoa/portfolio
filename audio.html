@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Audio - Borja Bonilla</title>
+    <link rel="icon" href="gaveta/favicon.png" type="image/png" />
     <link rel="stylesheet" href="style.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
@@ -69,6 +70,13 @@
         object-fit: contain;
         border: none;
         background: transparent;
+      }
+
+      /* El logo de El Economista trae mucho margen vacío: lo agrandamos */
+      .cliente-logo.logo-eleconomista img {
+        width: 100%;
+        max-width: 600px;
+        max-height: 420px;
       }
 
       .cliente-nombre {
@@ -203,16 +211,33 @@
   </head>
   <body>
     <div class="contenedor-galeria">
-      <a href="00.portada_portfolio.html" class="boton-volver">← Volver</a>
+      <a href="index.html" class="boton-volver">← Volver</a>
 
       <div class="seccion-clientes">
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-1">
-              <h2 class="cliente-nombre">NOMBRE</h2>
+              <h2 class="cliente-nombre">ATLÉTICO DE MADRID</h2>
+              <h3>Técnico de sonido para eventos corporativos</h3>
+              <p class="cliente-descripcion">
+                Responsable del sonido en los eventos corporativos que empresas y marcas celebran en el estadio Riyadh Air Metropolitano: presentaciones, jornadas, entregas de premios y actos institucionales.
+              </p>
               <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
+                <li>
+                  <strong>Mesas digitales Yamaha QL1 y QL3:</strong>
+                  Operación de las consolas del auditorio y del centro de
+                  control de partidos en cada evento corporativo.
+                </li>
+                <li>
+                  <strong>Sonorización del estadio:</strong>
+                  Gestión de la salida al sistema de PA del estadio cuando el
+                  evento corporativo se traslada al terreno de juego y las gradas.
+                </li>
+                <li>
+                  <strong>Mezcla en directo para clientes corporativos:</strong>
+                  Microfonía de ponentes y presentadores, música y vídeos
+                  integrados en el desarrollo de cada acto de empresa.
+                </li>
               </ul>
               <a class="enlace-video" onclick="alternarBloque('1', true)">
                 VER VIDEO
@@ -221,7 +246,8 @@
 
             <div id="video-cliente-1" class="cliente-video-box">
               <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
+                src="https://www.youtube.com/embed/naoOtvZ79Z8"
+                title="Atlético de Madrid - Presentación en el auditorio del Metropolitano"
                 allowfullscreen
               ></iframe>
               <a class="enlace-video" onclick="alternarBloque('1', false)"
@@ -231,17 +257,35 @@
           </div>
 
           <div class="cliente-logo">
-            <img src="atletico_de_madrid.jpg" alt="Logo Atlético de Madrid" />
+            <img src="gaveta/atm.webp" alt="Logo Atlético de Madrid" />
           </div>
         </div>
 
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-2">
-              <h2 class="cliente-nombre">NOMBRE</h2>
+              <h2 class="cliente-nombre">CIFRAS Y LETRAS (RTVE)</h2>
+              <h3>Diseño y configuración de la red de audio Dante</h3>
+              <p class="cliente-descripcion">
+                Configuración completa de la red Dante del plató durante el montaje del concurso, conectando toda la microfonía, las mesas y el sistema de grabación en una única red de audio sobre IP.
+              </p>
               <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
+                <li>
+                  <strong>Red Dante integral:</strong>
+                  Enrutamiento entre stagebox Yamaha Tio, consola Yamaha CL3 y
+                  Behringer X32 Compact, dejando cada señal disponible donde se
+                  necesitaba.
+                </li>
+                <li>
+                  <strong>Microfonía inalámbrica Sennheiser y Shure:</strong>
+                  Montaje de los sistemas inalámbricos y de la recepción Dante de
+                  Sennheiser, integrada directamente en la red.
+                </li>
+                <li>
+                  <strong>Grabación multipista con backup:</strong>
+                  Sistema de grabación de cada señal por separado basado en
+                  Metus, con una grabación de seguridad paralela en Reaper.
+                </li>
               </ul>
               <a class="enlace-video" onclick="alternarBloque('2', true)">
                 VER VIDEO
@@ -250,7 +294,8 @@
 
             <div id="video-cliente-2" class="cliente-video-box">
               <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
+                src="https://www.youtube.com/embed/Qtwpe2JXi8c"
+                title="Cifras y Letras - RTVE Play"
                 allowfullscreen
               ></iframe>
               <a class="enlace-video" onclick="alternarBloque('2', false)"
@@ -260,17 +305,33 @@
           </div>
 
           <div class="cliente-logo">
-            <img loading="lazy" src="el_economista.jpg" alt="Logo El Economista" />
+            <img loading="lazy" src="gaveta/cifrayletras.webp" alt="Logo Cifras y Letras" />
           </div>
         </div>
 
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-3">
-              <h2 class="cliente-nombre">NOMBRE</h2>
+              <h2 class="cliente-nombre">EL ECONOMISTA</h2>
+              <h3>Técnico de sonido en eventos corporativos</h3>
+              <p class="cliente-descripcion">
+                Sonorización de los eventos corporativos, foros y presentaciones de temática económica que organiza el diario El Economista.
+              </p>
               <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
+                <li>
+                  <strong>Mesa digital Allen &amp; Heath Qu-16:</strong>
+                  Operación de la consola en directo durante cada evento.
+                </li>
+                <li>
+                  <strong>Mesas redondas y paneles:</strong>
+                  Gestión de la microfonía de debates con varios ponentes,
+                  manteniendo la inteligibilidad en todo momento.
+                </li>
+                <li>
+                  <strong>Entrevistas y presentaciones:</strong>
+                  Sonido para entrevistas, ponencias y presentaciones de empresa
+                  vinculadas a la actualidad económica.
+                </li>
               </ul>
               <a class="enlace-video" onclick="alternarBloque('3', true)">
                 VER VIDEO
@@ -278,66 +339,378 @@
             </div>
 
             <div id="video-cliente-3" class="cliente-video-box">
-              <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
-                allowfullscreen
-              ></iframe>
+              <a href="https://www.dailymotion.com/video/xaa9ijk" target="_blank" rel="noopener noreferrer" title="Ver mesa redonda de El Economista en Dailymotion">
+                <img loading="lazy"
+                  src="gaveta/eco-mesa.webp"
+                  alt="Mesa redonda de El Economista sobre el sistema ferroviario español"
+                  style="width: 100%; height: 315px; object-fit: cover; border: none; margin-bottom: 15px; display: block; cursor: pointer;"
+                />
+              </a>
               <a class="enlace-video" onclick="alternarBloque('3', false)"
                 >← Volver a la descripción</a
               >
             </div>
           </div>
 
-          <div class="cliente-logo">
-            <img loading="lazy" src="iberdrola.jpg" alt="Logo Iberdrola" />
+          <div class="cliente-logo logo-eleconomista">
+            <img loading="lazy" src="gaveta/economista.webp" alt="Logo El Economista" />
           </div>
         </div>
 
         <div class="cliente-fila">
           <div class="cliente-contenido">
             <div id="texto-cliente-4">
-              <h2 class="cliente-nombre">NOMBRE CLIENTE 4</h2>
+              <h2 class="cliente-nombre">PROYECTOS PROPIOS</h2>
+              <h3>Sonido para eventos sociales, charlas y conferencias</h3>
+              <p class="cliente-descripcion">
+                Servicio de sonido con equipo propio para celebraciones y actos en sala: bodas, bautizos, comuniones y fiestas privadas, además de charlas literarias, presentaciones y debates políticos.
+              </p>
               <ul class="cliente-descripcion">
-                <li>hice aquello</li>
-                <li>hice lo de más allá</li>
+                <li>
+                  <strong>Equipo propio, de principio a fin:</strong>
+                  Microfonía, monitorización y sistema de sonido propios, montados
+                  y ajustados para cada sala y cada tipo de acto.
+                </li>
+                <li>
+                  <strong>Ceremonias y celebraciones:</strong>
+                  Sonido para los momentos clave de cada evento, desde la
+                  ceremonia y los discursos hasta la música de la fiesta.
+                </li>
+                <li>
+                  <strong>Charlas y mesas de debate:</strong>
+                  Gestión simultánea de varios ponentes y música, cuidando que
+                  cada intervención llegue clara a todo el público.
+                </li>
               </ul>
-              <a class="enlace-video" onclick="alternarBloque('4', true)">
-                VER VIDEO
-              </a>
-            </div>
-
-            <div id="video-cliente-4" class="cliente-video-box">
-              <iframe
-                src="https://www.youtube.com/embed/TU_ENLACE_AQUI"
-                allowfullscreen
-              ></iframe>
-              <a class="enlace-video" onclick="alternarBloque('4', false)"
-                >← Volver a la descripción</a
-              >
             </div>
           </div>
 
           <div class="cliente-logo">
-            <img loading="lazy" src="logo_cliente_4.jpg" alt="Logo Cliente 4" />
+            <img loading="lazy" src="gaveta/equipo-propio.webp" alt="Mesa de mezclas digital Behringer X32 Compact de equipo propio" />
+          </div>
+        </div>
+
+        <!-- Proyectos propios: producción musical -->
+        <div class="cliente-fila">
+          <div class="cliente-contenido">
+            <div id="texto-cliente-5">
+              <h2 class="cliente-nombre">PROYECTOS PROPIOS</h2>
+              <h3>Producción musical y grabación de podcasts</h3>
+              <p class="cliente-descripcion">
+                Producción de música electrónica y acústica y grabación de podcasts en estudio propio, combinando una cadena de audio 100% analógica a válvulas con el trabajo en digital.
+              </p>
+              <ul class="cliente-descripcion">
+                <li>
+                  <strong>Cadena analógica a válvulas:</strong>
+                  Previos de micrófono, compresores y ecualizadores a válvulas,
+                  junto a micrófonos de condensador, para un sonido cálido y
+                  con carácter desde la propia toma.
+                </li>
+                <li>
+                  <strong>Ableton Live 12 y Reaper:</strong>
+                  Producción, arreglos y mezcla principalmente en Ableton Live 12,
+                  y grabación y edición en Reaper.
+                </li>
+                <li>
+                  <strong>Plugins y procesado:</strong>
+                  Manejo de una amplia colección de plugins de síntesis, efectos y
+                  procesado para dar a cada proyecto el acabado que necesita.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cliente-logo">
+            <img loading="lazy" src="gaveta/produccion-musical.webp" alt="Ableton Live 12, software de producción musical" />
           </div>
         </div>
       </div>
 
-      <div class="pantalla-foto">
-        <img loading="lazy" src="gaveta/01audio.webp" alt="Audio 1" />
-      </div>
-      <div class="pantalla-foto">
-        <img loading="lazy" src="gaveta/02audio.webp" alt="Audio 2" />
-      </div>
-      <div class="pantalla-foto">
-        <img loading="lazy" src="gaveta/03audio.webp" alt="Audio 3" />
-      </div>
+      <!-- ================= EQUIPOS (antes infografías 01audio-03audio.webp) ================= -->
+
+      <!-- BLOQUE 1: MESAS YAMAHA Y ALLEN & HEATH, STAGEBOX DANTE -->
+      <section class="seccion-equipos">
+        <h2>Experiencia garantizada en la total configuración y el manejo en directo de los siguientes equipos</h2>
+        <div class="rejilla-equipos">
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/yamaha-ql1.webp" alt="Yamaha QL1" /></div>
+            <div class="info">
+              <h3>Yamaha QL1</h3>
+              <ul>
+                <li>Consola de mezcla digital de formato compacto con capacidad de procesamiento para 32 canales mono, 8 estéreo, 16 buses de mezcla y 8 buses matriz</li>
+                <li>Conectividad física local integrada compuesta por 16 entradas de micrófono/línea y 8 salidas analógicas mediante conectores XLR</li>
+                <li>Interfaz de red Dante nativa redundante (32 in / 32 out) para enrutamiento de audio IP y conexión directa con cajetines de escenario serie Rio</li>
+                <li>Superficie de control con 16 faders de canal y 2 faders master motorizados de 100 mm junto a una pantalla táctil y sistema "Touch and Turn"</li>
+                <li>Motor de procesamiento DSP "Premium Rack" con emulaciones VCM de hardware analógico clásico como los ecualizadores y compresores Rupert Neve Designs Portico</li>
+                <li>Sistema de mezcla automática Dan Dugan Sound Design incorporado para la gestión de hasta 16 micrófonos simultáneos en conferencias y eventos broadcast</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/yamaha-rio1608.webp" alt="Yamaha Rio1608-D3" /></div>
+            <div class="info">
+              <h3>Yamaha Rio1608-D3</h3>
+              <ul>
+                <li>Cajetín de escenario IP con 16 entradas analógicas de micrófono/línea y 8 salidas analógicas mediante conectores XLR estándar</li>
+                <li>Interfaz de red Dante con puertos primario y secundario para enrutamiento de audio IP redundante o conexiones en cadena (daisy chain)</li>
+                <li>Convertidores A/D y D/A de alto rendimiento con soporte completo para frecuencias de muestreo de hasta 96 kHz y procesamiento de baja latencia</li>
+                <li>Fuentes de alimentación duales y redundantes integradas en el chasis de 3RU para funcionamiento ininterrumpido en producciones críticas</li>
+                <li>Preamplificadores de audio basados en circuitos analógicos diseñados para ofrecer una reproducción sonora natural y transparente</li>
+                <li>Compatibilidad nativa para control remoto directo de ganancia y alimentación phantom (+48V) desde consolas Yamaha series Rivage PM, CL y QL o mediante software R Remote</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/yamaha-tio1608.webp" alt="Yamaha Tio1608-D2" /></div>
+            <div class="info">
+              <h3>Yamaha Tio1608-D2</h3>
+              <ul>
+                <li>Cajetín de escenario IP con 16 entradas analógicas de micrófono/línea y 8 salidas analógicas mediante conectores XLR estándar</li>
+                <li>Interfaz de red Dante con puertos primario y secundario para enrutamiento de audio IP redundante o conexiones en cadena (daisy chain)</li>
+                <li>Convertidores A/D y D/A de alto rendimiento con soporte completo para frecuencias de muestreo de hasta 96 kHz y procesamiento de baja latencia</li>
+                <li>Fuentes de alimentación duales y redundantes integradas en el chasis de 3RU para funcionamiento ininterrumpido en producciones críticas</li>
+                <li>Preamplificadores de audio basados en circuitos analógicos diseñados para ofrecer una reproducción sonora natural y transparente</li>
+                <li>Compatibilidad nativa para control remoto directo de ganancia y alimentación phantom (+48V) desde consolas Yamaha series Rivage PM, CL y QL o mediante software R Remote</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/yamaha-ls9.webp" alt="Yamaha LS9-32" /></div>
+            <div class="info">
+              <h3>Yamaha LS9-32</h3>
+              <ul>
+                <li>Consola de mezcla digital con 32 preamplificadores analógicos de micrófono/línea y capacidad de procesamiento ampliable a 64 canales de entrada</li>
+                <li>Arquitectura de enrutamiento que incluye 16 buses de mezcla, 8 buses matriz y buses estéreo/mono con soporte completo para modo LCR</li>
+                <li>Superficie de control equipada con 33 faders motorizados de 100 mm (32 de canal y 1 master) junto a una pantalla LCD a color</li>
+                <li>Rack virtual integrado con capacidad para hasta 8 procesadores internos, incluyendo efectos SPX y ecualizadores gráficos de 31 bandas</li>
+                <li>Puerto USB frontal dedicado para grabación directa de 2 pistas, reproducción de audio (BGM) y almacenamiento de escenas o claves de acceso</li>
+                <li>Provista de 2 ranuras de expansión Mini-YGDAI para interfaces de red o E/S digital adicional</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/allen-heath-qu16.webp" alt="Allen &amp; Heath Qu-16" /></div>
+            <div class="info">
+              <h3>Allen &amp; Heath Qu-16</h3>
+              <ul>
+                <li>Consola de mezcla digital de formato compacto equipada con 16 entradas analógicas mono (mic/line) y 3 entradas estéreo mediante conectores TRS</li>
+                <li>Superficie de control que incluye 17 faders motorizados de 100 mm y una pantalla táctil a color de 800x480 de resolución para gestión de parámetros</li>
+                <li>Sistema Qu-Drive incorporado para la grabación y reproducción multipista directa de hasta 18 canales directamente en discos duros USB externos</li>
+                <li>Puerto de audio remoto dSNAKE para la conexión digital a cajetines de escenario (AudioRacks) y sistemas de monitorización personal mediante cable Cat5</li>
+                <li>Arquitectura de procesamiento que alberga 4 motores de efectos (FX) estéreo independientes, heredados directamente de las consolas de la serie iLive</li>
+                <li>Interfaz de audio USB integrada de 24x22 canales para transmisión multipista y control MIDI bidireccional compatible con entornos Mac y Windows</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- BLOQUE 2: MESAS DIGITALES Y REDES DE AUDIO -->
+      <section class="seccion-equipos">
+        <h2>Mesas digitales y redes de audio</h2>
+        <div class="rejilla-equipos">
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/midas-m32.webp" alt="Midas M32 Live" /></div>
+            <div class="info">
+              <h3>Midas M32 Live</h3>
+              <ul>
+                <li>Consola de mezcla digital para entornos de directo y estudio con capacidad de procesamiento de hasta 40 canales de entrada y 25 buses de mezcla</li>
+                <li>Equipada con 32 preamplificadores de micrófono serie Midas PRO que ofrecen una reproducción sonora transparente y con alta capacidad de sobrecarga</li>
+                <li>Tarjeta de expansión DN32-Live integrada para grabación y reproducción multipista directa de 32 canales en tarjetas SD/SDHC duales o vía USB 2.0</li>
+                <li>Superficie de control robusta con 25 faders motorizados de 100 mm clasificados para una vida útil de un millón de ciclos de funcionamiento</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/behringer-wing.webp" alt="Behringer Wing-BK" /></div>
+            <div class="info">
+              <h3>Behringer Wing-BK</h3>
+              <ul>
+                <li>Consola de mezcla digital estéreo de 48 canales y 28 buses con superficie de control equipada con 24 faders motorizados de 100 mm</li>
+                <li>Pantalla táctil capacitiva de 10 pulgadas con ángulo ajustable y sección de controles giratorios totalmente personalizables</li>
+                <li>Conectividad avanzada con 8 preamplificadores de micrófono serie Midas PRO y 3 puertos AES50 para gestión de hasta 144 entradas y salidas</li>
+                <li>Equipamiento integrable dotado de interfaz de audio USB de 64x64 canales y grabador dual SD para captura multipista en directo</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/behringer-x32.webp" alt="Behringer X32" /></div>
+            <div class="info">
+              <h3>Behringer X32</h3>
+              <ul>
+                <li>Consola de mezcla digital estéreo de 48 canales y 28 buses con superficie de control equipada con 24 faders motorizados de 100 mm</li>
+                <li>Pantalla táctil capacitiva de 10 pulgadas con ángulo ajustable y sección de controles giratorios totalmente personalizables</li>
+                <li>Conectividad avanzada con 8 preamplificadores de micrófono serie Midas PRO y 3 puertos AES50 para gestión de hasta 144 entradas y salidas</li>
+                <li>Interfaz de audio USB de 64x64 canales y grabador dual SD incorporado para captura multipista directa en entornos de directo y estudio</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/soundcraft-ui24r.webp" alt="Soundcraft Ui24R" /></div>
+            <div class="info">
+              <h3>Soundcraft Ui24R</h3>
+              <ul>
+                <li>Consola de mezcla digital de 24 canales enrackable con grabador multipista y 20 preamplificadores de micrófono diseñados por Studer</li>
+                <li>Control remoto multiplataforma a través de navegador web para dispositivos iOS, Android, Windows y Mac sin necesidad de aplicaciones de terceros</li>
+                <li>Router Wi-Fi de doble banda integrado que permite la conexión simultánea de hasta 10 dispositivos para gestión de mezcla en directo</li>
+                <li>Procesamiento de señal de alto rendimiento con efectos Lexicon, compresión dbx y sistema automático de eliminación de acoples AFS2</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/directout-exbox.webp" alt="DirectOut EXBOX.MD" /></div>
+            <div class="info">
+              <h3>DirectOut EXBOX.MD</h3>
+              <ul>
+                <li>Conversor de audio IP Dante a MADI con capacidad de hasta 64 canales bidireccionales y gestión NMOS</li>
+                <li>Tres puertos MADI independientes con conectores coaxial BNC, óptico SC y ranura SFP intercambiable</li>
+                <li>Sistema integrado de conmutación automática de redundancia (EARS) y conversor de frecuencia de muestreo de baja latencia (FastSRC)</li>
+                <li>Switch de red con cuatro puertos Gigabit que incluye soporte avanzado para redundancia ST 2022-7 y alimentación PoE</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/dante-controller.webp" alt="Logo de Dante" /></div>
+            <div class="info">
+              <h3>Dante Controller / Virtual Soundcard</h3>
+              <ul>
+                <li>Software de control centralizado para la configuración, enrutamiento y supervisión de dispositivos de audio en redes IP Dante estándar</li>
+                <li>Dante Virtual Soundcard (DVS) transforma ordenadores Mac o Windows en interfaces de audio IP para hasta 64x64 canales bidireccionales</li>
+                <li>Integración directa con sistemas de grabación multipista (DAW) mediante soporte nativo para protocolos de audio ASIO, WDM y Core Audio</li>
+                <li>Gestión avanzada de parámetros críticos incluyendo sincronización de reloj maestro (PTP), ajustes de latencia y diagnóstico de red en tiempo real</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- BLOQUE 3: MICROFONÍA INALÁMBRICA, GRABACIÓN Y DAW -->
+      <section class="seccion-equipos">
+        <h2>Microfonía inalámbrica, grabación y software de audio</h2>
+        <div class="rejilla-equipos">
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/shure-slxd4q.webp" alt="Shure SLXD4Q+" /></div>
+            <div class="info">
+              <h3>Shure SLXD4Q+</h3>
+              <ul>
+                <li>Receptor inalámbrico digital de 4 canales (quad) en chasis metálico de 1RU</li>
+                <li>Audio digital de 24 bits con rango dinámico de 118 dB y diversidad predictiva</li>
+                <li>Cascada de RF para enlazar receptores y compartir antenas sin distribuidores</li>
+                <li>4 salidas XLR balanceadas y Ethernet dual para control vía Wireless Workbench</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/wireless-workbench.webp" alt="Shure Wireless Workbench" /></div>
+            <div class="info">
+              <h3>Wireless Workbench</h3>
+              <ul>
+                <li>Software de coordinación de RF para gestión centralizada de sistemas inalámbricos</li>
+                <li>Cálculo automático de frecuencias compatibles para evitar intermodulación</li>
+                <li>Análisis de espectro en tiempo real con monitoreo de RF, audio y baterías</li>
+                <li>Gestión multizona para producciones a gran escala con coberturas simultáneas</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/sennheiser-ewdx.webp" alt="Sennheiser EW-DX EM" /></div>
+            <div class="info">
+              <h3>Sennheiser EW-DX EM</h3>
+              <ul>
+                <li>Receptor inalámbrico digital de 4 canales en chasis metálico de 1RU</li>
+                <li>Cuadrícula de frecuencias equidistantes sin cálculo de intermodulación</li>
+                <li>Audio digital de 24 bits con latencia ultrabaja de 1,9 ms y cifrado AES-256</li>
+                <li>Red Dante integrada y control centralizado vía Sennheiser Control Cockpit</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto plana"><img loading="lazy" src="gaveta/equipos/sennheiser-wsm.webp" alt="Sennheiser Wireless Systems Manager" /></div>
+            <div class="info">
+              <h3>Wireless Systems Manager (WSM)</h3>
+              <ul>
+                <li>Software de control y monitorización remota para sistemas inalámbricos Sennheiser vía red IP</li>
+                <li>Coordinación avanzada de frecuencias y análisis de espectro para evitar interferencias</li>
+                <li>Supervisión en tiempo real de niveles de RF, señal de audio y estado de baterías</li>
+                <li>Gestión multicanal centralizada y configuración previa de proyectos en modo offline</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/zoom-h6.webp" alt="Grabador Zoom H6" /></div>
+            <div class="info">
+              <h3>Grabador Zoom H6</h3>
+              <ul>
+                <li>Grabador de audio portátil con capacidad para registrar hasta 6 pistas simultáneas</li>
+                <li>Sistema de cápsulas de entrada intercambiables para adaptarse a diferentes técnicas de captura</li>
+                <li>4 entradas combo XLR/TRS con control de ganancia independiente y alimentación phantom</li>
+                <li>Grabación directa en tarjetas SD a 24 bits/96 kHz y funcionamiento como interfaz de audio USB</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/schoeps-cmit5u.webp" alt="Schoeps CMIT 5U" /></div>
+            <div class="info">
+              <h3>Schoeps CMIT 5U</h3>
+              <ul>
+                <li>Micrófono de cañón lobular para cine y broadcast</li>
+                <li>Sonido transparente con mínima coloración fuera del eje</li>
+                <li>Chasis metálico ultraligero (89 g) ideal para uso en pértiga</li>
+                <li>Alta inmunidad a interferencias RF; requiere phantom 48V</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/ableton-live12.webp" alt="Ableton Live 12" /></div>
+            <div class="info">
+              <h3>Ableton Live 12</h3>
+              <ul>
+                <li>Secuenciador y estación de trabajo de audio digital (DAW) multipista para producción y actuaciones en directo</li>
+                <li>Vistas duales (Arrangement y Session) para composición lineal e improvisación no lineal basada en clips</li>
+                <li>Amplia biblioteca de instrumentos virtuales, efectos de audio y MIDI, incluyendo sintetizadores y samplers avanzados</li>
+                <li>Integración profunda con controladores de hardware (como Push) y soporte para protocolos MIDI, MPE y Max for Live</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/reaper.webp" alt="Reaper" /></div>
+            <div class="info">
+              <h3>Reaper (DAW)</h3>
+              <ul>
+                <li>Estación de trabajo de audio digital (DAW) de alta eficiencia con procesamiento interno a 64 bits y bajo consumo de recursos</li>
+                <li>Arquitectura de enrutamiento matricial universal sin restricciones de tipo de pista (audio, MIDI, vídeo o buses compartidos)</li>
+                <li>Compatibilidad exhaustiva con formatos de plugins de terceros (VST, VST3, AU, CLAP, JSFX) y efectos nativos integrados</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/adobe-audition.svg" alt="Logo de Adobe Audition" /></div>
+            <div class="info">
+              <h3>Adobe Audition</h3>
+              <ul>
+                <li>Edición y restauración de audio profesional: reducción de ruido, eliminación de clics, zumbidos y reverberación</li>
+                <li>Mezcla multipista para podcasts, locuciones y bandas sonoras de piezas audiovisuales</li>
+                <li>Análisis espectral para localizar y corregir problemas de forma visual, frecuencia a frecuencia</li>
+                <li>Integración directa con Premiere Pro para pulir el audio de los montajes de vídeo</li>
+              </ul>
+            </div>
+          </article>
+          <article class="tarjeta-equipo">
+            <div class="foto"><img loading="lazy" src="gaveta/equipos/audacity.svg" alt="Logo de Audacity" /></div>
+            <div class="info">
+              <h3>Audacity</h3>
+              <ul>
+                <li>Grabación y edición de audio multipista, ágil y ligera, para entrevistas, locuciones y podcasts</li>
+                <li>Limpieza de grabaciones con reducción de ruido, normalización, compresión y ecualización</li>
+                <li>Exportación a los formatos más habituales (WAV, MP3, FLAC…) para entregar el audio listo para cada uso</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
     </div>
-    <div class="banner-logos">
-      <span>MStudio</span><span>5G1</span><span>El Economista</span
-      ><span>Iberdrola</span> <span>Mediapro</span><span>Secuoya</span
-      ><span>PRG</span><span>Tres60</span><span>TVE1</span><span>CyL</span>
-    </div>
+
     <script>
       function alternarBloque(id, mostrarVideo) {
         const texto = document.getElementById("texto-cliente-" + id);
@@ -352,5 +725,6 @@
         }
       }
     </script>
+    <script src="banner-clientes.js"></script>
   </body>
 </html>

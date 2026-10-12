@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vídeo - Borja Bonilla</title>
+    <link rel="icon" href="gaveta/favicon.png" type="image/png" />
 
     <!-- Enlazamos tu archivo de diseño común -->
     <link rel="stylesheet" href="style.css" />
@@ -146,6 +147,27 @@
       .cliente-logo.logo-mrunderdog img {
         max-width: 560px;
         height: 240px;
+      }
+
+      .cliente-logo.logo-quality img {
+        max-width: 420px;
+        height: 150px;
+      }
+
+      .cliente-logo.logo-hibridos img {
+        max-width: 480px;
+        height: 300px;
+      }
+
+      /* El logo de Sinopsis tiene letras blancas: lo ponemos sobre un panel oscuro */
+      .cliente-logo.logo-sinopsis img {
+        width: auto;
+        max-width: min(380px, calc(100% - 80px));
+        height: auto;
+        background: #111827;
+        padding: 30px 40px;
+        border-radius: 18px;
+        box-sizing: content-box;
       }
 
       .cliente-nombre {
@@ -293,7 +315,7 @@
   </head>
   <body>
     <!-- Botón para regresar a la portada -->
-    <a href="00.portada_portfolio.html" class="boton-volver">← Volver</a>
+    <a href="index.html" class="boton-volver">← Volver</a>
 
        <div class="seccion-clientes">
         <!-- COMIENZO CLIENTE RTVE - CIFRAS Y LETRAS -->
@@ -306,7 +328,7 @@
               </p>
               <ul class="cliente-descripcion">
                 <li>
-                  <strong>Enrutamiento y distribución:</strong> Apoyo en configuración y enrutamiento de E/S, despliegue de fibra, recepción de 4 cámaras broadcast (más cabeza caliente) y emisión de señal personalizada a todos los departamentos.
+                  <strong>Enrutamiento y distribución:</strong> Apoyo en configuración y enrutamiento de E/S, despliegue de fibra, recepción de 4 cámaras broadcast (más cabeza caliente), dos PTZ y enrutamiento de diferentes señales personalizadas a todos los departamentos.
                 </li>
                 <li>
                   <strong>Gestión de señales e iluminación:</strong> Diseño de programación MIDI ad hoc para recibir señal y gestionar la pulsación de los concursantes mediante conexión específica con el departamento de iluminación.
@@ -620,59 +642,805 @@
   </div>
 </div>
 <!-- FIN CLIENTE FMS -->
+
+        <!-- COMIENZO CLIENTE RTVE - CÁMARA ENG (ESPAÑA DIRECTO / LA MAÑANA) -->
+        <div class="cliente-fila">
+          <div class="cliente-contenido">
+            <div id="texto-cliente-tve">
+              <h2 class="cliente-nombre">TELEVISIÓN ESPAÑOLA (2019-2021)</h2>
+              <p class="cliente-descripcion">
+                <strong>Operador de cámara ENG</strong> en La 1 de TVE, cubriendo
+                sustituciones fijas de la plantilla  de  cámaras de la cadena nacional.
+              </p>
+              <ul class="cliente-descripcion">
+                <li>
+                  <strong>España Directo:</strong> Grabación y conexiones en
+                  directo desde la calle para el magacín de actualidad de las
+                  tardes de La 1.
+                </li>
+                <li>
+                  <strong>La Mañana de La 1:</strong> Cámara ENG para las piezas
+                  y reportajes del magacín matinal de la cadena.
+                </li>
+                <li>
+                  <strong>Equipo ENG broadcast:</strong> Operación de la
+                  cámara de hombro <strong>Panasonic AJ-CX4000GJ</strong> y
+                  envío de la señal en directo a TVE mediante
+                  <strong>mochilas Aviwest</strong> de transmisión por redes
+                  móviles.
+                </li>
+              </ul>
+              <a class="enlace-video" onclick="alternarBloque('tve', true)">
+                VER ESPAÑA DIRECTO
+              </a>
+              <br />
+              <a
+                class="enlace-video"
+                href="https://www.youtube.com/watch?v=YXitAxK0SpM"
+                target="_blank"
+                rel="noopener"
+                >VER LA MAÑANA DE LA 1 ↗</a
+              >
+            </div>
+
+            <div id="video-cliente-tve" class="cliente-video-box">
+              <iframe
+                src="https://www.youtube.com/embed/UzXY5DFYNYw"
+                title="España Directo (La 1 de TVE, 16/03/2020)"
+                allowfullscreen
+              ></iframe>
+              <a class="enlace-video" onclick="alternarBloque('tve', false)"
+                >← Volver a la descripción</a
+              >
+            </div>
+          </div>
+
+          <div class="cliente-logo">
+            <img loading="lazy" src="gaveta/rtve.webp" alt="Logo de RTVE" style="max-width: 300px;" />
+          </div>
+        </div>
+        <!-- FINAL DEL CLIENTE RTVE - CÁMARA ENG -->
+
+<!-- Quality Media -->
+<div class="cliente-fila">
+  <div class="cliente-contenido">
+    <div id="texto-cliente-9">
+      <h2 class="cliente-nombre">QUALITY MEDIA</h2>
+      <h3>Técnico de realización deportiva en streaming</h3>
+      <p class="cliente-descripcion">
+        Realización y emisión en directo de competiciones deportivas (fútbol sala, rugby, mundial de petanca).
+      </p>
+      <ul class="cliente-descripcion">
+        <li>
+          <strong>Realización y Replay:</strong>
+          Mezcla multicámara en directo y control del sistema de repeticiones
+          multicanal a través de vMix.
+        </li>
+        <li>
+          <strong>Grafismo en directo:</strong>
+          Diseño, integración y ejecución de marcadores y rótulos en tiempo
+          real mediante GT Title de vMix.
+        </li>
+        <li>
+          <strong>Coordinación remota:</strong>
+          Dirección en directo de operadores de cámara y recepción de señales
+          de vídeo mediante mochilas Aviwest.
+        </li>
+      </ul>
+      <a class="enlace-video" onclick="alternarBloque('9', true)">
+        VER VIDEO
+      </a>
     </div>
 
-    <!-- PANTALLA 1: INFOGRAFÍA DE EQUIPOS -->
-    <div class="pantalla-foto">
-      <img loading="lazy"
-        src="gaveta/01video.webp"
-        alt="Experiencia en configuración y manejo de equipos Broadcast"
-      />
+    <div id="video-cliente-9" class="cliente-video-box">
+      <iframe
+        src="https://www.youtube.com/embed/knysD7mDBVA"
+        title="Quality Media - Realización deportiva en streaming"
+        allowfullscreen
+      ></iframe>
+      <a class="enlace-video" onclick="alternarBloque('9', false)"
+        >← Volver a la descripción</a
+      >
+    </div>
+  </div>
+
+  <div class="cliente-logo logo-quality">
+    <img loading="lazy" src="gaveta/quality.png" alt="Logo Quality Media" />
+  </div>
+</div>
+<!-- FIN CLIENTE Quality Media -->
+
+<!-- Sinopsis Vuvuzela -->
+<div class="cliente-fila">
+  <div class="cliente-contenido">
+    <div id="texto-cliente-10">
+      <h2 class="cliente-nombre">SINOPSIS VUVUZELA</h2>
+      <h3>Realizador de retransmisiones deportivas en streaming</h3>
+      <p class="cliente-descripcion">
+        Producción y emisión en directo de baloncesto en silla de ruedas, así como de fútbol sala y baloncesto de 2ª y 3ª división.
+      </p>
+      <ul class="cliente-descripcion">
+        <li>
+          <strong>Realización multicámara y repeticiones:</strong>
+          Mezcla de cámaras en directo y gestión de las repeticiones
+          multicanal con vMix durante todo el partido.
+        </li>
+        <li>
+          <strong>Grafismo en tiempo real:</strong>
+          Creación y lanzamiento de marcadores, rótulos y estadísticas en
+          directo con GT Title de vMix.
+        </li>
+        <li>
+          <strong>Producción remota:</strong>
+          Coordinación de los operadores de cámara durante la emisión y
+          recepción de señales por mochilas Aviwest.
+        </li>
+      </ul>
+      <a class="enlace-video" onclick="alternarBloque('10', true)">
+        VER VIDEO
+      </a>
     </div>
 
-    <!-- PANTALLA 2 -->
-    <div class="pantalla-foto">
-      <!-- <h2>Nombre o Proyecto de la Foto 2</h2> -->
-      <img loading="lazy" src="gaveta/02video.webp" alt="Proyecto Vídeo 2" />
+    <div id="video-cliente-10" class="cliente-video-box">
+      <iframe
+        src="https://www.youtube.com/embed/7qf4DOfY51o"
+        title="Sinopsis Vuvuzela - Mundial de Baloncesto en silla de ruedas 2026"
+        allowfullscreen
+      ></iframe>
+      <a class="enlace-video" onclick="alternarBloque('10', false)"
+        >← Volver a la descripción</a
+      >
+    </div>
+  </div>
+
+  <div class="cliente-logo logo-sinopsis">
+    <img loading="lazy" src="gaveta/sinopsis.png" alt="Logo Sinopsis Vuvuzela" />
+  </div>
+</div>
+<!-- FIN CLIENTE Sinopsis Vuvuzela -->
+
+<!-- Eventos híbridos y formación online -->
+<div class="cliente-fila">
+  <div class="cliente-contenido">
+    <div id="texto-cliente-11">
+      <h2 class="cliente-nombre">EVENTOS HÍBRIDOS Y FORMACIÓN ONLINE</h2>
+      <h3>Realización multicámara con participación remota</h3>
+      <p class="cliente-descripcion">
+        Realización de eventos, jornadas y formaciones que se viven a la vez en sala y en remoto, para clientes como BBVA Talks, eNubes, el Colegio Oficial de la Psicología de Madrid y el Consejo General de Graduados Sociales de España.
+      </p>
+      <ul class="cliente-descripcion">
+        <li>
+          <strong>Integración multicámara:</strong>
+          Realización en directo con vMix y TriCaster, combinando las cámaras
+          de sala con presentaciones, vídeos y grafismo.
+        </li>
+        <li>
+          <strong>Ponentes y asistentes en remoto:</strong>
+          Entrada de participantes por Microsoft Teams y Zoom integrados en la
+          realización, con retorno de programa y audio limpio para que la
+          conversación sala-remoto sea fluida.
+        </li>
+        <li>
+          <strong>Emisión y formación online:</strong>
+          Distribución de la señal a plataformas de streaming y aulas
+          virtuales para que los alumnos sigan la formación desde cualquier
+          lugar.
+        </li>
+      </ul>
+      <a class="enlace-video" onclick="alternarBloque('11', true)">
+        VER VIDEO
+      </a>
     </div>
 
-    <!-- PANTALLA 3 -->
-    <div class="pantalla-foto">
-      <!-- <h2>Nombre o Proyecto de la Foto 3</h2> -->
-      <img loading="lazy" src="gaveta/03video.webp" alt="Proyecto Vídeo 3" />
+    <div id="video-cliente-11" class="cliente-video-box">
+      <iframe
+        src="https://www.youtube.com/embed/lc2k_cRcu2Y"
+        title="BBVA Spark - Open Talks"
+        allowfullscreen
+      ></iframe>
+      <a class="enlace-video" onclick="alternarBloque('11', false)"
+        >← Volver a la descripción</a
+      >
+    </div>
+  </div>
+
+  <div class="cliente-logo logo-hibridos">
+    <img loading="lazy" src="gaveta/eventos-hibridos.svg" alt="Multiview de un evento híbrido con cámaras y entradas de Teams y Zoom" />
+  </div>
+</div>
+<!-- FIN Eventos híbridos y formación online -->
     </div>
 
-    <!-- PANTALLA 4 -->
-    <div class="pantalla-foto">
-      <!-- <h2>Nombre o Proyecto de la Foto 4</h2> -->
-      <img loading="lazy" src="gaveta/04video.webp" alt="Proyecto Vídeo 4" />
-    </div>
+    <!-- ================= EQUIPOS (antes infografías 01video-06video.webp) ================= -->
 
-    <!-- PANTALLA 5 -->
-    <div class="pantalla-foto">
-      <!-- <h2>Nombre o Proyecto de la Foto 5</h2> -->
-      <img loading="lazy" src="gaveta/05video.webp" alt="Proyecto Vídeo 5" />
-    </div>
+    <!-- BLOQUE 1: TRICASTER Y VIZRT -->
+    <section class="seccion-equipos">
+      <h2>Experiencia garantizada en la total configuración y el manejo en directo de los siguientes equipos</h2>
+      <div class="rejilla-equipos">
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/tc2-elite.webp" alt="TriCaster TC2 Elite" /></div>
+          <div class="info">
+            <h3>TriCaster TC2 Elite</h3>
+            <span class="etiqueta">Buque insignia hardware</span>
+            <ul>
+              <li>32 entradas totalmente 4K</li>
+              <li>8 M/Es para composición avanzada</li>
+              <li>2 canales Skype integrados para entrevistas remotas</li>
+              <li>Gestión I/O extensa e integración híbrida NDI/SDI</li>
+              <li>Capacidad de grabación avanzada y reproducción de medios integrada</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/tc1.webp" alt="TriCaster TC1" /></div>
+          <div class="info">
+            <h3>TriCaster TC1</h3>
+            <span class="etiqueta">Estándar profesional 4K</span>
+            <ul>
+              <li>16 entradas (hasta 4 4K)</li>
+              <li>4 M/Es para flujos de trabajo eficientes</li>
+              <li>2 canales Skype integrados para entrevistas remotas</li>
+              <li>Entradas híbridas SDI/NDI y fiabilidad comprobada en directos exigentes</li>
+              <li>Gestión completa de gráficos y automatización de macros</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto plana"><img loading="lazy" src="gaveta/equipos/viz-vectar.webp" alt="Viz Vectar" /></div>
+          <div class="info">
+            <h3>Viz Vectar</h3>
+            <span class="etiqueta">Producción cloud nativa</span>
+            <ul>
+              <li>Capacidad de canales masiva</li>
+              <li>Flujos NDI avanzados y fiabilidad enterprise</li>
+              <li>Gestión flexible de producciones híbridas</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/tricaster-flex-dual.webp" alt="Panel de control TriCaster Flex Dual" /></div>
+          <div class="info">
+            <h3>TriCaster Flex Dual Control Panel</h3>
+            <span class="etiqueta">Superficie de control para Vectar</span>
+            <ul>
+              <li>Panel de doble franja con 24 cruces directos y 2 M/E con T-bar propia</li>
+              <li>Joystick de tamaño completo, el primero en un panel de la serie Flex</li>
+              <li>Dos menús dinámicos de 10 teclas y botones con etiquetas LCD</li>
+              <li>Conexión nativa por NDI sobre Ethernet, sin depender de dónde esté el motor de producción</li>
+              <li>Control de Vectar y de los TriCaster TC1 y TC2 Elite</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/viz-3play.webp" alt="Viz 3Play V2" /></div>
+          <div class="info">
+            <h3>Viz 3Play V2</h3>
+            <span class="etiqueta">Repetición deportiva avanzada</span>
+            <ul>
+              <li>Multicanal y cámara lenta de alta precisión</li>
+              <li>Integración con sistemas Vizrt y flujos NDI</li>
+              <li>Capacidad de creación de reel de resumen en tiempo real</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/tricaster-mini.webp" alt="TriCaster Mini" /></div>
+          <div class="info">
+            <h3>TriCaster Mini</h3>
+            <span class="etiqueta">Solución ultraportátil</span>
+            <ul>
+              <li>8 entradas totalmente 4K</li>
+              <li>4 M/Es para producción live completa</li>
+              <li>2 canales Skype integrados para entrevistas remotas</li>
+              <li>Enfoque NDI simplificado ideal para eventos corporativos o remotos</li>
+              <li>Gestión ágil de entradas y salidas NDI en un formato compacto</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <!-- PANTALLA 6 -->
-    <div class="pantalla-foto">
-      <!-- <h2>Nombre o Proyecto de la Foto 6</h2> -->
-      <img loading="lazy" src="gaveta/06video.webp" alt="Proyecto Vídeo 6" />
-    </div>
+    <!-- BLOQUE 2: VMIX Y ATEM -->
+    <section class="seccion-equipos">
+      <h2>vMix y ecosistema Blackmagic ATEM</h2>
+      <div class="rejilla-equipos">
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/vmix.webp" alt="Software vMix" /></div>
+          <div class="info">
+            <h3>Software vMix</h3>
+            <ul>
+              <li>Producción en directo por software</li>
+              <li>Entradas (depende del hardware)</li>
+              <li>Soporte completo NDI y SRT</li>
+              <li>Chroma key y sets virtuales</li>
+              <li>Repetición instantánea</li>
+              <li>RTMP streaming integrado</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/atem-constellation.webp" alt="Mezclador ATEM 4 M/E Constellation 4K" /></div>
+          <div class="info">
+            <h3>Mezclador ATEM 4 M/E Constellation 4K</h3>
+            <ul>
+              <li>Mezclador broadcast de rack</li>
+              <li>49 entradas 12G-SDI con conversión de formato</li>
+              <li>24 salidas 12G-SDI auxiliares</li>
+              <li>4 mezcladores de efectos (M/E)</li>
+              <li>4 multiview independientes</li>
+              <li>Audio Fairlight avanzado (hasta 156 canales)</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/atem-2me-panel.webp" alt="ATEM 2 M/E Advanced Panel" /></div>
+          <div class="info">
+            <h3>ATEM 2 M/E Advanced Panel</h3>
+            <ul>
+              <li>Panel de control hardware profesional. 28 botones de entrada por banco M/E</li>
+              <li>2 pantallas LCD independientes para ajustes. Control de transiciones y palancas fader físicas, compatible con mezcladores ATEM grandes</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/atem-4me-studio.webp" alt="ATEM 4 M/E Broadcast Studio 4K" /></div>
+          <div class="info">
+            <h3>ATEM 4 M/E Broadcast Studio 4K</h3>
+            <ul>
+              <li>Mezclador de producción Ultra HD</li>
+              <li>18 entradas 12G-SDI con re-sync</li>
+              <li>6 salidas 12G-SDI auxiliares</li>
+              <li>4 ATEM Advanced Chroma Keyers</li>
+              <li>Audio Fairlight integrado (28 canales)</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/atem-1me-panel.webp" alt="ATEM 1 M/E Advanced Panel" /></div>
+          <div class="info">
+            <h3>ATEM 1 M/E Advanced Panel</h3>
+            <ul>
+              <li>Panel de control de hardware compacto. 19 botones de entrada con etiquetas LCD</li>
+              <li>Pantalla LCD integrada para ajustes rápidos</li>
+              <li>Diseño portátil para unidades móviles</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/atem-camera-control.webp" alt="ATEM Camera Control Panel" /></div>
+          <div class="info">
+            <h3>ATEM Camera Control Panel</h3>
+            <ul>
+              <li>Control remoto de hasta 4 cámaras</li>
+              <li>Ajuste de iris, ganancia y pedestal en tiempo real</li>
+              <li>Pantalla LCD y joysticks de precisión</li>
+              <li>Compatible con cámaras Blackmagic Design</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/atem-software-control.webp" alt="ATEM Software Control" /></div>
+          <div class="info">
+            <h3>ATEM Software Control</h3>
+            <ul>
+              <li>Control por software completo</li>
+              <li>Interfaz visual del mezclador</li>
+              <li>Gestión de medios, macros y ajustes del sistema</li>
+              <li>Gratuito con cualquier ATEM</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/atem-sdi-extreme.webp" alt="ATEM SDI Extreme ISO" /></div>
+          <div class="info">
+            <h3>ATEM SDI Extreme ISO</h3>
+            <ul>
+              <li>Mezclador de producción SDI de 8 entradas</li>
+              <li>Soporte hasta 1080p60</li>
+              <li>Grabación ISO de todas las entradas y la señal de programa</li>
+              <li>Streaming RTMP integrado</li>
+              <li>Proyecto DaVinci Resolve guardado automáticamente</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <!-- BANNER INFERIOR -->
-    <div class="banner-logos">
-      <span>MStudio</span>
-      <span>5G1</span>
-      <span>El Economista</span>
-      <span>Iberdrola</span>
-      <span>Mediapro</span>
-      <span>Secuoya</span>
-      <span>PRG</span>
-      <span>Tres60</span>
-      <span>TVE1</span>
-      <span>CyL</span>
-    </div>
+    <!-- BLOQUE 3: CÁMARAS, GRABACIÓN Y SEÑAL BLACKMAGIC -->
+    <section class="seccion-equipos">
+      <h2>Cámaras, grabación y gestión de señal Blackmagic</h2>
+      <div class="rejilla-equipos">
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/ursa-broadcast-g2.webp" alt="Blackmagic URSA Broadcast G2" /></div>
+          <div class="info">
+            <h3>BM URSA Broadcast G2</h3>
+            <ul>
+              <li>Sensor Super 35mm 6K e ISO dual</li>
+              <li>Montura de lente intercambiable (B4, PL, EF, F)</li>
+              <li>Filtros ND motorizados integrados (2, 4, 6 pasos)</li>
+              <li>Graba Blackmagic RAW, ProRes, H.264/H.265</li>
+              <li>12G-SDI y streaming directo vía SRT/RTMP</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/pocket-6k-pro.webp" alt="Blackmagic Pocket Cinema 6K Pro" /></div>
+          <div class="info">
+            <h3>BM Pocket Cinema 6K Pro</h3>
+            <ul>
+              <li>Sensor S35 6144 x 3456 (13 pasos de rango dinámico)</li>
+              <li>Filtros ND motorizados integrados (2, 4, 6 pasos)</li>
+              <li>Pantalla táctil HDR de 5" (1500 nits)</li>
+              <li>Graba Blackmagic RAW y ProRes en SD/CFast/USB-C dual</li>
+              <li>Audio profesional, soporte para LUT</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/micro-studio-4k-g2.webp" alt="Blackmagic Micro Studio Camera 4K G2" /></div>
+          <div class="info">
+            <h3>BM Micro Studio Camera 4K G2</h3>
+            <ul>
+              <li>Cámara de estudio UHD 4K ultracompacta</li>
+              <li>Montura de lente MFT activa</li>
+              <li>Conexión 12G-SDI para 2160p60</li>
+              <li>Control remoto de color, foco e iris desde el mezclador (SDI)</li>
+              <li>Talkback a través de los canales SDI 15/16</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/hyperdeck-4k-pro.webp" alt="Blackmagic HyperDeck Studio 4K Pro" /></div>
+          <div class="info">
+            <h3>BM HyperDeck Studio 4K Pro</h3>
+            <ul>
+              <li>Grabador broadcast UHD 4K 12G-SDI</li>
+              <li>Grabación H.264/H.265 / ProRes / DNx</li>
+              <li>Tarjetas SD o SSD duales</li>
+              <li>Ethernet 10G y dial de búsqueda mecanizado</li>
+              <li>Control de pletina RS-422</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/teranex.webp" alt="Blackmagic Teranex" /></div>
+          <div class="info">
+            <h3>BM Teranex</h3>
+            <ul>
+              <li>Conversión de estándares Teranex patentada</li>
+              <li>Más de 1000 conversiones up/down/cross</li>
+              <li>Baja latencia (&lt;1 frame)</li>
+              <li>Procesamiento de 10 bits y corrector de color</li>
+              <li>Búfer de imágenes fijas de entrada</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/videohub-40x40.webp" alt="Blackmagic Videohub 40x40 12G" /></div>
+          <div class="info">
+            <h3>Videohub 40x40 12G</h3>
+            <ul>
+              <li>Enrutador 12G-SDI de latencia cero</li>
+              <li>40 entradas y 40 salidas</li>
+              <li>Resincronización (re-clocking) en todas las entradas y salidas</li>
+              <li>LCD integrado para enrutamiento visual</li>
+              <li>Control por dial y remoto por Ethernet</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/video-assist-12g.webp" alt="Blackmagic Video Assist 12G" /></div>
+          <div class="info">
+            <h3>BM Video Assist 12G</h3>
+            <ul>
+              <li>Monitor/grabador HDR 12G-SDI y HDMI</li>
+              <li>Grabación UHD 4K en SD / USB-C</li>
+              <li>Graba ProRes, DNx y Blackmagic RAW</li>
+              <li>Herramientas: forma de onda, vectorscopio, LUTs</li>
+              <li>Baterías duales intercambiables en caliente</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto vitrina"><img loading="lazy" src="gaveta/equipos/talkback-converter.webp" alt="Blackmagic Talkback Converter 4K" /></div>
+          <div class="info">
+            <h3>BM Talkback Converter 4K</h3>
+            <ul>
+              <li>Conversor de talkback para hasta 8 cámaras</li>
+              <li>Utiliza el 12G-SDI existente para talkback</li>
+              <li>Conversión I/O a través de fibra óptica</li>
+              <li>Tally/color controlado remotamente por el mezclador</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOQUE 4: ESTABILIZADORES, PTZ Y CONTROLADORES -->
+    <section class="seccion-equipos">
+      <h2>Cámaras PTZ, controladores y estabilización</h2>
+      <div class="rejilla-equipos">
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/dji-rs5.webp" alt="DJI RS 5 Combo" /></div>
+          <div class="info">
+            <h3>DJI RS 5 Combo</h3>
+            <ul>
+              <li>Estabilizador de cámara para entornos profesionales</li>
+              <li>Capacidad de carga de hasta 3 kg y peso reducido</li>
+              <li>Algoritmo de estabilización RS de 5ª generación</li>
+              <li>Autonomía extendida y carga rápida mediante USB-PD</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/aw-ue80.webp" alt="Panasonic AW-UE80" /></div>
+          <div class="info">
+            <h3>Panasonic AW-UE80</h3>
+            <ul>
+              <li>Cámara PTZ profesional 4K con sensor MOS de 1/2,5"</li>
+              <li>Zoom óptico 24x y objetivo gran angular de 74,1°</li>
+              <li>Compatibilidad nativa con NDI de alto ancho de banda, SRT y FreeD</li>
+              <li>Mecanismo de accionamiento directo para movimientos silenciosos y rápidos</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/aw-ue100.webp" alt="Panasonic AW-UE100KEJ" /></div>
+          <div class="info">
+            <h3>Panasonic AW-UE100KEJ</h3>
+            <ul>
+              <li>Cámara PTZ 4K 60p/50p de alto rendimiento</li>
+              <li>Soporte para protocolos NDI completo, NDI|HX y SRT</li>
+              <li>Zoom óptico de 24x con ángulo de visión horizontal de 74,1°</li>
+              <li>Compatible con FreeD para sistemas de realidad virtual y aumentada (AR/VR)</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto vitrina"><img loading="lazy" src="gaveta/equipos/aw-ue160.webp" alt="Panasonic AW-UE160WEJ" /></div>
+          <div class="info">
+            <h3>Panasonic AW-UE160WEJ</h3>
+            <ul>
+              <li>Cámara PTZ integrada 4K con sensor MOS de tipo 1.0</li>
+              <li>Alta sensibilidad equivalente a cámara de estudio</li>
+              <li>Enfoque automático por detección de fase (PDAF) de nueva generación</li>
+              <li>Zoom óptico de 20x con amplio ángulo de visión</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/aw-rp150.webp" alt="Panasonic AW-RP150GJ" /></div>
+          <div class="info">
+            <h3>Panasonic AW-RP150GJ</h3>
+            <ul>
+              <li>Controlador remoto de cámaras PTZ con pantalla táctil LCD de gran tamaño</li>
+              <li>Joystick de diseño ergonómico para operación sencilla con una sola mano</li>
+              <li>Gestión simplificada de preajustes y memoria de trayectoria</li>
+              <li>Salida activa 3G-SDI, puertos RS-422 y conectividad LAN PoE+</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/canon-cr-n700.webp" alt="Canon CR-N700" /></div>
+          <div class="info">
+            <h3>Canon CR-N700</h3>
+            <ul>
+              <li>Cámara PTZ profesional 4K UHD 60p con muestreo 4:2:2 a 10 bits</li>
+              <li>Sensor CMOS de tipo 1,0 y potente procesador DIGIC DV7</li>
+              <li>Enfoque automático Dual Pixel CMOS AF con EOS iTR AF X y detección de ojos</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/canon-rc-ip1000.webp" alt="Canon RC-IP1000" /></div>
+          <div class="info">
+            <h3>Canon RC-IP1000</h3>
+            <ul>
+              <li>Controlador profesional para gestión y supervisión de hasta 200 cámaras PTZ</li>
+              <li>Pantalla táctil multifunción de 7 pulgadas para vídeo en directo y configuración</li>
+              <li>Palanca de control ergonómica (joystick) e interruptor basculante de zoom</li>
+              <li>Entradas y salidas 12G-SDI, HDMI, puertos RS-422 y conectividad LAN/PoE+</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/birddog-p200.webp" alt="BirdDog Eyes P200 y PTZ Keyboard" /></div>
+          <div class="info">
+            <h3>BirdDog Eyes P200 + PTZ Keyboard</h3>
+            <ul>
+              <li>Cámara PTZ Full HD con sensor Sony CMOS retroiluminado</li>
+              <li>Zoom óptico de 30x y salidas independientes en SDI, HDMI y Full NDI</li>
+              <li>Teclado controlador PTZ compatible con NDI, VISCA sobre IP, RS422 y RS232</li>
+              <li>Joystick de precisión y controles dedicados para exposición, foco y balance de blancos</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOQUE 5: KILOVIEW -->
+    <section class="seccion-equipos">
+      <h2>Codificación y transmisión IP con Kiloview</h2>
+      <div class="rejilla-equipos">
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/kiloview-cradle.webp" alt="Kiloview Cradle RU01" /></div>
+          <div class="info">
+            <h3>Kiloview Cradle RU01</h3>
+            <ul>
+              <li>Chasis de montaje en rack de 1RU con capacidad para hasta 4 módulos encoders/decoders</li>
+              <li>Fuentes de alimentación duales y redundantes para funcionamiento continuo e ininterrumpido</li>
+              <li>Sistema de refrigeración activa integrada con control de temperatura centralizado</li>
+              <li>Compatibilidad con tarjetas modulares de procesamiento NDI|HX, SRT, RTMP y HLS</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/kiloview-ren1v2.webp" alt="Kiloview REN-1v2" /></div>
+          <div class="info">
+            <h3>Kiloview REN-1v2</h3>
+            <ul>
+              <li>Módulo codificador HD/3G-SDI a NDI|HX e IP compatible con chasis Kiloview Cradle</li>
+              <li>Codificación de vídeo en formato H.264/AVC con resolución de hasta 1080p60</li>
+              <li>Conexiones físicas que incluyen 1 entrada SDI, 1 salida loop SDI y entrada de audio analógico de 3,5 mm</li>
+              <li>Transmisión dual simultánea con soporte para protocolos SRT, RTMP, HLS y TS vía Ethernet</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/kiloview-e1s.webp" alt="Kiloview E1-s IP HD" /></div>
+          <div class="info">
+            <h3>Kiloview E1-s IP HD</h3>
+            <ul>
+              <li>Codificador H.264 con entrada HD/3G-SDI y salida loop integrada</li>
+              <li>Soporte Full HD hasta 1080p60 con una latencia inferior a 68 ms</li>
+              <li>Transmisión dual simultánea para protocolos SRT, RTMP, HLS y TS</li>
+              <li>Incluye audio analógico 3,5 mm, ranura micro SD y expansión USB</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/kiloview-e2.webp" alt="Kiloview E2 HDMI" /></div>
+          <div class="info">
+            <h3>Kiloview E2 HDMI</h3>
+            <ul>
+              <li>Codificador H.264 con entrada HDMI y salida loop integrada</li>
+              <li>Soporte Full HD hasta 1080p60 con una latencia inferior a 68 ms</li>
+              <li>Transmisión dual simultánea para protocolos NDI|HX, SRT, RTMP y HLS</li>
+              <li>Incluye audio analógico 3,5 mm, ranura micro SD y expansión USB</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/kiloview-rmg300.webp" alt="Kiloview RMG-300" /></div>
+          <div class="info">
+            <h3>Kiloview RMG-300</h3>
+            <ul>
+              <li>Gateway de medios de alto rendimiento para conversión, enrutamiento y distribución de vídeo IP</li>
+              <li>Soporte multiprotocolo bidireccional compatible con NDI|HX, SRT, RTMP, RTSP, HLS y TS</li>
+              <li>Capacidad de procesamiento de alta densidad para la gestión de múltiples canales simultáneos</li>
+              <li>Interfaz web centralizada para supervisión y escalabilidad en entornos broadcast</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/kiloview-n3s.webp" alt="Kiloview N3-S" /></div>
+          <div class="info">
+            <h3>Kiloview N3-S</h3>
+            <ul>
+              <li>Conversor bidireccional 3G-SDI a NDI de alto ancho de banda (Full NDI)</li>
+              <li>Soporte Full HD hasta 1080p60 con entrada SDI y salida loop integrada</li>
+              <li>Alimentación mediante PoE y soporte para control de cámaras PTZ vía USB</li>
+              <li>Incluye luz tally de gran tamaño y audio analógico in/out de 3,5 mm</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/kiloview-ren2.webp" alt="Kiloview Ren-2" /></div>
+          <div class="info">
+            <h3>Kiloview Ren-2</h3>
+            <ul>
+              <li>Módulo codificador de vídeo H.265/H.264 diseñado para su integración en el chasis Kiloview Cradle</li>
+              <li>Procesamiento de señal con entrada de vídeo y salida loop activa con una latencia inferior a 68 ms</li>
+              <li>Transmisión dual simultánea y compatibilidad multiprotocolo para NDI|HX, SRT, RTMP, HLS y TS</li>
+              <li>Conexión de audio analógico de 3,5 mm, soporte para funciones intercom y gestión centralizada vía web</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/kiloview-e3.webp" alt="Kiloview E3" /></div>
+          <div class="info">
+            <h3>Kiloview E3</h3>
+            <ul>
+              <li>Codificador H.265/H.264 con entradas duales HDMI y 3G-SDI, ambas con salida loop integrada</li>
+              <li>Procesamiento simultáneo de señales hasta 4Kp30 vía HDMI y 1080p60 vía SDI de forma independiente</li>
+              <li>Transmisión multiprotocolo y multidestino con soporte para NDI|HX, SRT, RTMP, RTSP y HLS</li>
+              <li>Interfaz con pantalla LCD frontal, puertos Ethernet Gigabit duales, PoE y audio analógico de 3,5 mm</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOQUE 6: NDI Y GESTIÓN IP -->
+    <section class="seccion-equipos">
+      <h2>Conversión NDI y gestión de redes IP</h2>
+      <div class="rejilla-equipos">
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/kilolink-server.webp" alt="KiloLink Server Pro" /></div>
+          <div class="info">
+            <h3>KiloLink Server Pro</h3>
+            <ul>
+              <li>Plataforma de gestión centralizada y multiplexación (bonding) de redes para ecosistemas Kiloview</li>
+              <li>Despliegue flexible basado en Linux, compatible tanto con servidores locales como entornos cloud</li>
+              <li>Enrutamiento avanzado de señales IP con soporte completo para protocolos SRT, NDI, RTMP y RTSP</li>
+              <li>Supervisión de hardware en tiempo real con control detallado de ancho de banda y estado de red</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/kiloview-n50.webp" alt="Kiloview N50" /></div>
+          <div class="info">
+            <h3>Kiloview N50</h3>
+            <ul>
+              <li>Conversor bidireccional 12G-SDI a NDI de alto ancho de banda (Full NDI)</li>
+              <li>Capacidad para codificar o decodificar vídeo 4K en NDI High Bandwidth, NDI HX y protocolos IP como SRT, RTMP, RTSP o HLS</li>
+              <li>Interfaz física con entrada 12G-SDI y salida loop activa</li>
+              <li>Conectividad mediante Ethernet Gigabit con soporte de alimentación PoE</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/spark-plus-4k.webp" alt="Vizrt Spark Plus 4K" /></div>
+          <div class="info">
+            <h3>Vizrt Spark Plus 4K</h3>
+            <ul>
+              <li>Conversor IP bidireccional para NDI High Bandwidth (Full NDI) con latencia cercana a cero</li>
+              <li>Interfaz HDMI de entrada y salida para procesamiento de señales hasta 4K UHD 60p</li>
+              <li>Conectividad Ethernet Gigabit con alimentación PoE para instalación mediante un solo cable</li>
+              <li>Indicadores tally físicos integrados y configuración remota completa mediante interfaz web</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/birddog-play-pro.webp" alt="BirdDog Play Pro" /></div>
+          <div class="info">
+            <h3>BirdDog Play Pro</h3>
+            <ul>
+              <li>Decodificador hardware ultracompacto para conversión de flujos de vídeo IP a HDMI</li>
+              <li>Soporte de decodificación hasta resolución 4K UHD 60p a través de su salida HDMI 2.0</li>
+              <li>Compatibilidad completa con el ecosistema NDI 5, NDI|HX2, NDI|HX3 y protocolos SRT</li>
+              <li>Conectividad Ethernet Gigabit con alimentación versátil mediante puerto estándar USB-C</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/birddog-studio-ndi.webp" alt="BirdDog Studio NDI" /></div>
+          <div class="info">
+            <h3>BirdDog Studio NDI</h3>
+            <ul>
+              <li>Encoder/decoder bidireccional con entradas y salidas 3G-SDI y HDMI, incluyendo conversión cruzada (cross conversion)</li>
+              <li>Procesamiento NDI High Bandwidth (Full NDI) para resoluciones hasta 1080p60 con latencia ultrabaja</li>
+              <li>Pantalla tally de gran visibilidad integrada en el chasis y compatibilidad con la plataforma de intercom BirdDog Comms</li>
+              <li>Conectividad Ethernet con alimentación versátil a través de PoE (Power over Ethernet) o entrada DC estándar</li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta-equipo">
+          <div class="foto"><img loading="lazy" src="gaveta/equipos/birddog-flex-4k.webp" alt="BirdDog Flex 4K" /></div>
+          <div class="info">
+            <h3>BirdDog Flex 4K</h3>
+            <ul>
+              <li>Conversor NDI ultracompacto en versiones de entrada (IN, HDMI a NDI) y salida (OUT, NDI a HDMI)</li>
+              <li>Trabajo en resoluciones de hasta 4K UHD con Full NDI y NDI|HX</li>
+              <li>Alimentación PoE por el mismo cable de red, ideal para montajes rápidos sin fuentes adicionales</li>
+              <li>Tally integrado y configuración remota mediante interfaz web</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
 
     <script>
       function alternarBloque(id, mostrarVideo) {
@@ -690,5 +1458,6 @@
         }
       }
     </script>
+    <script src="banner-clientes.js"></script>
   </body>
 </html>

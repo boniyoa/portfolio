@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Streaming y Automatizaciones - Borja Bonilla</title>
+    <link rel="icon" href="gaveta/favicon.png" type="image/png" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
 
@@ -22,6 +23,7 @@
 
       body {
         margin: 0;
+        padding-bottom: 60px; /* hueco para el banner fijo de abajo */
         background:
           linear-gradient(rgba(17, 24, 39, 0.25), rgba(17, 24, 39, 0.25)),
           url("gaveta/fondo-general.webp") center center / cover no-repeat fixed;
@@ -204,6 +206,156 @@
         }
       }
 
+      /* Tarjetas de equipos: copia del bloque 6 de style.css (esta página no carga style.css) */
+      .seccion-equipos {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 70px 24px 40px;
+      }
+
+      .seccion-equipos + .seccion-equipos {
+        padding-top: 20px;
+      }
+
+      .seccion-equipos h2 {
+        font-family: "DepartureMono", monospace;
+        font-size: clamp(1.3rem, 2.6vw, 2.3rem);
+        line-height: 1.3;
+        text-transform: uppercase;
+        text-align: center;
+        color: #111827;
+        margin: 0 auto 40px;
+        max-width: 1000px;
+      }
+
+      /* Rejilla: las tarjetas se recolocan solas según el ancho de pantalla.
+         Con flex + justify-content: center, las filas incompletas quedan centradas */
+      .rejilla-equipos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 70px 24px; /* más separación vertical: las fotos sobresalen por arriba */
+        padding-top: 50px;
+      }
+
+      .tarjeta-equipo {
+        /* 5 por fila (100% menos los 4 huecos de 24px, entre 5); nunca más estrechas de 220px */
+        flex: 0 0 calc((100% - 4 * 24px) / 5);
+        min-width: 220px;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.94);
+        border: 2px solid #6b8fe8;
+        border-radius: 16px;
+        overflow: visible; /* deja que la foto salga de la tarjeta */
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .tarjeta-equipo:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+      }
+
+      /* Zona de la foto: la imagen se apoya abajo y, al ser más alta que la caja, sobresale por arriba */
+      .tarjeta-equipo .foto {
+        height: 140px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 0 10px 14px;
+        border-bottom: 1px solid #e5e7eb;
+        border-radius: 14px 14px 0 0;
+        background: linear-gradient(#ffffff, #eef2fb);
+      }
+
+      .tarjeta-equipo .foto img {
+        position: relative;
+        z-index: 2;
+        max-width: 110%;
+        max-height: 190px;
+        object-fit: contain;
+        /* drop-shadow sigue la silueta del aparato (box-shadow seguiría el rectángulo) */
+        filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.28));
+        transition: transform 0.35s ease;
+      }
+
+      .tarjeta-equipo:hover .foto img {
+        transform: scale(1.06) translateY(-4px);
+      }
+
+      /* Aparatos blancos y capturas de pantalla: tienen fondo blanco, se quedan dentro de la caja */
+      .tarjeta-equipo .foto.plana {
+        height: 170px;
+        align-items: center;
+        padding: 12px;
+        background: #ffffff;
+      }
+
+      .tarjeta-equipo .foto.plana img {
+        max-width: 100%;
+        max-height: 100%;
+        filter: none;
+      }
+
+      /* Aparatos blancos: fondo oscuro tipo vitrina para que destaquen */
+      .tarjeta-equipo .foto.vitrina {
+        height: 170px;
+        align-items: center;
+        padding: 14px;
+        background: radial-gradient(ellipse at 50% 40%, #3b4a63 0%, #1b2333 75%);
+        border-bottom: none;
+      }
+
+      .tarjeta-equipo .foto.vitrina img {
+        max-width: 100%;
+        max-height: 100%;
+        filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.55));
+      }
+
+      .tarjeta-equipo .info {
+        padding: 18px 20px 22px;
+      }
+
+      .tarjeta-equipo h3 {
+        font-family: "DepartureMono", monospace;
+        font-size: 1.05rem;
+        text-transform: uppercase;
+        color: #111827;
+        margin: 0 0 10px;
+      }
+
+      /* Etiqueta corta bajo el nombre (p. ej. "Buque insignia hardware") */
+      .tarjeta-equipo .etiqueta {
+        display: inline-block;
+        font-family: "DepartureMono", monospace;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #1d4ed8;
+        background: #dbeafe;
+        border-radius: 999px;
+        padding: 3px 10px;
+        margin: 0 0 12px;
+      }
+
+      .tarjeta-equipo ul {
+        margin: 0;
+        padding-left: 18px;
+        font-family: "League Gothic", "Arial Narrow", sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        color: #374151;
+      }
+
+      .tarjeta-equipo li {
+        margin-bottom: 4px;
+      }
+
+      .tarjeta-equipo li::marker {
+        color: #2563eb;
+      }
+
       /* ----- ESTILOS DE STREAMING.HTML ----- */
       .streaming-section {
         width: 100%;
@@ -283,6 +435,13 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         font-weight: bold;
+      }
+
+      /* Móvil: las fichas ocupan todo el ancho */
+      @media (max-width: 520px) {
+        .tarjeta-equipo {
+          flex-basis: 100%;
+        }
       }
 
       @media (max-width: 768px) {
@@ -725,30 +884,317 @@
 
       <section class="streaming-section">
         <div class="contenedor-galeria">
-          <a href="00.portada_portfolio.html" class="boton-volver">← Volver</a>
+          <a href="index.html" class="boton-volver">← Volver</a>
 
-          <div class="pantalla-foto">
-            <img loading="lazy" src="gaveta/01streaming.webp" alt="Streaming 1" />
-          </div>
+          <!-- ================= EQUIPOS (antes infografías 01streaming-04streaming.webp) ================= -->
 
-          <div class="pantalla-foto">
-            <img loading="lazy" src="gaveta/02streaming.webp" alt="Streaming 2" />
-          </div>
+          <!-- BLOQUE 1: SERVIDORES DE STREAMING Y MOCHILAS -->
+          <section class="seccion-equipos">
+            <h2>Experiencia garantizada en la total configuración y el manejo en directo de los siguientes equipos</h2>
+            <div class="rejilla-equipos">
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/nimble-streamer.webp" alt="Esquema de Softvelum Nimble Streamer" /></div>
+                <div class="info">
+                  <h3>Softvelum Nimble Streamer</h3>
+                  <ul>
+                    <li>Servidor de streaming por software de alta eficiencia y bajo consumo de recursos para distribución de vídeo</li>
+                    <li>Soporte multiprotocolo integral compatible con SRT, NDI, RTMP, WebRTC, HLS y MPEG-DASH</li>
+                    <li>Soporte multiplataforma compatible con envíos personalizados a TV broadcast y todas las plataformas de streaming (YouTube, Facebook, Twitch, TikTok, LinkedIn, Dailymotion, etc.)</li>
+                    <li>Transcodificación de vídeo en directo con aceleración por hardware y soporte para códecs H.264 y H.265/HEVC</li>
+                    <li>Inserción dinámica de anuncios (SSAI) y protección de contenido avanzada mediante sistemas DRM estándar</li>
+                    <li>Configuración, enrutamiento y supervisión centralizada en tiempo real mediante la interfaz web WMSPanel</li>
+                    <li>Protección de contenido de extremo a extremo mediante cifrado y sistemas DRM estándar (Widevine, FairPlay, PlayReady)</li>
+                    <li>Motor de grabación digital (DVR) integrado con capacidad de retroceso (time-shift) en emisiones en vivo</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/haivision-streamhub.webp" alt="Haivision StreamHub Server" /></div>
+                <div class="info">
+                  <h3>Haivision StreamHub Server</h3>
+                  <ul>
+                    <li>Receptor, decodificador y transcodificador de los flujos enviados por las mochilas Haivision y Aviwest (Pro380, Pro 340, AIR200)</li>
+                    <li>Recepción de múltiples señales en directo mediante el protocolo SST (Safe Streams Transport) con baja latencia</li>
+                    <li>Salidas de vídeo por SDI e IP (SRT, NDI, RTMP, HLS) para entregar la señal al control de realización o a plataformas de streaming</li>
+                    <li>Envío de vídeo de retorno e intercomunicación (IFB) hacia los operadores de cámara en campo</li>
+                    <li>Gestión y supervisión centralizada de los transmisores mediante interfaz web y la plataforma Haivision Hub</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/haivision-pro380.webp" alt="Haivision Pro380" /></div>
+                <div class="info">
+                  <h3>Haivision Pro380</h3>
+                  <ul>
+                    <li>Transmisor móvil celular tipo mochila de alto rendimiento para transmisión de vídeo en directo</li>
+                    <li>Tecnología de agregación de redes (IP bonding) combinando múltiples módems 4G/5G y conexiones IP</li>
+                    <li>Codificación de vídeo avanzada con soporte para H.265/HEVC y H.264/AVC con baja latencia</li>
+                    <li>Protocolo de transporte SST (Safe Streams Transport) para garantizar estabilidad ante fluctuaciones de red</li>
+                    <li>Diseño físico robusto y portátil con sistema de refrigeración activa para condiciones de campo exigentes</li>
+                    <li>Capacidad de doble enlace para streaming simultáneo y retorno de vídeo o intercomunicación (IFB)</li>
+                    <li>Interfaz de gestión táctil integrada y control remoto centralizado mediante la plataforma Haivision Hub</li>
+                    <li>Entradas de vídeo profesionales SDI y HDMI con detección automática de formatos HD y SD</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/aviwest-pro340.webp" alt="Aviwest Pro 340" /></div>
+                <div class="info">
+                  <h3>Aviwest Pro 340</h3>
+                  <ul>
+                    <li>Transmisor celular portátil para emisión de vídeo en directo con codificación avanzada H.265/HEVC y H.264/AVC</li>
+                    <li>Tecnología de agregación de redes (IP bonding) que combina módems celulares internos, Wi-Fi y conexiones Ethernet</li>
+                    <li>Protocolo de transporte SST (Safe Streams Transport) para garantizar una señal estable y de baja latencia en redes inestables</li>
+                    <li>Entradas de vídeo profesionales HD/SD-SDI y HDMI con reconocimiento automático de formatos y resoluciones</li>
+                    <li>Capacidad de grabación interna simultánea en tarjeta SD (dual encoding) para respaldo o envío en diferido (store and forward)</li>
+                    <li>Sistema de comunicación bidireccional (IFB / intercom) integrado para contacto de voz en tiempo real con el estudio</li>
+                    <li>Pantalla táctil intuitiva en el chasis para una configuración rápida y supervisión del flujo de vídeo en campo</li>
+                    <li>Diseño preparado para largas jornadas en exteriores mediante alimentación con baterías profesionales tipo V-Mount o Gold Mount</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/aviwest-air200.webp" alt="Aviwest AIR200" /></div>
+                <div class="info">
+                  <h3>Aviwest AIR200</h3>
+                  <ul>
+                    <li>Transmisor celular ultracompacto y ligero diseñado para retransmisiones en directo y cobertura de noticias en movimiento</li>
+                    <li>Codificación de vídeo de alta eficiencia con soporte hardware para compresión H.265/HEVC y H.264/AVC</li>
+                    <li>Tecnología de agregación IP (bonding) que combina múltiples conexiones 3G/4G, Wi-Fi y Ethernet simultáneamente</li>
+                    <li>Equipado con protocolo SST (Safe Streams Transport) para transmisión continua incluso en condiciones de red extremadamente fluctuantes</li>
+                    <li>Interfaces de vídeo con entradas HD-SDI y HDMI, compatibles con resoluciones hasta 1080p60</li>
+                    <li>Batería interna recargable de larga duración (hasta 3 horas de autonomía) para operación totalmente autónoma sin cables</li>
+                    <li>Almacenamiento interno y ranura SD para grabación de vídeo simultánea y transmisión en diferido (store and forward)</li>
+                    <li>Pantalla frontal y botonera integradas para configuración rápida, supervisión de señal y estado de las conexiones en campo</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </section>
 
-          <div class="pantalla-foto">
-            <img loading="lazy" src="gaveta/03streaming.webp" alt="Streaming 3" />
-          </div>
+          <!-- BLOQUE 2: INTERCOM, TELEPRÓMPTER Y ENLACES INALÁMBRICOS -->
+          <section class="seccion-equipos">
+            <h2>Intercom, teleprómpter y enlaces de vídeo inalámbricos</h2>
+            <div class="rejilla-equipos">
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/hollyland-solidcom.webp" alt="Hollyland Solidcom C1" /></div>
+                <div class="info">
+                  <h3>Hollyland Solidcom C1</h3>
+                  <ul>
+                    <li>Sistema inalámbrico full-duplex (1.9 GHz) con un alcance operativo de hasta 350 metros en línea de visión directa</li>
+                    <li>Función UAC (clase de audio USB) que permite que el sistema de intercomunicación se una a aplicaciones de videoconferencias en línea como Zoom o Skype</li>
+                    <li>Tecnología de cancelación de ruido ambiental (ENC) mediante doble micrófono para comunicaciones claras en entornos ruidosos</li>
+                    <li>Brazo de micrófono abatible con función de silencio (mute) automático al levantarlo y botón push-to-talk (PTT) dedicado</li>
+                    <li>Baterías extraíbles de carga rápida que proporcionan hasta 10 horas de autonomía en cada auricular remoto</li>
+                    <li>Construcción ultraligera diseñada para evitar la fatiga durante largas jornadas de producción y eventos</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto plana"><img loading="lazy" src="gaveta/equipos/unity-intercom.webp" alt="Unity Intercom" /></div>
+                <div class="info">
+                  <h3>Unity Intercom</h3>
+                  <ul>
+                    <li>Sistema de intercomunicación basado en IP y servidor cloud, con arquitectura de servidor Mac y aplicaciones cliente multiplataforma</li>
+                    <li>Soporte escalable para hasta 128 canales de línea compartida (party-line) y 64 grupos de usuarios simultáneos</li>
+                    <li>Conectividad remota global a través de redes Wi-Fi o datos móviles con transmisión de audio de baja latencia y calidad broadcast</li>
+                    <li>Capacidad de enrutamiento integrada para recibir y enviar hasta 64 flujos de audio externos (program feed y mix-minus)</li>
+                    <li>Integración directa con sistemas de comunicación de terceros mediante interfaces de audio I/O o Dante Virtual Soundcard</li>
+                    <li>Compatibilidad nativa con superficies de control físico como Elgato Stream Deck y X-Keys para gestión y acceso directo a canales</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/autocue.webp" alt="Autocue teleprómpter" /></div>
+                <div class="info">
+                  <h3>Autocue Teleprompter</h3>
+                  <ul>
+                    <li>Monitor de alto brillo de hasta 1500 nits para lectura clara en entornos de estudio broadcast y exteriores</li>
+                    <li>Cristal divisor de haz (beamsplitter) 70/30 de calidad óptica para preservar la transmisión íntegra de luz hacia la cámara</li>
+                    <li>Sistema de montaje mecánico totalmente ajustable y compatible con configuraciones de cámaras ENG, EFP y PTZ</li>
+                    <li>Interfaces de vídeo profesionales que incluyen entradas HD/3G-SDI, HDMI y compuesto con salida loop activa</li>
+                    <li>Software integrado con soporte nativo para sistemas informáticos de redacción de noticias (NRCS) mediante protocolo MOS</li>
+                    <li>Periféricos de desplazamiento de velocidad variable controlados mediante mandos de mano ergonómicos o pedales de suelo</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/teradek-ranger.webp" alt="Teradek Ranger MK II 2500" /></div>
+                <div class="info">
+                  <h3>Teradek Ranger MK II 2500</h3>
+                  <ul>
+                    <li>Sistema de transmisión de vídeo inalámbrico de latencia cero (&lt;1 ms) con un alcance operativo de hasta 760 metros (2500 pies)</li>
+                    <li>Transmisión de señal en resoluciones de hasta 4K HDR a 60p con muestreo de color 4:2:2 a 10 bits</li>
+                    <li>Operación en espectro de frecuencia extendido de 4,9 a 6,425 GHz (incluyendo banda UNII-5 de 6 GHz) para evitar saturación de RF</li>
+                    <li>Conectividad broadcast mediante entradas y salidas 12G-SDI y HDMI 2.0 con conversión cruzada integrada</li>
+                    <li>Cifrado de datos AES-256 para protección y transmisión segura de flujos de vídeo en tiempo real</li>
+                    <li>Pantalla OLED integrada y gestión inalámbrica mediante la aplicación Launchpad para emparejamiento y análisis de espectro</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </section>
 
-          <div class="pantalla-foto">
-            <img loading="lazy" src="gaveta/04streaming.webp" alt="Streaming 4" />
-          </div>
+          <!-- BLOQUE 3: CONTROL Y AUTOMATIZACIÓN -->
+          <section class="seccion-equipos">
+            <h2>Control y automatización de la realización</h2>
+            <div class="rejilla-equipos">
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/bitfocus-companion.webp" alt="Logo de Bitfocus Companion" /></div>
+                <div class="info">
+                  <h3>Bitfocus Companion</h3>
+                  <ul>
+                    <li>Software de control y automatización multiplataforma diseñado para integrar y gestionar equipos de producción audiovisual mediante red IP</li>
+                    <li>Amplia biblioteca de módulos integrados para control bidireccional de mezcladores (ATEM, Vizrt), cámaras PTZ, matrices, reproductores y sistemas de iluminación</li>
+                    <li>Especialización en la gestión de dispositivos remota vía OSC, MIDI, HTTP request…</li>
+                    <li>Interfaz de gestión basada en web que permite programar macros complejas, botones dinámicos con retroalimentación visual (feedback) y lógica de variables</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/central-control.webp" alt="Logo de Central Control" /></div>
+                <div class="info">
+                  <h3>Central Control</h3>
+                  <ul>
+                    <li>Software de control universal diseñado para unificar la gestión de equipos de producción audiovisual mediante el mapeo de protocolos de múltiples fabricantes en directo</li>
+                    <li>Compatibilidad integral con una amplia gama de superficies de control físicas, transformando controladores MIDI, Stream Decks y paneles X-Keys en mesas de realización broadcast totalmente personalizadas</li>
+                    <li>Integración nativa bidireccional con los principales mezcladores de vídeo y sistemas de repetición, permitiendo el control fluido de entornos basados en vMix, la serie Blackmagic ATEM o ecosistemas Vizrt y TriCaster</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/streamdeck-studio.webp" alt="Elgato Stream Deck Studio" /></div>
+                <div class="info">
+                  <h3>Elgato Stream Deck Studio</h3>
+                  <ul>
+                    <li>Controlador broadcast avanzado diseñado específicamente para optimizar flujos de trabajo en entornos de estudio profesional y unidades móviles</li>
+                    <li>Integración total con mezcladores como vMix, TriCaster TC2 o los sistemas Blackmagic ATEM para lanzamiento de gráficos y transiciones</li>
+                    <li>Control preciso de movimientos y presets en cámaras PTZ Panasonic y Canon mediante sus teclas LCD de alta visibilidad</li>
+                    <li>Automatización de macros complejas y enrutamiento de señales de vídeo con una sola pulsación, descargando de trabajo al realizador</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/streamdeck-xl.webp" alt="Elgato Stream Deck XL" /></div>
+                <div class="info">
+                  <h3>Elgato Stream Deck XL</h3>
+                  <ul>
+                    <li>Superficie de control táctil personalizable con teclas LCD para la automatización de flujos de trabajo en directo</li>
+                    <li>Integración nativa avanzada para disparar macros, gráficos y transiciones en sistemas como vMix, TriCaster o mezcladores Blackmagic ATEM</li>
+                    <li>Control directo mediante plugins para enrutamiento de señales y movimientos de cámaras PTZ Panasonic o BirdDog</li>
+                    <li>Alimentación y conectividad vía USB con diseño compacto, ideal para descargar de trabajo al operador en entornos de realización</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/xtouch.webp" alt="Behringer X-Touch" /></div>
+                <div class="info">
+                  <h3>Behringer X-Touch</h3>
+                  <ul>
+                    <li>Superficie de control universal con 9 faders motorizados sensibles al tacto para una mezcla de audio física y precisa en entornos broadcast</li>
+                    <li>Integración mediante protocolo Mackie Control y MIDI, ideal para gestionar el apartado de audio en sistemas como ATEM Software Control u otras matrices de realización</li>
+                    <li>Pantallas LCD individuales (scribble strips) en cada canal para una identificación visual rápida de pistas, niveles y enrutamientos en directo</li>
+                    <li>Conectividad avanzada que incluye puertos Ethernet y USB, permitiendo enlazar la consola directamente con software de automatización y redes de control</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/xtouch-compact.webp" alt="Behringer X-Touch Compact" /></div>
+                <div class="info">
+                  <h3>Behringer X-Touch Compact</h3>
+                  <ul>
+                    <li>Superficie de control con 9 faders motorizados sensibles al tacto en un formato más reducido</li>
+                    <li>16 encoders giratorios con anillos LED para ajustes rápidos y precisos en directo</li>
+                    <li>Modo dual layer que permite alternar instantáneamente entre dos capas de configuración distintas</li>
+                    <li>Integración estándar mediante Mackie Control y MIDI para gestión directa de audio en matrices</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- BLOQUE 4: CONECTIVIDAD Y REDES -->
+          <section class="seccion-equipos">
+            <h2>Conectividad satelital y redes para eventos</h2>
+            <div class="rejilla-equipos">
+              <article class="tarjeta-equipo">
+                <div class="foto plana"><img loading="lazy" src="gaveta/equipos/starlink-gen3.webp" alt="Starlink UTR 232 Gen 3" /></div>
+                <div class="info">
+                  <h3>Starlink UTR 232 Gen 3</h3>
+                  <ul>
+                    <li>Enrutador de nueva generación con tecnología Wi-Fi 6 (802.11ax) para mayor velocidad y gestión eficiente de múltiples dispositivos simultáneos</li>
+                    <li>Incorpora dos puertos Ethernet Gigabit LAN integrados directamente en la parte trasera, eliminando la necesidad de utilizar adaptadores externos</li>
+                    <li>Compatibilidad nativa para crear redes mesh, permitiendo ampliar la cobertura inalámbrica de forma sencilla añadiendo nodos compatibles de la marca</li>
+                    <li>Diseño físico robusto con certificación IP56 de resistencia al polvo y al agua</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto plana"><img loading="lazy" src="gaveta/equipos/starlink-gen2.webp" alt="Starlink UTR 211 Gen 2" /></div>
+                <div class="info">
+                  <h3>Starlink UTR 211 Gen 2</h3>
+                  <ul>
+                    <li>Enrutador Wi-Fi 5 (802.11ac) de doble banda con tecnología 3x3 MIMO para transmisiones inalámbricas de alto rendimiento</li>
+                    <li>Compatibilidad nativa como nodo mesh para ampliar la red, admitiendo la conexión de hasta 12 extensores simultáneos</li>
+                    <li>Diseñado como unidad de control principal para los kits de antena rectangular estándar y de alto rendimiento (V2)</li>
+                    <li>Configuración física minimalista que requiere un adaptador Ethernet externo de la marca para integrar conexiones LAN</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto vitrina"><img loading="lazy" src="gaveta/equipos/ubiquiti-u6lr.webp" alt="Ubiquiti U6-LR" /></div>
+                <div class="info">
+                  <h3>Ubiquiti U6-LR</h3>
+                  <ul>
+                    <li>Punto de acceso inalámbrico de largo alcance con tecnología Wi-Fi 6 (802.11ax) diseñado para ofrecer máxima cobertura en entornos de alta densidad</li>
+                    <li>Transmisión de datos de alto rendimiento con capacidad MU-MIMO 4x4 y OFDMA en la banda de 5 GHz, alcanzando velocidades combinadas de hasta 3 Gbps</li>
+                    <li>Diseño robusto con certificación IP54 que permite su instalación versátil tanto en interiores como en entornos exteriores protegidos</li>
+                    <li>Integración completa con la plataforma UniFi Network para su gestión centralizada y alimentación simplificada mediante el estándar PoE+ (802.3at)</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto vitrina"><img loading="lazy" src="gaveta/equipos/unifi-cloudkey.webp" alt="Ubiquiti UniFi Cloud Key G2" /></div>
+                <div class="info">
+                  <h3>Ubiquiti UniFi Cloud Key G2</h3>
+                  <ul>
+                    <li>Controlador hardware integrado para la gestión centralizada de dispositivos de red UniFi y sistemas de videovigilancia UniFi Protect de forma simultánea</li>
+                    <li>Incorpora un disco duro de 1 TB de 2,5 pulgadas (ampliable hasta 5 TB) para almacenamiento de vídeo local privado sin cuotas de suscripción</li>
+                    <li>Batería interna de respaldo integrada que permite un apagado automático seguro ante cortes eléctricos, evitando la corrupción de datos y grabaciones</li>
+                    <li>Alimentación versátil mediante PoE (802.3af) a través de su puerto Ethernet Gigabit o vía USB-C (Quick Charge 2.0), incluyendo pantalla frontal para monitorización rápida de estado</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto vitrina"><img loading="lazy" src="gaveta/equipos/glinet-xe3000.webp" alt="GL.iNet GL-XE3000" /></div>
+                <div class="info">
+                  <h3>GL.iNet GL-XE3000</h3>
+                  <ul>
+                    <li>Router 5G portátil con Wi-Fi 6 de doble banda para dar conexión a internet en eventos y exteriores sin red fija</li>
+                    <li>Batería integrada que permite trabajar sin alimentación externa durante la retransmisión</li>
+                    <li>Conmutación automática entre 5G, Wi-Fi y cable (multi-WAN y failover) para mantener la conexión estable</li>
+                    <li>Sistema OpenWrt con soporte VPN (WireGuard y OpenVPN) y gestión mediante interfaz web o app</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="tarjeta-equipo">
+                <div class="foto"><img loading="lazy" src="gaveta/equipos/asus-brt-ac828.webp" alt="ASUS BRT-AC828" /></div>
+                <div class="info">
+                  <h3>ASUS BRT-AC828</h3>
+                  <ul>
+                    <li>Enrutador empresarial Wi-Fi 5 (AC2600) de alta densidad con tecnología MU-MIMO 4x4, capaz de gestionar hasta 250 conexiones simultáneas</li>
+                    <li>Puertos dual-WAN Gigabit que permiten agregación de ancho de banda y conmutación automática por error (failover) de red</li>
+                    <li>Ocho puertos LAN Gigabit con soporte avanzado para segmentación mediante VLAN y servidor VPN IPsec hardware integrado</li>
+                    <li>Ranura interna M.2 SATA para instalación de disco de estado sólido (SSD), actuando como un servidor NAS ultrarrápido en red</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </section>
+
         </div>
 
-        <div class="banner-logos">
-          <span>MStudio</span><span>5G1</span><span>El Economista</span
-          ><span>Iberdrola</span> <span>Mediapro</span><span>Secuoya</span
-          ><span>PRG</span><span>Tres60</span> <span>TVE1</span><span>CyL</span>
-        </div>
+
       </section>
     </div>
 
@@ -777,5 +1223,6 @@
         boton.textContent = mostrandoDiagrama ? "VER DIAGRAMA" : "VOLVER";
       }
     </script>
+    <script src="banner-clientes.js"></script>
   </body>
 </html>
